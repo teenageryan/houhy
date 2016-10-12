@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>onbeforeunload事件</title>
+        <style>
+            div{
+                width: 600px;
+                height: 200px;
+                color: red;
+                background: #ddf
+            }
+            section{
+                height: 400px;
+                background: #eef
+            }
+        </style>
+    </head>
+     <script>
+            // 如果使用window.onbeforeunload,使用return value调用自定义提示
+            // 该提示时浏览器自带的
+            // window.onbeforeunload = function(){
+            //     return 'ttt'
+            // }
+            // var div = document.querySelector('div')
+            // window.onresize = function(){
+            //     div.style.transform = 'rotate(40deg)'
+            // }
+            // window.onscroll = function(){
+            //     document.body.style.background = '#aae'
+            // }
+            window.onload = function(){
+                alert('ttt')
+                var sec = document.querySelector('section')
+                sec.innerHTML = '加载完成之后更改内容'
+            }
+        </script>
+    <body>
+        <div>
+            窗口大小触发的事件以及滚动条滚动的时候触发的事件
+        </div>
+        <section>
+            放进内容
+        </section>
+        <!--会覆盖标签内容-->
+       <script>
+           var sec1=document.querySelector('section')
+           sec1.innerHTML = '第二次放入内容'
+       </script>
+    </body>
+</html>

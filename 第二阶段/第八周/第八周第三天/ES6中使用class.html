@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6中使用class</title>
+</head>
+<body>
+<script>
+//    原来创建构造函数及原型方法的方法
+    function student(name,age){
+        this.name = name
+        this.age = age
+    }
+    student.prototype.sing = function(){
+        alert( this.naem + '会唱歌')
+    }
+//    ES6中的方法 -- 使用class
+    class Animal{
+    constructor(name){     //构造函数
+        this.name = name
+    }
+    run(){            //原型方法
+        alert( this.name + '会逃跑')
+    }
+}
+//    var cat = new Animal('damao')
+//    console.log(cat)
+//    cat.run()
+
+
+    class dog extends Animal{   //dog的原型对象来自于Animal
+    constructor(name,color){
+        super(name)           //调用父类元素的构造函数
+        this.color = color
+    }
+    drink(){
+        alert('会喝水')
+    }
+}
+    var dogs = new dog('大概','yellow')
+    console.log(dogs)
+    dogs.drink()
+
+
+    var a = ['eed','rrr','fde'];
+    var a2 = a.map(function(s){return s.length})
+    var aa = a.map(s => s.length)
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>回调函数</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <pre>
+            回调函数：把函数A作为参数，传递给函数B，然后函数B执行函数A，函数A被称为回调函数
+            
+            同步：多个任务排列，任务是按顺序执行的
+            
+            异步：多个任务排列，每个任务都是有一个或者多个回调函数，当前任务执行完成后执行其中的回调函数或者函数（插队执行）
+            
+            回调函数多用于异步编程，但异步编程不一定都是使用回调函数
+        </pre>
+        <script>
+            window.onkeyup = function(ev){
+                console.log(ev)
+            }
+            
+            
+            function show(){
+                console.log('11')
+            }
+            setTimeout(show,1000)
+            
+             function f2(){
+                f1()     //f1()不属于回调函数，只是异步编程
+                console.log('2')
+            }
+            f2()
+            function f1(){
+                console.log('22')
+            }
+           
+        </script>
+    </body>
+</html>

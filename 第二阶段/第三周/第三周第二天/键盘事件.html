@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>键盘事件</title>
+        <style>
+            div{
+                height: 300px;
+                width: 300px;
+                border-radius: 50%;
+                background: lemonchiffon;
+                color: goldenrod;
+                line-height: 300px;
+                font-size: 150px;
+                margin: 0 auto;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <pre>
+            onkeyup按键松开的时候出发的事件
+            onkeydown 按键按下时触发的事件
+            onkeypress 按键按下并松开时触发的事件
+        </pre>
+        <div>
+            A
+        </div>
+        <script>
+            //刷新页面随机显示26个大写英文字母，当按下的键与显示的一致，弹出输入字母，否则重新按键
+            var div = document.querySelector('div')
+            var char;
+            function active(){
+            //第一步：获取26个随机数
+            var code = Math.floor(Math.random()*26)+65   //0~65
+            // alert(code)
+            // var char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.charAt(code)
+            char = String.fromCharCode(code)
+            // alert(char)
+            
+                div.innerHTML = char
+                // div.style.color = ''
+            }   
+            active() 
+            window.onkeydown = function(ev){
+                // ev参数是用来存储当前事件的一些属性数据（对象类型） 
+                // key 事件在按下按键时返回按键的标识符
+                var chars = ev.key.toUpperCase()
+                // alert(chars)
+                
+                if( chars == char ){
+                    div.style.color = 'green'
+                    active()
+                }
+                else{
+                    alert('重输')
+                }
+            }
+            window.onkeyup = function(){
+                div.style.color = 'goldenrod'
+            }
+            
+        </script>
+    </body>
+</html>

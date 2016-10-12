@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>留言页面</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<!--<form action="/login" target="tea" method="post">-->
+    <!--<textarea name="tea" id="" cols="30" rows="10"></textarea><br>-->
+    <!--<button type="submit" id="liu">留言</button><br>-->
+<!--</form>-->
+<button type="button" id="liu" name="name">liu</button>
+<button type="button" id="yan" name="val">qingqiu</button>
+<!--<iframe name="tea"></iframe>-->
+<script>
+    $('#liu').click(function (){
+        $.get('/login',
+                {name:'nd',val:'di'},
+        function(data,status){
+            console.log(status)
+        })
+
+    })
+</script>
+</body>
+</html>

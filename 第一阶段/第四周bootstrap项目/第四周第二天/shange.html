@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Bootstrap</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <style>
+        body{
+            margin: 0px;
+        }
+        .container{
+            width: 70%;
+            margin: 0 auto;
+            /*border: 1px solid red;*/
+            /*padding: 0px;*/
+        }
+        .col-lg-4{
+            /*border: 1px solid #999;*/
+            padding: 0px;
+            margin: 10px 0;
+        }
+       main>div img{
+            width: 100%;
+            height: 100px;
+        }
+        .fa{
+            padding:0 5px;
+        }
+        h4,h5{
+            font-weight: bold;
+        }
+        h4{
+            font-size: 14px;
+            border-bottom: 2px solid #999;
+            padding: 5px 20px;
+        }
+        h5{
+            font-size: 13px;
+            margin: 0px 10px;
+        }
+        .row>div:nth-of-type(3) h5{
+            padding: 10px 0;
+        }
+        .col-lg-4:nth-child(3) h5:nth-of-type(1){
+            border-top:1px solid #999; 
+            padding-top: 10px;
+        }
+        .col-lg-4:nth-child(3) h5:nth-of-type(2){
+            border-bottom:1px solid #999; 
+            padding-bottom: 10px;
+        }
+        p{
+            padding-left:20px;
+            margin-bottom: 0px;
+            line-height: 2;
+        }
+        main>img{
+            width: 100%;
+            height: 400px;
+            margin-top:20px;
+        }
+        nav{
+            background: silver;
+            overflow: hidden;
+        }
+        ul{
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            display: inline-block;
+        }
+        li{
+            display: inline-block;
+        }
+        input{
+            width: 200px;
+            margin: 5px;
+        }
+        nav>div:nth-of-type(2)>div>div{
+            float: right;
+            margin-top: 15px;
+            background: #fff;
+            border-radius: 5px;
+        }
+        label{
+            background: cadetblue;
+            margin: 5px;
+            border-radius: 3px;
+        }
+        nav>div:nth-of-type(2) a{
+            display: block;
+            padding: 20px;
+        }
+        nav>div:nth-of-type(1){
+            overflow: hidden;
+            padding: 5px;
+        }
+        nav>div:nth-of-type(1)>p{
+            display: inline-block;
+        }
+        nav>div:nth-of-type(1)>ul{
+            float: right;
+        }
+        nav>div:nth-of-type(2){
+            background: blanchedalmond;      
+        }
+        .in{
+            border: 1px solid #999;
+            margin: 10px;
+            height: 350px;
+        }
+        .col-lg-4:nth-child(2) span{
+            position: absolute;
+            padding:0 10px;
+            left: 0;
+            top: 6px;
+        }
+        .col-lg-4:nth-child(2) p{
+            position: relative;
+            /*padding-left: 10px;*/
+        }
+        .col-lg-4:nth-child(3) p span{
+            position: absolute;
+            padding:0 10px;
+            left: 0;
+            top: 6px;
+        }
+        .col-lg-4:nth-child(3) p{
+            position: relative;
+            /*padding-left: 10px;*/
+        }
+        @media(max-width:980px){
+            .row>.col-lg-4:nth-child(2){
+                clear: both;
+            }
+            .in{
+                height: auto;
+            }
+        }
+        @media(max-width:1200px){
+            .row>.col-lg-4:nth-child(2){
+                clear: both;
+            }
+            .in{
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <nav>
+            <div class="container">
+                <p>
+                    购买专线4444443322，售后服务
+                </p>
+                <ul>
+                    <li><a href="">PartnerDirect登录</a></li>
+                    <li><a href="">Premier在线</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="container">
+                    <ul>
+                        <li><a href="">家庭个人产品</a></li>
+                        <li><a href="">商用产品</a></li>
+                        <li><a href="">技术支持</a></li>
+                        <li><a href="">登录我的账户</a></li>
+                    </ul>
+                    <div>
+                        <form action="">
+                        <input type="text" id="demo" placeholder="关键字或E-Value代码查询"><label for="demo">搜索</label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main class="container">
+            <img src="g.jpg" alt="">
+            <div class="row">
+            <div class="col-lg-4 col-xs-12">
+                <div class="in">
+                    <h4>戴尔新产品</h4>
+                    <img src="g.jpg" alt="">
+                    <h5><span class="fa fa-caret-right"></span>全新PowerEdge R830服务器</h5>
+                    <p>经济实惠的2U机架式服务器，4插槽设计，推荐应用于数据库、虚拟化和VDI。</p>
+                    <h5><span class="fa fa-caret-right"></span>Alienware Alpha R2全新登场</h5>
+                    <p>小体积，大震撼！可选第六代英特尔酷睿<sup>TM</sup>i7处理器和GTX960独显，显示性能提升
+                    60%！Allenware史上超小巧游戏台式机，可支持4k高清视频处理器和GTX960独显，显示性能提升
+                    60%！Allenware史上超小巧游戏台式机，可支持4k高清
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="in">
+                    <h4>戴尔新闻速递</h4>
+                    <img src="g.jpg" alt="">
+                    <p><span class="fa fa-caret-right"></span>经济实惠的2U机架式服务器，4插槽设计，推荐应用于数据库、虚拟化和VDI。
+                    Alienware Alpha R2全新登场</p>
+                    <p><span class="fa fa-caret-right"></span>小体积，大震撼！可选第六代英特尔酷睿i7处理器和GTX960独显，显示性能提升
+                    60%！Allenware史上超小巧游戏台式机，可支持4k高清视频处理器和GTX960独显，显示性能提升
+                    60%！Allenware史上超小巧游戏台式机，可支持4k高清
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="in">
+                    <h4>戴尔热卖信息</h4>
+                    <img src="g.jpg" alt="">
+                    <p><span class="fa fa-caret-right"></span>经济实惠的2U机架式服务器，4插槽设计，推荐应用于数据库、虚拟化和VDI。
+                    Alienware Alpha R2全新登场</p>
+                    <h5><span class="fa fa-caret-right"></span>显示性能提升可支持4k高清</h5>
+                    <h5><span class="fa fa-caret-right"></span>经济实惠的2U机架式服务器</h5>
+                    <h5><span class="fa fa-caret-right"></span>推荐应用于数据库、虚拟化和VDI。</h5>  
+                </div>  
+            </div>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</html>

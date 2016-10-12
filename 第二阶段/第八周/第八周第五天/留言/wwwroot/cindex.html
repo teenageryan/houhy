@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>留言板</title>
+</head>
+<style>
+    div{
+        display: none;
+    }
+    #ceng{
+        height: 100%;
+        width: 100%;
+        opacity: 0.2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: gray;
+        z-index: 100;
+    }
+    #content{
+        height: 200px;
+        width: 400px;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 20px;
+        position: absolute;
+        left: calc(50% - 200px);
+        top: calc(50% - 100px);
+        background: #ffffff;
+        border:2px solid #aaa;
+        z-index: 200;
+    }
+    p:first-child{
+        border-bottom: 2px solid #aaa;
+        padding: 20px 0px;
+        color: #999;
+    }
+    p:last-child{
+        cursor: pointer;
+    }
+</style>
+<body>
+<section>
+    <form action="" method="post" id="sub">
+        <textarea name="name" cols="30" rows="10"></textarea><br>
+        <input type="submit" value="提交" onclick="jiao()"/>
+    </form>
+
+</section>
+<div id="content">
+    <p> 感谢你的留言！！！</p>
+    <p onclick="pop()"> 确定 </p>
+</div>
+<div id="ceng">
+
+</div>
+<script>
+
+    function jiao(){
+        var div = document.querySelectorAll('div')
+        for(var i=0;i<div.length;i++){
+            div[i].style.display = 'block'
+
+        }
+
+    }
+    var xhr = new XMLHttpRequest()
+    var form = document.querySelector('#sub')
+    form.onsubmit = function (ev) {
+        ev.preventDefault()
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState == 4){
+                console.log(xhr.responseText)
+            }
+        }
+
+        var data = new FormData(form)
+        xhr.open('post','/login')
+        xhr.send(data)
+    }
+      function pop(){
+          location.href = '/'
+      }
+
+</script>
+</body>
+</html>

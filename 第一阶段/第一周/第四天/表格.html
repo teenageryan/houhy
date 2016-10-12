@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>表格</title>
+        <style>
+            table{
+                border-collapse: collapse;
+                text-align: center;
+                width: 60%;
+                height: 300px;
+            }
+            #a{
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <table border="1">
+            <caption>表格标题</caption>
+            <tr>
+                <td>会签部门</td>
+                <td>移交事项</td>
+                <td>数量</td>
+                <td>说明</td>
+                <td>移交人</td>
+                <td>接收人</td>
+            </tr>
+            <tr>
+                <td rowspan="5">原<br>部<br>门</td>
+                <td id="a">1、工作</td>
+                <td></td>
+                <td rowspan="4"></td>
+                <td rowspan="4"></td>
+                <td rowspan="4"></td>
+            </tr>
+            <tr>
+                <!--<td></td>-->
+                <td id="a">2、文件、文档</td>
+                <td></td>
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+            </tr>
+            <tr>
+                <!--<td></td>-->
+                <td id="a">3、客户资料</td>
+                <td></td>
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+            </tr>  
+             <tr>
+                <!--<td></td>-->
+                <td id="a">4、工作进展情况说明</td>
+                <td></td>
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+            </tr>
+             <tr>
+                <!--<td></td>-->
+                <td style="font-style:italic">备注</td>
+                <td colspan="4"></td>
+                <!--<td></td>
+                <td></td>
+                <td></td>-->
+            </tr>         
+        </table>
+    </body>
+</html>

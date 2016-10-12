@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型的出现</title>
+</head>
+<body>
+<script>
+//    学生模型
+//    function Student(name){
+//        this.name = name
+//        this.age = 18
+//        this.sing = function(){
+//            alert(this.name + '会唱歌')
+//            return this
+//        }
+//    }
+//    var ming = new Student('xiaoming')
+//    var hong = new Student('xiaohong')
+//    hong.age = 20
+//    hong.sing()
+//    console.log(ming)
+//    console.log(hong)
+
+    function aa(name){
+        this.name = name
+    }
+//为了节省资源和空间，JS提供了prototype属性，---原型
+//原型属性 ---- prototype对象，包含了所有实例化对象的属性和方法
+//共享的属性和方法
+aa.prototype.sing = function(){
+    alert(this.name + '会唱歌')
+}
+    var lv = new aa('xiaolv')
+var ss = new aa('sss')
+console.log(ss)
+//    console.log(lv)
+    lv.sing()
+
+console.log(aa.prototype)      //object
+//aa -----  Function  ---Object --- Null   --原型链
+console.log(aa.__proto__)      //function
+    console.log(aa.__proto__.__proto__)      //object
+    console.log(aa.prototype.constructor)     //function
+    console.log(aa.prototype.constructor.prototype)     //object
+//mm  ----  Array ----Object  ----  Null    --原型链
+    var mm = [1,23.45]
+    console.log(mm.__proto__)      //array[]
+//    nn  ----  String  -----  Object  --- Null   --原型链
+    var nn = '1234'
+//sa  --- number  -----  Object  -----  Null   --原型链
+var sa = 123
+
+//    var uns = undefined
+//    console.log(uns.__proto__)
+
+//ob -- Boolean --- Object -- Null    --原型链
+    var ob = false
+    console.log(ob.__proto__)
+</script>
+</body>
+</html>

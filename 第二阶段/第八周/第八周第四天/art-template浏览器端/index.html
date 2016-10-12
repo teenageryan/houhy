@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>art-template</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/template.js"></script>
+</head>
+<body>
+<!--假设服务器返回了一组JSON数据，把数据转化为HTML页面-->
+<article>
+</article>
+</body>
+
+<!-- id - 当前标签的标志，template可以根据标签名选择标签（模板）-->
+<!--
+    template.js语法结构  {{变量名称，不能有空格}}
+    条件判断：
+    if--/if
+    if--else--/if
+    if--else if--else--/if
+    each arrayName as value index--/each
+    数组名称 as 数组元素  索引值
+-->
+<!--<script id="text" type="text/html">-->
+
+    <!--{{if books.length == 0}}-->
+        <!--<h1>没有推荐的书目</h1>-->
+    <!--{{else}}-->
+        <!--<h1> {{title}} </h1>-->
+        <!--{{each books as book index}}-->
+    <!--<section>-->
+        <!--<h4>{{book.name}}</h4>-->
+        <!--<p>{{book.price | pri}}</p>-->
+        <!--<p>{{book.author}}</p>-->
+    <!--</section>-->
+        <!--{{/each}}-->
+    <!--{{/if}}-->
+<!--</script>-->
+
+<!--<script>-->
+<!--//    模板的辅助方法，para1--方法名称-->
+    <!--template.helper('pri',function(price){-->
+        <!--return '￥' + price.toFixed(2)-->
+    <!--})-->
+<!--</script>-->
+
+<!--<script>-->
+    <!--var datas = {-->
+        <!--title:'推荐书目',-->
+        <!--books:[-->
+            <!--{-->
+                <!--name:'HTML5权威指南',-->
+                <!--price:59,-->
+                <!--author:'不止'-->
+            <!--},-->
+            <!--{-->
+                <!--name:'HTML5权威指南',-->
+                <!--price:59,-->
+                <!--author:'不止'-->
+            <!--},-->
+            <!--{-->
+                <!--name:'HTML5权威指南',-->
+                <!--price:59,-->
+                <!--author:'不止'-->
+            <!--}-->
+
+        <!--]-->
+    <!--}-->
+<!--//    template（template_name,data数据）-->
+<!--//    template(id, data)-->
+<!--//    结合模板和数据，构成HTML页面-->
+    <!--var html = template('text',datas)-->
+    <!--$('article').html(html)-->
+
+<!--</script>-->
+<script id="text" type="text/html">
+{{if books.length == 0}}
+<h1>无书名</h1>
+    {{else}}
+<h1> {{title}} </h1>
+{{each books as book index}}
+<section>
+    <h4>{{book.name}}</h4>
+    <p>{{book.price | pri}}</p>
+</section>
+    {{/each}}
+    {{/if}}
+</script>
+<script>
+    template.helper('pri',function(price){
+        return '￥' + price.toFixed(2)
+    })
+</script>
+<script>
+    var datas = {
+        title:'书名',
+        books:[{
+            name:'童年',
+            price:50,
+            type:'book'
+        },
+        {
+            name:'两',
+            price:40,
+            type:'book'
+        },
+            {
+                name:'github',
+                url:'http://www.baidu.con',
+                type:'web'
+            },
+            {
+                name:'art-template',
+                url:'http://www.weibo.con',
+                type:'web'
+            }]
+    }
+
+
+    var tem = template('text',datas)
+    $('article').html(tem)
+</script>
+</html>

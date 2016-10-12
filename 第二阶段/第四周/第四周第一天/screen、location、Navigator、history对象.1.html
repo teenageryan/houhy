@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>screen/location/Navigator/history对象了解</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <a href="history.html">历史</a>
+        <script>
+            //screen 返回浏览器客户端显示屏幕信息
+            console.log(screen)
+            console.log(screen.width)     //屏幕总宽度
+            console.log(screen.height)    //屏幕总高度
+            console.log(screen.availWidth)     //不包含任务栏宽度
+            console.log(screen.availHeight)     //不包含任务栏高度度
+            
+             
+            // location包含当前页面URL相关信息
+            console.log(location)
+            console.log(document.location)
+            console.log()
+          //  location.assign('http://www.baidu.com')     //重新载入一个文档
+          //  location.replace('http://www.baidu.com')      //替换当前文档
+            
+            // 改变当前页面URL
+            // location.href = 'http://www.baidu.com'
+            
+            // 重新加载页面 -- 刷新页面
+            // location.reload()
+            
+            // 浏览器相关信息
+            console.log(navigator)
+            
+            
+            // 历史记录       返回访问过的网址数
+            // 历史记录按浏览器上方后退按钮，页面跳转过后的历史记录长度不变，一旦页面再发生跳转，历史记录重新计算
+            console.log(history)
+            
+            
+            //window可不写， go()方法从当前会话的历史记录中加载页面（当前页面位置索引值为0，上一页就是-1，下一页为1）
+            window.history.go(-1);
+            
+        </script>
+        
+    </body>
+</html>

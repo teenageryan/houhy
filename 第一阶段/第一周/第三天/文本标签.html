@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title></title>
+        <style>
+           #jiacu{
+               /*设置字体粗细*/
+               font-weight: bold;
+           }
+           #xieti{
+               /*斜体*/
+               font-style: italic;
+           }
+           #xiahuaxian{
+               /*文本装饰添加下划线*/
+               text-decoration: underline;
+           }
+           #shanchuxian{
+               text-decoration: line-through;
+           }
+           .quotes{
+               /*quotes属性值成对出现，假如需要多对引号，那么最前面那对引号为内容最外边引号*/
+               quotes: '{' '}' '[' ']';
+           }
+        </style>
+    </head>
+    <body>
+         普通文本<br><br>
+            <span>span普通文本</span><br><br>
+            <b>bold加粗文本</b><br><br>
+            <strong>strong强调意义，可以用于文本加粗</strong><br><br>
+            <span id="jiacu">用font-weight: bold;样式去实现加粗效果</span><br><br>
+            <i>italic斜体</i><br><br>
+            <em>em斜体</em><br><br>
+            <span id="xieti">用font-style: italic;样式实现斜体效果</span><br><br>
+            <u>u下划线</u><br><br>
+            <ins>ins下划线，带有插入含义，表示新增强调</ins><br><br>
+            <span id="xiahuaxian">用text-decoration: underline;样式实现下划线</span><br><br>
+            <del>del删除线带有删除含义</del><br><br>
+            <s>s删除线</s><br><br>
+            <span id="shanchuxian">使用text-decoration: line-through;样式实现删除线</span><br><br>
+            <small>小字号</small><br><br>
+            <big>大字号</big><br><br>
+            <span>通过font-size修改字体大小</span><br><br>
+            <span>文本<sup>上标</sup></span><br><br>
+            <span>文本<sub>下标</sub></span><br><br>
+            <q>quotes带有引号的字体</q><br><br>
+            <q>带有引号文本<q>引号<q>最内部</q>嵌套</q>更多文本</q><br><br>
+            <q class="quotes">自定义<q>二级<q>三级引号</q>引号</q>引号</q><br><br>
+            <abbr title="hypertext markup language">显示html全称</abbr><br><br>
+            <code>
+                定义计算机代码文本
+                &lt;span id="shanchuxian"&gt;使用text-decoration: line-through;样式实现删除线&lt;/span&gt;
+            </code>
+            <pre>预格式设定</pre>
+            <cite>定义引用。可使用该标签对参考文献的引用进行定义，比如书籍或杂志的标题</cite>
+            <pre>
+                <!--小于号&lt；  大于号&gt；-->
+&lt;span id="shanchuxian"&gt;使用text-decoration: line-through;样式实现删除线&lt;/span&gt;                 
+            </pre>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title></title>
+        <style>
+            body{
+                height: 100vh;
+                margin: 0px;
+                background: #000;
+                
+            }
+            .wrapper{
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+                perspective: 500px;
+                /*设置视角，在不做动画的时候才能看出层次效果*/
+            }
+            main{
+                width: 300px;
+                height: 300px;
+                border: 1px solid aquamarine;
+                transform-style: preserve-3d;
+                /*保留3D效果，在不做动画的时候才能看出层次效果*/
+                /*animation: rotate 4s linear infinite;*/
+            }
+            @keyframes rotate{
+                0%{
+                    transform: rotateX(0deg) rotateY(0deg);
+                }
+                100%{
+                    transform: rotateX(360deg) rotateY(360deg);
+                }
+            }
+            main div{
+                height: 100%;
+                width: 100%;
+                position: absolute;
+            }
+            .front{
+                border: 1px solid darkcyan;
+                transform: translateZ(150px);
+            }
+            .back{
+                border: 1px solid violet;
+                transform: translateZ(-150px);
+            }
+            .above,.under{
+                transform: rotateX(90deg);
+            }
+            .left{
+                border: 1px solid saddlebrown;
+                transform: translateX(-150px) rotateY(90deg);
+            }
+            .right{
+                border: 1px solid navajowhite;
+                transform: translateX(150px) rotateY(90deg);
+            }
+            .above{
+                border: 1px solid darkgray;
+                transform: translateY(150px) rotateX(90deg);
+            }
+            .under{
+                border: 1px solid chartreuse;
+                transform: translateY(-150px) rotateX(90deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <main>
+                <div class="front"></div>
+                <div class="back"></div>
+                <div class="left"></div>
+                <div class="right"></div>
+                <div class="above"></div>
+                <div class="under"></div>
+            </main>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>jQuery的基本了解</title>
+        <script src="jquery.js"></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <script>
+            console.log( $ )
+            console.log( jQuery )
+            console.log( $ === jQuery)     //true
+            // $ 等价于 jQuery
+            // 基本写法：$(selector).action()
+            
+            // 写$(function(){}) 时当页面加载完成后才开始执行某段代码,所以script标签可以随意写
+            $(document).ready(function(){      //Window.onload = function(){}
+                //js代码
+                document.querySelector('div').style.color = 'red'
+            })
+            
+            // 简写写法：一样
+            $(function(){
+                document.querySelector('div').style.background = 'lightblue'
+            })
+        </script>
+        <div>
+            页面加载之后执行
+        </div>
+    </body>
+</html>

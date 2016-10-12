@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>倒计时</title>
+        <style>
+            body{
+                margin: 0;
+            }
+            main{
+                width: 50%;
+                margin: 30px auto;
+                background: khaki;
+                text-align: center;
+                height: 400px;
+                font-size: 50px;
+            }
+            .jishi span{
+                background: navajowhite; 
+                display: inline-block;
+                margin: 40px auto;
+                padding: 10px;
+            }
+            button{
+                background: floralwhite;
+                text-align: center;
+                width: 80%;
+                margin: 0 auto;
+                font-size: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="jishi">
+                <span id="minute">01</span>
+                <span>分</span>
+                <span id="second">12</span>
+                <span>秒</span>
+            </div>
+            <button type="button" onclick="action();">开始计时</button>
+            <button onclick="stop();">停止</button>
+        </main>
+    </body>
+    <!--<script src="daoji.js"></script>-->
+    <script>
+        function cal(){
+            var minute = document.getElementById('minute')
+            var second = document.getElementById('second')
+            var se = second.innerHTML
+            var min = minute.innerHTML
+            var ti
+            se--
+            if(se<0){
+                min--
+                if(min<0)
+                {
+                    return
+                }
+                min = min>=10 ? min : '0' + min
+                minute.innerHTML = min
+                se = '10'
+            }
+            se = se>=10 ? se : '0' + se
+            second.innerHTML = se
+        }
+        function action(){
+            ti = setInterval(cal,1000)
+        }
+        function stop(){
+            clearInterval(ti)
+        }
+    </script>
+</html>

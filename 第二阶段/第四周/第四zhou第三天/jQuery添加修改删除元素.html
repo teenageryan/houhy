@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>jQuery添加、修改、删除元素</title>
+        <script src="jquery.js"></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <div>
+            已经写好的标签
+        </div>
+        <p></p>
+        <span>
+            通过appendTo方法将元素插入到某个位置
+        </span>
+        <section>
+            通过insertAfter插入内容
+        </section>
+        <script>
+            $(function(){
+                //内部插入
+                //在当前标签内部最后位置添加新内容，也可以是标签和内容
+                $('div').append('添加')
+                $('div').append(' <p>添加p标签</p> ')
+                
+                // appendTo(),把当前的p标签移动到div里边
+                $('p').appendTo('div')
+                // prepend() 在当前标签内部开始部分添加文本或标签
+                $('div').prepend('通过prepend添加内容')
+                $('div').prepend('<p>prepend添加带标签</p>')
+                // prependTo()插入最前面
+                $('p').prependTo('div')
+                
+                $('p').prepend(function(){
+                   return $(this).index() 
+                })
+                //m为索引，n为内容
+                $('p').append(function(m,n){
+                    return m + n
+                })
+                
+                // 外部插入     插入同级元素
+                $('p').after('<span>这是通过after外部插入的</span>')
+                $('p').before('<span>通过before外部插入内容</span>')
+                // 把当前元素插入到目标元素之后
+                $('div').insertAfter('section')
+                // 把当前元素插入到目标元素外部之前
+                $('div').insertBefore('section')
+                // 在当前元素外边包裹一层元素
+                $('div').wrap('<main></main>')
+                $('main').wrap('<section></section>')
+                // 移除当前元素的父级元素
+                $('div').unwrap()
+                // $('span').wrap('<p></p>')
+                // 将符合条件的元素摘出来，放到同一个目标元素下
+                // $('span').wrapAll('<p></p>')
+                
+                // 复制  插入内部
+                $('section').clone().prependTo('div')
+                
+            })
+        </script>
+    </body>
+</html>

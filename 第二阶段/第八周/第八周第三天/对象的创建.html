@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象的创建</title>
+</head>
+<body>
+<script>
+//    var a = [1,2,3,4]
+
+//    通过字面量直接创建对象
+//    var b = {
+//        name:'y',
+//        age:3,
+//        sing:function(){
+//            alert('唱歌')
+//            console.log(this)
+//            return this      //b
+//        },
+//        run:function(){
+//            alert('跑步')
+//            return this
+//        }
+//    }
+//    b.sing().run()
+
+//    等同于
+//    b.sing = function(){
+//        return this   //b
+//    }
+
+//    通过构造函数创建对象
+    function ab(name,age,sing,run){
+        this.name = name,
+        this.age = age,
+        this.sing = function(){
+             alert('sing')
+             return this
+        },
+        this.run = function(){
+            alert('run')
+            return this
+        }
+    }
+    var ba = new ab('hou')
+    console.log(ba)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>回调函数方法</title>
+        <script src="jquery.js"></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <script>
+            function f1(){
+                console.log('1')
+            }
+            function f2(cb){
+                console.log('2')
+                cb()
+            }
+            // f2(f1)
+            function f3(){
+                console.log('3')
+            }
+            // f3()
+            // callbacks()提供了回调函数的多种用途，管理回调函数的队列列表
+            // console.log( jQuery.Callbacks() )
+            // console.log( $.Callbacks() )
+            var callback = $.Callbacks()
+            console.log(callback.has())    //false     空列表
+            // 添加函数到回调函数队列
+            callback.add(f1,f3)
+            // has()判断某个回调函数是否在队列当中，返回的为boolean
+            // 无参数的情况下，判断当前队列是否有函数
+            console.log( callback.has() ) 
+            function f4(a,b){
+                console.log( a + b )
+            }
+            function f5(c){
+                console.log(c)
+            }
+            callback.add(f4,f5)
+            // .fire()按顺序执行队列中的回调函数
+            // 如果有参数,按顺序把参数传递给队列中的有参函数
+            callback.fire(2,5,3)
+            console.log('删除后结果')
+            // 删除某个函数
+            callback.remove(f5)
+            callback.fire(3,11,8)
+            // 清空当前队列中的函数
+            callback.empty()
+            console.log( callback.has() )      //false
+            // fired（）判断队列中的函数是否被执行（之前是否有fire（）），返回值---Boolean
+            console.log( callback.fired() )
+            
+            function f6(){
+                console.log(this)
+            }
+            callback.add(f6)
+            // fireWith()能够改变函数执行的上下文，其实就是this当前对象
+            callback.fire()       //this 指代callback（）对象
+            callback.fireWith(window)       //this 指代window对象
+            callback.fireWith(f1)           //this   指代f1函数
+        </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>HTML总结</title>
+        <style>
+            /*标签、类名、id、伪类、伪元素（:before、:after）选择器*/
+            /*在 CSS 定义中，a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的*/
+            /*在 CSS 定义中，a:active 必须被置于 a:hover 之后，才是有效的*/
+            /*定位不能用来做布局，可以写层次关系*/
+            /*background：color、url（）、repeat、size;
+            其中size 指的是位置 可以写多个值（center top 之类的）*/
+            /*background-size:背景大小要单独设置*/
+            a{
+                display: block;
+                text-decoration: none;
+                color: black;
+                font-size: 20px;
+                background: indigo url("img/18234d8c-0026-9b84-d9df-fe483de6079e.jpg") no-repeat 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <a class="baidu" id="bai" href="https://www.baidu.com" title="百度">百度搜索</a>
+    </body>
+</html>

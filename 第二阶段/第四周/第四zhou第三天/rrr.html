@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title></title>
+        <script src="jquery.js"></script>
+        <style>
+            main{
+                width: 65%;
+                height:455px; 
+                margin: 0 auto;
+                position: relative;
+            }
+            ul{
+                list-style: none;
+                padding: 0px;
+                margin: 0px;
+            }
+            #first{
+                position: relative;
+            }
+            #second{
+                position: absolute;
+                bottom: 20px;
+                right: 10px;
+                z-index: 8;
+            }
+            #first li{
+                position: absolute;
+            }
+            #second li{
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                /*background: olive;*/
+                border: 1px solid yellowgreen;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <ul id="first">
+                <li> <img src="img/1.jpg" alt=""> </li>
+                <li> <img src="img/2.jpg" alt=""> </li>
+                <li> <img src="img/3.jpg" alt=""> </li>
+                <li> <img src="img/4.jpg" alt=""> </li>
+            </ul>
+            <ul id="second">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </main>
+        <script>
+            $(function(){
+                $('#second li').hover(function(){
+                    clearInterval(ti)
+                    $('#first li').eq($(this).index()).css('z-index','5').siblings().css('z-index','1')
+                    $('#second li').eq($(this).index()).css('background','olive').siblings().css('background','')
+                },function(){
+                    i = $(this).index() + 1
+                   ti = setInterval(show,1000)
+                })
+                
+                var i = 0
+                function　show(){
+                    if(i >= 4){
+                        i = 0
+                    }
+                     $('#first li').eq(i).css('z-index','5').siblings().css('z-index','1')
+                    $('#second li').eq(i).css('background','olive').siblings().css('background','')
+                    i++
+                }
+               ti = setInterval(show,1000)
+            })
+        </script>
+    </body>
+</html>

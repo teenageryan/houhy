@@ -1,0 +1,11 @@
+span:nth-child(3){
+    border: 4px solid olive;
+    background: white;
+}
+li{
+    background: palevioletred;
+    border: 1px solid olive;
+}
+body{
+    background: mediumaquamarine;
+}

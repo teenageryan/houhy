@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>jQuery获取标签的位置和尺寸</title>
+        <script src="jquery.js"></script>
+        <style>
+            div{
+                width: 200px;
+                height: 200px;
+                border: 10px solid lightblue;
+                margin: 50px;
+                padding: 60px;
+                background: red;
+                color: #fff;
+                position: relative;
+                overflow: auto;
+            }
+            section{
+                margin: 30px;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <!--一个DIv标签，获取大小、位置-->
+            <section>
+               <p>jjjjjjjjjjjjyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy</p>
+               <p>jjjjjjjjjjjj</p>
+               <p>jjjjjjjjjjjj</p>
+               <p>jjjjjjjjjjjj</p>
+               <p>jjjjjjjjjjjj</p><p>jjjjjjjjjjjj</p>
+               
+               <p>jjjjjjjjjjjj</p>
+               <p>jjjjjjjjjjjj</p>
+               <p>jjjjjjjjjjjj</p>
+               <p>jjjjjjjjjjjj</p>
+               <p>jjjjjjjjjjjj</p><p>jjjjjjjjjjjj</p>
+               <p>jjjjjjjjjjjj</p>
+               <p>jjjjjjjjjjjj</p>
+               <p>jjjjjjjjjjjj</p>
+               <p>jjjjjjjjjjjj</p><p>jjjjjjjjjjjj</p>
+               
+            </section>
+        </div>
+        
+        <script>
+            $(function(){
+                // 标签内容的宽高
+                console.log($('div').width())
+                console.log($('div').height())
+                // 标签内容和内边距之和
+                console.log($('div').innerHeight())
+                console.log($('div').innerWidth())
+                // 标签大小 = 内容 + 内边距 + 边框
+                console.log($('div').outerHeight())
+                console.log($('div').outerWidth())
+                // 垂直方向上外边距由大的决定
+                // offset() 计算的时当前元素与窗口的偏移量top，left
+                console.log($('div').offset())
+                console.log($('section').offset())
+                // position（）获取当前元素与最近设置有定位的父级元素之间的偏移量
+                // 从当前元素的外边距开始算
+                console.log($('div').position())
+                console.log($('section').position())
+                // scroll（）当标签有滚动条时，第一行元素与滚动条上方距离，被隐藏部分长度
+                console.log($('div').scrollTop())
+                console.log($('div').scrollLeft())
+            })
+        </script>
+    </body>
+</html>

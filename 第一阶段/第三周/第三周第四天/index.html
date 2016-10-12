@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>WebApp</title>
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <link rel="icon" href="42.jpg">
+        <!--让页标签左侧显示图片，图片大小一般为小于100像素的正方形-->
+        <style>
+            body{
+                /*body默认继承浏览器的高度*/
+                margin: 0px;
+                background: url(ni.jpg) center top;
+                /*center水平方向，top垂直方向*/
+                background-size: 500%;
+                /*background-size: 一个值时为宽度，高度按比例，图片会显示；
+                两个值时高度为0，所以不会显示*/
+                /*img为行内块元素，默认为基线对齐，与下方元素会有空行，是基线与底线距离
+                解决方法：display：block*/
+                color: #fff;
+                text-align: center;
+            }
+            header span:nth-of-type(1),header span:nth-of-type(3){
+                font-size: 14px; 
+                margin-top:8px; 
+            }
+            header span:nth-of-type(2){
+                font-size: 20px; 
+            }
+            header span:nth-of-type(1){
+                float: left;
+                /*浮动和定位会影响行元素自身的特点*/
+            }
+            header span:nth-of-type(3){
+                float: right;
+            }
+            header{
+                padding: 10px;
+            }
+            main{
+                width: 80%;
+                margin: 0 auto;
+            }
+            main p{
+                line-height: 40px;
+            }
+            img{
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                margin: 30px 0;
+            }
+            main>p:nth-of-type(2),main>p:nth-of-type(1){
+                text-align: left;
+                border-bottom: 1px solid white;
+            }
+            main>p:nth-of-type(3){
+                background: green;
+                border-radius: 20px;
+                letter-spacing: 15px; 
+            }
+            footer{
+                margin-top: 100px;
+            }
+            .fa{
+                font-size: 50px;
+            }
+            .fa-qq{
+                margin: 0px 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <!--第一部分-->
+        <header>
+            <span>返回</span>
+            <span>登录</span>
+            <span>注册</span>
+        </header>
+        <!--第二部分-->
+        <main>
+            <img src="f.jpg" alt="">
+            <p>账号 <span>4444444444</span></p>
+            <p>密码 <span>44444444</span></p>
+            <p>登录</p>
+            <p>忘记密码？</p>
+        </main>
+        <!--第三部分-->
+        <footer>
+            <span class="fa fa-weibo"></span>
+            <span class="fa fa-qq"></span>
+            <span class="fa fa-weixin"></span>
+        </footer>
+    </body>
+</html>

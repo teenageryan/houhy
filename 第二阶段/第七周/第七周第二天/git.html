@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+1.全局设置当前计算机所有git仓库的用户信息
+    git config --global user.name 'name'
+    git config --global user.email 'email'
+
+2.mkdir learngit  创建learngit空文件夹，作为版本库（repository）的存储
+    cd filename 打开文件夹
+    pwd filename 显示当前工作路径
+4.git init  初始化git，会创建一个默认隐藏的文件夹（把这个目录变成Git可以管理的仓库）
+5.如果版本库内找不到.git文件夹，可以通过命令行查看是否存在
+    ls -ah 查看隐藏文件夹路径
+6.提交文件到仓库中
+    （1）.添加文件到仓库内部 git add filename（要上传文件）
+    （2）.把文件提交到仓库 git commit -m "message"
+7.查看当前仓库状态变化 ---查看当前文件是否做好提交准备
+    git status
+8.查看文件修改内容 -- 有什么不同
+    git diff filename
+9.查看最近到最远提交到仓库的修改的日志内容
+    git log
+10.版本回退
+    HEAD -- 当前最新提交
+    HEAD^ -- 上一个提交文件
+    HEAD~5 -- 往上数的第五个后的提交文件（commit成功的）
+    git reset --hard HEAD^  返回的上一个版本号
+    git reset --hard hard 版本号 返回指定版本
+11.查看当前版本具体内容
+    cat filename
+12.记录之前每次命令
+    git reflog
+13.git add -- 可以添加多个内容，当前内容保存在暂存区内
+    git commit -- 一次性把暂存区的多个文档提交到git仓库
+14.撤销工作区文件的修改 --- 未提交至暂存区前 撤销上一步操作
+    git checkout -- filename
+15.提交至暂存区后，撤销当前的提交状态 - 把暂存区的文件退回工作区
+    git reset HEAD filename
+16.删除文件
+    rm filename
+17.ssh-keygen -t rsa -C "邮箱"
+    查看sshkey
+    cat ~/.ssh/id_rsa.pub
+    显示公钥
+18.git remote add origin 网站的git库地址网址.git
+    git push origin master -- 就可以push 网站上
+1. 在当前文件打开git bash here ，克隆已有git库中内容（git clone git库网址）；在克隆得到的文件打开git bash here，添加提交要新加的内容，然后git push origin master -- 就可以在原有的网站git库中添加新的内容
+(克隆完git库中内容后有修改的话要git pull，已更新克隆文件夹）
+2.在新的空git库中添加内容：
+    新建空文件夹
+    右键打开git bash here
+    初始化git init
+    在文件夹中放入要上传内容
+    git add filename
+    git commit -m 'message'
+    git remote add origin 网站的git库地址网址.git
+    git push origin master
+</body>
+</html>

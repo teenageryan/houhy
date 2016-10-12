@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>历史记录3</title>
+        <style>
+            progress{
+                width: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <button>后退</button>
+        <div>
+            <button onclick="pro(0)">进度0</button>
+            <button onclick="pro(0.25)">进度25</button>
+            <button onclick="pro(0.5)">进度50</button>
+            <button onclick="pro(1)">进度100</button>
+        </div>
+        <progress></progress>
+        <script>
+            console.log(history)
+            var progress = document.querySelector('progress')
+            var btns = document.querySelectorAll('button')
+            
+            // var a=[0,0.25,0.5,1]
+            // for(var i = 1;i < btns.length;i++){
+            //     btns[i].index = i
+            //     btns[i].onclick = function(){
+            //         progress.value = a[this.index -1]
+            //     }
+            // }
+            // console.log(progress.value)
+             
+            
+            // 添加/修改当前页面的历史记录条目，即length
+            // 第一个参数：状态对象，第二个：标题，第三个：历史记录的路径（新地址）
+            // state对象，用来存储当前插入历史记录条目的相关信息
+            // pushstate（）添加新的历史记录
+            //  value不是一个定值，可以把它作为一个参数
+            function pro(val){
+                progress.value = val
+                history.pushState( val,'进度' + val, '#' + val)
+                document.title = '进度' + val
+            }
+            btns[0].onclick = function(){
+                history.back()
+            }
+        </script>
+    </body>
+</html>

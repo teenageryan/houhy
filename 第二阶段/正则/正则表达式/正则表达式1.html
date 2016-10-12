@@ -1,0 +1,83 @@
+<!DOCTPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="晓公举">
+        <title>正则表达式1</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <script>
+            // 一、什么是正则表达式
+            // 正则表达式(regular expression) 是一个描述字符模式的对象
+            // ECMAScript中的RegExp类表示正则表达式。而String和RegExp都定义了
+            // 使用正则表达式进行强大的模式匹配和文本检索与替换的函数
+            // Date String Arr Object Math Number (对象的构造方法)
+
+            // 二、创建正则表达式 方法两种
+            // 方法1.new + 构造函数的形式
+            // 构造函数中两个参数，参数1:模式字符串  参数2:模式修饰符
+            var reg = new RegExp('box')
+            console.log(reg) //   /box/
+            // 模式修饰符
+            // g 全局
+            // i 不区分大小写
+            // m 多行
+            var reg2 = new RegExp('box','gim')
+            console.log(reg2) //  /box/igm
+            // 方法2：字面量的形式
+            var reg3 = /box/
+            var reg4 = /box/g
+            console.log(reg3) //   /box/
+            console.log(reg4) //  /box/g
+
+            // 三、正则表达式里的两个方法
+            // test()
+            // 作用：匹配到则返回真，没有匹配到则返回假
+            // 用法:reg.test(str)
+            var reg5 = /box/i
+            var str1 = 'this is a box'
+            console.log(reg5.test(str1)) //true
+            var reg5 = /box/
+            var str1 = 'this is a Box'
+            console.log(reg5.test(str1)) //false
+            // exec()
+            // 作用：返回值是一个数组，如果匹配到字符串，则返回字符串的信息数组，如果没有匹配到则返回null
+            // 用法：reg.exec(str)
+            // 他只能匹配一个(到学完控制符之后再看)
+            var reg6 = /box/i
+            var str2 = 'this is Box,that is a box'
+            console.log(reg6.exec(str2)) //["Box"]
+
+            // 四、字符串中正则表达式的用法
+            // 字符串里的四个方法:match() replace() search() split()
+            var str3 = '我爱学习 学习爱我'
+            console.log(str3.replace('爱','不爱'))
+            // 体验一下
+            var str4 = 'this 3 is 55a 3 box,that 7 21a 74 box865 too!'
+            var reg7 = /([^0-9])(\d)([^0-9])/g
+            console.log(str4.replace(reg7,'$1'+0+'$2$3'))
+
+            // match() 返回的是一个子字符串的数组 第一个
+            console.log(str4.match('is'))
+            // 正则可以进行全局匹配 返回的是子字符串的一个数组
+            var reg8 = /is/g
+            console.log(str4.match(reg8))
+
+            // search() 返回子字符串的开始位置
+            console.log(str4.search('is')) //2
+            // search() 返回子字符串的开始位置 只返回第一个
+            console.log(str4.search(reg8)) //2
+
+            // split(str) 返回一个分割成的数组
+            var str5 = '李易峰,薛之谦，许嵩，金木研，夏目';
+            console.log(str5.split('，'))
+
+            var reg9 = /，|,/  // | 或者的意思
+            console.log(str5.split(reg9))
+
+        </script>
+    </body>
+<html>

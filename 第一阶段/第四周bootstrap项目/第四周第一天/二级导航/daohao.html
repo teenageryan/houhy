@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title></title>
+        <style>
+            body{
+                margin: 0px;
+            }
+            nav{
+                width: 60%;
+                margin: 0 auto;
+            }
+            ul{
+                padding: 0px;
+                margin: 0px;
+                list-style: none;
+                background: goldenrod;
+                text-align: center;
+            }
+            a{
+                text-decoration: none;
+                display: block;
+/*关键                */
+                /*padding: 10px 50px;*/
+                margin: 10px 50px;
+                border: 1px solid seagreen;
+            }
+            a:hover{
+                background: forestgreen; 
+            }
+            li{
+                display: inline-block;
+                background: rosybrown;
+                margin: 10px 0;
+            }
+            nav>ul>li:nth-of-type(2){
+                position: relative;
+            }
+            nav>ul>li:nth-of-type(1){
+                position: relative;
+            }
+            .nav2{
+                position: absolute;
+                background: none;
+                /*display: none;*/
+                /*visibility: hidden;*/
+                width: 100%;
+/*关键                */
+            }
+            .nav2 li{
+                display: block;
+            }
+            nav>ul>li:hover .nav2{
+                /*display: block;*/
+                /*visibility: visible;*/
+            }
+            .nav1{
+                position: absolute;
+                background: none;
+                width: 100%;
+            }
+            .nav1 li{
+                display: block;
+            }
+            nav>ul>li:last-child>ul{
+                display: none;
+            }
+            .nav3{
+                position: absolute;
+                background: none;
+                left: 0;
+                width: 100%;
+                text-align: center;
+            }
+            nav>ul>li:last-child:hover .nav3{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="">dao666</a>
+                    <ul class="nav1">
+                        <li><a href="">n</a></li>
+                        <li><a href="">45</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">e</a></li>
+                        <li><a href="">x</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">han</a>
+                    <ul class="nav2">
+                        <li><a href="">n</a></li>
+                        <li><a href="">45</a></li>
+                        <li><a href="">3rrrrr</a></li>
+                        <li><a href="">e</a></li>
+                        <li><a href="">x</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">ie</a>
+                </li>
+                <li><a href="">we</a></li>
+                <li>
+                    <a href="">pot</a>
+                    <ul class="nav3">
+                        <li><a href="">n</a></li>
+                        <li><a href="">45</a></li>
+                        <li><a href="">3rrrrr</a></li>
+                        <li><a href="">e</a></li>
+                        <li><a href="">x</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </body>
+</html>

@@ -1,0 +1,192 @@
+body{
+    font-family: "时尚简黑中体";
+}
+main{
+    width: 80%;
+    margin: 0 auto;
+    /*定宽居中*/
+    background: url(wood.jpg);
+    padding: 80px 0;
+}
+main > div{
+    width: 60%;
+    margin: 0 auto;
+    height: 150px;
+    border: solid 1px blanchedalmond;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 5px 5px 5px black;
+    /*边框阴影：x轴 y轴 模糊度 颜色*/
+    margin-top: -10px;
+}
+main > div:nth-child(2n+1){
+    margin-left: 100px;
+}
+main > div:nth-child(2n){
+    margin-right: 100px;
+}
+main > div:first-child{
+    background-color: #1F1A17;
+    overflow: hidden;
+    /*溢出内容：隐藏*/
+    z-index: 10;
+}
+main > div > span{
+    width: 30px;
+    height: 30px;
+    background: url(wood.jpg);
+    position: absolute;
+    /*行元素设定绝对定位后可以设置宽高*/
+    border-radius: 50%;
+    left: 20px;
+    bottom: 20px;
+    z-index: 9;
+}
+h1{
+    font-size: 70px;
+    font-family: "迷你简双线体";
+    color: white;
+    font-weight: normal;
+    position: absolute;
+    right: 100px;
+    top: -15px;
+    margin: 0;
+    /*h1-h6 标题标签具有默认的外边距，字体粗细，字体大小*/
+}
+h2{
+    font-size: 40px;
+    color: rebeccapurple;
+    position: relative;
+    left: 40px;
+}
+h2 small{
+    display: block;
+    font-size: 25px;
+    color: white;         
+}
+img{
+    position: absolute;
+    width: 300px;
+    top:-20px;
+    right: -180px; 
+}
+main > div:nth-child(2){
+    background-color: #DEDEDC;
+    z-index: 9;
+}
+h3{
+    position: absolute;
+    right: 20px;
+    margin: 0px;
+    top: 15px;
+    font-weight: normal;
+    font-size: 25px;
+}
+address,aside{
+    font-style: normal;
+    float: right;
+    text-align: right;
+    /*文本对齐方式：右对齐*/
+}
+address p{
+    float: left;
+    margin: 20px;
+    font-size: 15px;
+    margin-top: 50px;
+}
+address p:last-child{
+    margin-top: 60px;
+}
+div:nth-child(3) aside p{
+    margin: 20px;
+    font-size: 15px;
+    margin-top: 50px;
+    position: absolute;
+    right: 0px;
+}
+main > div:nth-child(3){
+    background-color: #C4BE66;
+    z-index: 8;
+}
+main > div:nth-child(4){
+    background-color: #BA8FBA;  
+    z-index: 7;
+}
+main > div:nth-child(4) p{
+    position: relative;
+    right: 10px;
+    
+}
+main > div:nth-child(4) p:first-child{
+    margin-top: 60px;
+    margin-bottom: 0px;
+}
+main > div:nth-child(4) p:nth-of-type(2){
+    margin: 0px;
+}
+main > div:nth-child(5){
+   background-color:  #DC214C;
+   z-index: 6;
+}
+main > div:nth-child(6){
+   background-color:  #E3EFC1;
+   z-index: 5
+}
+main > div:nth-child(7){
+   background-color:  #D5C2D8;
+   z-index: 4;
+}
+main > div:last-child{
+    background-color: #C1C1C1;
+    z-index: 3;
+    /*overflow: hidden;*/
+}
+h4:first-child{
+    margin: 0px;
+    font-size: 30px;
+    position: absolute;
+    top: 20px;
+    left: 150px;  
+    color: #fff;  
+    z-index: 3;
+}
+h4:nth-child(2){
+    margin: 0px;
+    position: absolute;
+    font-size: 40px;
+    top: 80px;
+    left: 180px;
+    color: #fff;
+    z-index: 3;
+}
+h4:first-child::first-letter{
+    color: blue;
+}
+div:last-child>div:nth-child(3){
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: -30px;
+    left: 40px;
+    background-color: rgba(225, 225, 0, 0.6);
+    clip: rect(30px,200px,180px,0px);
+    /*clip:rect(top,right,bottom,left);
+    裁减属性
+    第一个值：裁掉的上方的范围（从上到下）；
+    第二个值：留下的从左到右的范围（从左到右，包含左侧裁掉的部分）；
+    第三个值：留下的从上到下的范围（从上到下，包含上不裁剪掉的部分）
+    第四个值：裁掉的左边的范围（从左到右）*/
+    z-index: 4;
+}
+div:last-child>div:nth-child(4){
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: rgba(0, 100, 255, 0.8);
+    position: absolute;
+    top: -30px;
+    left: 180px;
+    clip: rect(30px,250px,180px,0px);
+    z-index: 2;
+}

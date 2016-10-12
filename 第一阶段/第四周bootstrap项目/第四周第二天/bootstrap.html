@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--language:中文语言-->
+<html lang="zh-CN">
+
+<head>
+    <!--字符编码：简体中文-->
+    <meta charset="utf-8">
+    <!--设置IE浏览器兼容性，以最新的IE版本兼容当前网页-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--width 属性控制设备的宽度。假设您的网站将被带有不同屏幕分辨率的设备浏览，那么将
+        它设置为 device-width 可以确保它能正确呈现在不同设备上。-->
+    <!--initial-scale=1.0 确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放。-->
+    <!--maximum-scale=1.0 与 user-scalable=no 一起使用。这样禁用缩放功能后，用户只能滚动屏幕-->
+    <!--最后两个值视情况可以不写-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--<meta name="author" content="常伟">-->
+    <title>Bootstrap</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    body { 
+        padding-top: 50px;
+    } 
+    .starter-template {
+        padding: 40px 15px; 
+        text-align: center; 
+    }
+    </style>
+</head>
+<body>
+    
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Bootstrap基本页面</h1>
+        <p class="lead">这个页面包含了相对完整的导航功能，能够适应从大到小各种屏幕尺寸。<br> All you get is this text and a mostly barebones HTML document.</p>
+      </div>
+
+    </div>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--bootstrap是基于jQuery的框架-->
+
+</html>

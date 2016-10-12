@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>盒模型</title>
+        <style>
+            body{
+                padding:20px;
+            }
+            /*body的内边距与div的外边距没有相等关系*/
+            div{
+                width: 500px;
+                border: 10px solid olive;
+                padding: 50px;
+                margin: 40px;
+                box-sizing: border-box;
+                /*内外边距三个值时分别为上、水平、下的值*/
+                /*当设定当前的样式时，设置的宽度为 标签的宽度*/
+                /*标签的宽度 = 内容宽度 + 内边距 + 边框值
+                与外边距无关*/
+                /*box-sizing: 默认值为content-box;相当于不设置box-sizing*/
+                /*简写属性：样式名称：多个样式值
+                background、margin、padding、animation*/
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容美容内容
+        </div>
+    </body>
+</html>

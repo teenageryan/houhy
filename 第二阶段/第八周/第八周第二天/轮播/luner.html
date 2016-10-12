@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播（2）</title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"/>
+    <script src="js/jquery.js"></script>
+</head>
+<style>
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        font-size: 0;
+    }
+    li{
+        width: 100px;
+        height: 150px;
+    }
+    .box-left ul{
+        width: 100px;
+    }
+    .box-left ul{
+        width: 700px;
+        position: absolute;
+    }
+
+    .box-left li{
+        display: inline-block;
+    }
+    li>img{
+        height: 100%;
+        width: 100%;
+    }
+    .box-top .imbox{
+        height: 600px;
+        width: 100px;
+        overflow: hidden;
+        position: relative;
+    }
+    .box-left .imbox{
+        width: 400px;
+        height: 150px;
+        overflow: hidden;
+        position: relative;
+    }
+    .box-top .fa{
+        font-size: 40px;
+        position: relative;
+        left: 30px;
+    }
+    .box-left{
+        position: relative;
+        left: 400px;
+        top: 100px;
+    }
+    .box-left .left{
+        font-size: 40px;
+        position: absolute;
+        left: -40px;
+        top: 40px;
+    }
+    .box-left .right{
+        font-size: 40px;
+        position: absolute;
+        left: 420px;
+        top: 40px;
+    }
+</style>
+<body>
+<main>
+    <div class="box-left">
+        <span class="fa fa-angle-left left"></span>
+        <div class="imbox">
+            <ul class="sld">
+                <li><img src="img/6.jpg" alt=""/></li>
+                <li><img src="img/9.jpg" alt=""/></li>
+                <li><img src="img/1.jpg" alt=""/></li>
+                <li><img src="img/12.jpg" alt=""/></li>
+                <li><img src="img/2.jpg" alt=""/></li>
+                <li><img src="img/7.jpg" alt=""/></li>
+                <li><img src="img/8.jpg" alt=""/></li>
+            </ul>
+        </div>
+        <span class="fa fa-angle-right right"></span>
+    </div>
+    <div class="box-top">
+        <span class="fa fa-angle-up up"></span>
+        <div class="imbox">
+            <ul class="sld">
+                <li><img src="img/6.jpg" alt=""/></li>
+                <li><img src="img/9.jpg" alt=""/></li>
+                <li><img src="img/1.jpg" alt=""/></li>
+                <li><img src="img/12.jpg" alt=""/></li>
+                <li><img src="img/2.jpg" alt=""/></li>
+                <li><img src="img/7.jpg" alt=""/></li>
+                <li><img src="img/8.jpg" alt=""/></li>
+            </ul>
+        </div>
+        <span class="fa fa-angle-down down"></span>
+    </div>
+</main>
+
+</body>
+<script src="js/luner.js"></script>
+<script>
+    $(function(){
+        $('.box-left').lunbo({
+            direction:'left',
+            speed:1000,
+            preClass:'left',
+            nextClass:'fa-angle-right',
+            moveClass:'sld',
+            listClass:'imbox'
+        })
+    })
+
+//    $('.box').children().first().click(function(){
+//        $('ul').animate({
+//top:-150
+//        },function(){
+//            $(this).css('top','0').children().first().appendTo($('ul'))
+//        })
+//    })
+//    $('.box').children().last().click(function(){
+////            console.log($(this))
+//            $('ul').css('top','-150px').children().last().prependTo($('ul'))
+//        $('ul').animate({
+//            top:0
+//        })
+//    })
+</script>
+</html>

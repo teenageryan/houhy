@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>获取窗口大小及位置</title>
+        <style>
+            div{
+                height: 500px;
+               width: 2000px;
+            }
+        </style>
+    </head>
+    <body>
+        <!--Document对象的属性和方法-->
+        <div></div>
+        <script>
+           // 获取文档根元素
+            document.documentElement
+            // title属性：当前文档标题
+            console.log(document.title)
+            // window对象  --文档的大小
+            console.log(window.innerHeight)   //可视窗口高度
+            console.log(window.innerWidth)     //可视窗口宽度 不受滚动条影响
+            console.log(window.outerWidth)     //宽度 = innerWidth + 浏览器边框 受滚动条影响
+            console.log(window.outerHeight)    //整个浏览器的高度
+            // 获取屏幕的大小
+            console.log(screen.width)
+            console.log(screen.height)
+            // 获取页面大小
+            console.log(document.documentElement.clientWidth)   //去除滚动条宽度（不包含滚动条宽度）
+            console.log(document.documentElement.clientHeight)   //去除滚动条宽度（不包含滚动条宽度）
+            //获取html元素宽高
+            console.log(document.documentElement.offsetHeight)    //html高度
+            console.log(document.documentElement.offsetWidth)     //html宽度
+        </script>
+    </body>
+</html>

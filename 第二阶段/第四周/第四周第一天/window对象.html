@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>window对象</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <div>
+           <span>02</span><span>05</span>
+        </div>
+        
+        <script>
+            // window.前缀可以省略掉不写
+      //      console.log(window.document)
+       //     console.log(document)
+            
+            // 提示框
+     //       alert('这是一个提示框')
+     //       alert('又是一个提示框')
+            // 点击确定就可以取消掉当前提示框
+            
+            
+     //       confirm('新的')
+     //       console.log(confirm('新滩'))
+            // confirm 带有确定和取消，点击确定返回true，点击取消可以返回false，alert只带有确定
+            
+            
+            // 可以输入文字的对话框，第一个参数：提示文字信息，第二个参数：默认输入内容
+     //       prompt('是否输入文字','12')
+            
+            
+            // 打开新窗口，第一个参数：网址；第二个参数：名称/target属性的值
+            // 第三个参数：设置新窗口属性
+      //      open('http://www.baidu.con','baidu','width = 300px,height = 300px')
+            
+            
+            
+            // 倒计时：setInterval,clearInterval;setTimeout,clearTimeout
+            // setTimeout(function,time) 暂停多少毫秒后执行一次函数
+            var timer
+     //      timer = setTimeout(function(){
+     //     alert('暂停3秒后')
+     //        },3000)
+     //        clearTimeout(timer)      //清除延时
+            
+            
+            // setInterval 每隔多少毫秒循环调用函数
+      //    timer = setInterval(function(){
+    //            console.log(11)
+    //        },1000)
+    //        clearInterval(timer)
+    
+    
+    
+        //     var div = document.querySelector('div')
+        //     var se = div.innerHTML
+        //     var timer
+        //  timer = setInterval(function(){
+        //          se --
+        //         div.innerHTML = se
+        //         if(se == 0){
+        //             clearInterval(timer)
+        //         }
+        //     },1000)
+           
+        
+        
+       var minute = document.querySelector('span')
+       var second = document.querySelectorAll('span')[1]
+       var se = second.innerHTML
+       var min = minute.innerHTML
+       setInterval(function(){
+            se--
+            if(se < 0){
+                min--
+                if(min < 0){
+                    return
+                }
+                min = min > 10?min:'0' + min
+                minute.innerHTML = min
+                se = 05
+            }
+            se = se > 10?se:'0' + se
+            second.innerHTML = se
+       },1000)
+      
+        </script>
+    </body>
+</html>

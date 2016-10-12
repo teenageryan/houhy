@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>弹性布局对齐方式</title>
+        <style>
+            html{
+                height: 100%;
+            }
+            main{
+                height: 100%;
+                display: flex;
+                /*容器开启弹性布局*/
+                flex-direction: row;
+                /*flex-direction: column;*/
+                flex-wrap: nowrap;
+                flex-wrap: wrap;
+                /*flex-flow: row nowrap;*/
+                /*justify-content: center;*/
+                justify-content: space-between;
+                /*align-items: flex-start;*/
+                /*align-items: flex-end;*/
+                /*align-items: center;*/
+                /*项目,换行的话，每行都有一条轴线*/
+                /*align-items: baseline;*/
+                /*align-content: stretch;*/
+                /*align-content: flex-start;*/
+                /*align-content: flex-end;*/
+                /*align-content: center;*/
+                /*内容，只有一条轴线*/
+                align-content: space-between;
+                /*align-content: space-around;*/
+            }
+            body{
+                margin: 0px;
+                height: 100%;
+            }
+            section{
+                border: 1px solid aquamarine;
+                height: 80px;
+                /*font-size: 10px;*/
+                width: 60%;
+                /*flex-basis: 200px;*/
+                /*如果只存在width: 剩余空间 = 容器宽度 - 项目的宽度之和；
+                如果存在flex-basis(值不为auto,auto为原来宽度)和width
+                剩余空间 = 容器宽度 - 项目basis值之和；*/
+                /*flex-grow: 1;*/
+                /*出去占有部分，平均分配剩余空间*/
+            }
+            span{
+                border: 1px solid peru;
+                height: 35px;
+                /*font-size: 20px;*/
+                width: 30%;
+            }
+            section:nth-of-type(2){
+                /*flex-grow: 2;*/
+            }
+            span:nth-of-type(1){
+                align-self: flex-end;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <section>1 A</section>
+            <section>2 b</section>
+            <section>3 j</section>
+            <section>4 y</section>
+            <!--<section></section>
+            <section></section>
+            <section></section>
+            <section></section>
+            <section></section>-->
+            <span> 5 Y </span>
+            <span> 6 g </span>
+            <span> 7 G </span>
+        </main>
+    </body>
+</html>

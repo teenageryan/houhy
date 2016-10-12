@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+1.安装mongo步骤：
+    c盘根目录创建mongo
+    d盘创mongochef
+    安装改为c盘路径路径
+    mongo文件夹里创建db log 文件夹
+    db存放数据库的数据
+    log日志文件
+    打开cmd终端，进入mongo文件夹，进入mongo下的bin文件夹
+    在命令行下运行 mongod --dbpath C:\mongo\db启动mongodb服务器，不能关闭cmd窗口，否则会终止
+    双击打开mongo.exe，进入mongodb服务器终端
+2.基本结构
+    数据库 -- 集合 -- 文档
+mongo.exe命令行
+    show dbs     ----显示所有的数据库
+    use local    ----可以连接到一个指定的(local)数据库
+如果数据库不存在，则创建数据库，否则切换到指定数据库。
+    db.createCollection('集合名称') ---用来创建新的集合
+MongoDB 使用 insert() 或 save() 方法向集合中插入文档，语法如下:
+    db.COLLECTION_NAME.insert({name:'value',age:value})
+update() 方法用于更新已存在的文档
+
+MongoDB 查询数据的语法格式如下:
+    db.COLLECTION_NAME.find()
+格式化查找数据：
+    db.COLLECTION_NAME.find().pretty()
+
+db.dropDatabase()   删除当前数据库
+db.collectionName.drop()   删除当前集合
+db.collectionName.remove()  删除指定数据
+如何将MongoDB服务器作为Windows服务运行：
+终端中进入bin文件中，输入代码c:\mongo\bin\
+
+mongod --dbpath c:\mongo\db --logpath c:\mongo\log\mongo.log --logappend --install
+在服务中启动mongoDB服务，即可(如果命令运行不成功，使用管理员身份运行cmd，不手动启动服务的话，运行net start MongoDB 命令也可)
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>背景图片开始位置和结束位置</title>
+        <style>
+            p{
+                width: 1024px;
+                box-sizing: border-box;
+                margin: 30px;
+                padding: 50px;
+                background: url(leafs.jpg) no-repeat;
+                border: dotted 20px sandybrown;
+                /*边框：点 宽度 颜色*/
+                /*图片默认的初始位置是边框左上角内部开始，
+                结束位置是边框右下角外部；*/
+                background-origin: border-box;
+                /*初始位置：左上角外部开始*/
+                background-origin: padding-box;
+                /*初始位置：内边距左上角外部开始*/
+                background-origin: content-box;
+                /*应该先写否则无效初始位置：内容的左上角外部开始*/
+                /*background-origin: padding-box;*/
+                background-clip: border-box;
+                /*结束位置：边框的右下角外部裁剪*/
+                background-clip: padding-box;
+                /*裁剪范围：超出内边距范围的背景图片将被裁剪*/
+                background-clip: content-box;
+                /*裁剪范围：超出内容范围的背景图片将被裁剪*/
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            这是段落-这是段落这是段落-这是段落这是段落-这是段落这是段落-这是段落<br>
+            这是段落-这是段落这是段落-这是段落这是段落-这是段落这是段落-这是段落<br>
+            这是段落-这是段落这是段落-这是段落这是段落-这是段落这是段落-这是段落<br>
+            这是段落-这是段落这是段落-这是段落这是段落-这是段落这是段落-这是段落<br>
+            这是段落-这是段落这是段落-这是段落这是段落-这是段落这是段落-这是段落<br>
+            这是段落-这是段落这是段落-这是段落这是段落-这是段落这是段落-这是段落<br>
+        </p>
+    </body>
+</html>

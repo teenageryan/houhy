@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>this用法</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <pre>
+            this是什么
+            this 返回的是Window，或者是对象本身
+        </pre>
+        <div>
+            通过点击事件调用函数
+        </div>
+        <button class="b1">button1</button>
+        <button class="b2">button2</button>
+        <button class="b3">button3</button>
+        <script>
+            // this 指代window
+            // console.log(this)
+            // console.log(window)
+            // if(this == window){
+            //     alert(true)
+            // }
+            // else{
+            //     alert(false)
+            // }
+            
+            
+            
+            // function add(){
+            //     console.log(this)   //window
+            //     function add2(){
+            //         console.log(this)   //window
+            //         function add3(){
+            //             console.log(this)   //window
+            //         }
+            //         add3()
+            //     }
+            //     add2()
+            // }
+            // add()
+            //this指向的是哪个
+            
+            
+    //    在事件调用函数中，this指向的是调用事件的元素,ev指向的是当前事件本身     
+            document.querySelector('div').onclick = function(ev){
+                console.log(this)
+                console.log(ev)
+            }
+            
+            
+            var btns = document.querySelectorAll('button')
+            for(var i=0;i < btns.length;i++){
+                btns[i].index = i
+                btns[i].onclick = function(){
+                    console.log(this)   
+                    console.log(this.index)
+                }
+            }
+            
+            
+            //构造函数中，this指向的是函数本身
+            function box(){
+                this.name = 'hou'
+                this.age = 3
+                console.log(this)
+            }
+            var result = new box()    //构造函数本身
+            var results = box()    //当前this指的是window
+            console.log(result)
+            console.log(results)
+            
+            
+            // 在对象中使用this   this指向对象本身
+            var obj = {
+                name :'hou',
+                age :'10',
+                run : function(){
+                    console.log(this)
+                }
+            }
+            obj.run()         //Object { name: "hou", age: "10", run: obj.run() }
+            
+            
+            // 实例
+            var name = 'h'
+            var age = 40
+            function box(){
+                console.log(this.name)
+                console.log(this.age)
+            }
+            box()
+            // 当前this指向的是  window
+            
+            function box1(){
+                console.log(this)
+                this.name = 'bangzhang'
+                this.age = '20'
+                console.log(this.name)
+                console.log(this.age)
+            }
+            box1()      // 当前指向window
+            var text = new box1()      //当前指向构造函数本身
+        </script>
+    </body>
+</html>

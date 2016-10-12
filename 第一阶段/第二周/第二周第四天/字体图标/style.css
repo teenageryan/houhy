@@ -1,0 +1,41 @@
+.fa-weixin{
+    color: red;
+    font-size: 40px;
+}
+.fa-weibo{
+    color: palegreen;
+    font-size: 30px;
+    border: 1px solid lawngreen;
+}
+img{
+    width: 300px;
+    display: block;
+    float: left;
+}
+/*行元素不能设置宽高
+块元素独占一行*/
+/*img为行内块元素，之间有空隙，
+可以转化为块元素消除空隙；
+行元素之间也有空隙*/
+body{
+    margin: 0px;
+    background: blanchedalmond;
+}
+div{
+    width: 100%;
+    background: yellowgreen;
+    height: 100px;
+    clear: both;
+}
+ul{
+    list-style: none;
+    color: aquamarine;
+    margin: 0;
+    padding: 0;
+    
+}
+li{
+    padding: 10px 20px;
+    border: solid 1px white;
+    display: inline-block;
+}

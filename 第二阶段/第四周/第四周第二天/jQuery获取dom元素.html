@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>jQuery获取dom元素</title>
+        <script src="jquery.js"></script>
+        <style> 
+            
+        </style>
+    </head>
+    <body>
+        <p class="p2">通过类名获取标签</p>
+        <p id="p1"> 通过ID获取的标签</p>
+        <p>通过标签名获取标签</p>
+        <div>通过*选中所有标签</div>
+        <ul>
+            <li><a href="">通过层级关系选中标签</a><span>通过prev+next选择</span></li>
+        </ul>
+        <script>
+            //通过id获取标签，原生js写法
+            var p1 = document.getElementById('p1')
+            
+            console.log(p1)
+            console.log(document.querySelector('#p1'))
+            //jq写法  id选择器
+            console.log($('#p1'))
+            $(function(){
+                //通过类名获取标签
+                console.log(document.getElementsByClassName('p2'))
+                console.log(document.querySelector('.p2'))
+                console.log($('.p2'))
+                
+                // 通过标签名获取标签
+                console.log(document.getElementsByTagName('p'))
+                console.log(document.querySelectorAll('p')[2])
+                console.log($('p')[2])
+                
+                // 通过*选中标签   所有标签数目，可以加索引匹配标签
+                console.log($('*'))
+                
+                // 选择多个匹配标签
+                console.log($('#p1,div'))
+                
+                // 通过层级关系选中标签
+                console.log($('ul li a'))
+                
+                // 通过层级关系选中直系子元素
+                console.log($('ul>li>a'))
+                
+                // 通过层级关系中紧接着的标签
+                console.log($('a + span'))
+                $('a + span').css('color','red')
+                
+                //同级元素
+                console.log($('p ~ '))
+            })
+        </script>
+    </body>
+</html>

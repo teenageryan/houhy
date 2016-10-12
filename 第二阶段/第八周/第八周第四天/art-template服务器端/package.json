@@ -1,0 +1,15 @@
+{
+  "name": "hao",
+  "version": "1.0.0",
+  "description": "我的",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hy",
+  "license": "ISC",
+  "dependencies": {
+    "art-template": "^3.0.3",
+    "express": "^4.14.0"
+  }
+}

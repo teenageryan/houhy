@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>拼图</title>
+        <style>
+            body{
+                
+            }
+            ul{
+                list-style: none;
+                padding: 0px;
+                width: 500px;
+                margin: 0 auto;
+                text-align: center;
+                /*可以清除inlin-block之间的空隙*/
+                font-size: 0px;
+            }
+            li{
+                display: inline-block;
+                /*float: left;*/
+                height: 135px;
+                width: 135px;
+                border: 1px solid cadetblue;
+                /*margin: 5px;*/
+            }
+            img{
+                display: block;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li draggable = true><img src="img/01.png" alt="" draggable = false></li>
+            <li draggable = true><img src="img/02.png" alt="" draggable = false></li>
+            <li draggable = true><img src="img/03.png" alt="" draggable = false></li>
+            <li draggable = true><img src="img/04.png" alt="" draggable = false></li>
+            <li draggable = true><img src="img/05.png" alt="" draggable = false></li>
+            <li draggable = true><img src="img/06.png" alt="" draggable = false></li>
+            <li draggable = true><img src="img/07.png" alt="" draggable = false></li>
+            <li draggable = true><img src="img/08.png" alt="" draggable = false></li>
+            <li draggable = true><img src="img/09.png" alt="" draggable = false></li>
+            <!--<li><img src="" alt=""></li>
+            <li><img src="" alt=""></li>
+            <li><img src="" alt=""></li>-->
+        </ul>
+        <script>
+            var lis = document.querySelectorAll('li')
+            for(var i=0;i < lis.length;i++){
+                var li = lis[i]
+                // console.log(li)
+                li.ondragstart = function(ev){
+                    // console.log(ev)
+                    ev.target.id = 'draging'
+                    ev.dataTransfer.effectAllowed = 'move'
+                    ev.dataTransfer.setData('text',ev.target.id)
+                }
+                li.ondragend = function(ev){
+                    console.log('拖动结束')
+                    ev.target.id = ''
+                }
+                li.ondrop = function(ev){
+                    console.log('释放')
+                    ev.preventDefault()
+                    ev.stopImmediatePropagation()
+                    var ul = document.querySelector('ul')
+                    var id = ev.dataTransfer.getData('text')
+                    var li = document.getElementById(id)
+                    // console.log(li)
+                    ul.insertBefore(li,ev.currentTarget)
+                }
+            }
+        </script>
+    </body>
+</html>

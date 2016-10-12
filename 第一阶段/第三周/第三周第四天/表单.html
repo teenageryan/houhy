@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>表单练习</title>
+        <style>
+            body{
+                margin: 0px;
+            }
+            main{
+                width: 25%;
+                margin: 50px auto;
+            }
+            form{
+                width: 100%;
+                margin: 0 auto;
+            }
+            section{
+                border-bottom: 1px solid #bbb;
+                margin-bottom: 30px;
+            }
+            p{
+                border-left: 5px solid lightskyblue;
+                padding: 5px;
+                margin: 0px;
+                margin-bottom: 5px;
+                color: #777;
+                font-size: 18px;
+            }
+            label{
+                line-height: 40px;
+                font-family: "宋体";
+                font-size: 15px;
+                display: inline-block;
+                width: 65px;
+                text-align: right;
+            }    
+            input{
+                border-radius: 5px;
+                border: 1px solid dodgerblue;
+            }
+            form>div:nth-of-type(8) span,form>div:last-child span{
+                font-size: 14px;
+                color: gray;
+                display: block;
+                margin-left: 70px;
+                margin-top: 20px;
+            }
+            form>a{
+                margin-left: 70px;
+            }
+            form>div:nth-of-type(8) span a{
+                margin-left: 20px;
+            }
+            form>a>button{
+                margin-top: 20px;
+            }
+            form>div:nth-of-type(1)>span{
+                font-size: 14px;
+                color: gray;
+            }
+            #demo1,#demo2,#demo3,#demo4{
+                height: 30px;
+                width: 300px; 
+            }
+            #man,.female{
+                font-size: 14px;
+                color: #999;
+            }
+            button{
+                height: 60px;
+                width: 300px;
+                color: white;
+                font-size: 18px;
+                border-radius: 5px;
+                background: yellowgreen;
+            }
+            #female{
+                margin-left: 30px;
+            }
+            #country,#sheng,#shi{
+                width: 95px;
+                color: dodgerblue;
+            }
+            #gongli,#nian,#yue,#ri{
+                width: 70px;
+                color: dodgerblue;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+         <section>
+             <p>注册账号</p>
+         </section>
+         <form action="">
+            <div>
+                <label for="demo1">昵称</label>
+                <input type="text" id="demo1" name="" required> <span>请输入昵称</span>
+            </div>
+            <div>
+                <label for="demo2">密码</label>
+                <input type="text" id="demo2" name="" required>
+            </div>
+            <div>
+                <label for="demo3">确认密码</label>
+                <input type="text" id="demo3" name="" required>
+            </div>
+            <div>
+                <label for="">性别</label>
+                <input type="radio" name="sex" value="man" checked><span id="man">男</span>
+                <input type="radio" name="sex" value="female"  id="female"><span class="female">女</span>
+            </div>
+            <div>
+                <label for="">生日</label>
+                <select name="" id="gongli">
+                    <option value="">公历</option>
+                    <option value="">农历</option>
+                </select>
+                <select name="" id="nian">
+                    <option value="">2000年</option>
+                    <option value="">1990年</option>
+                    <option value="">1993年</option>
+                </select>
+                <select name="" id="yue">
+                    <option value="">4月</option>
+                    <option value="">8月</option>
+                    <option value="">10月</option>
+                    <option value="">12月</option>
+                </select>
+                <select name="" id="ri">
+                    <option value="">8日</option>
+                    <option value="">14日</option>
+                    <option value="">18日</option>
+                    <option value="">24日</option>
+                </select>
+            </div>
+            <div>
+                <label for="">所在地</label>
+                <select name="" id="country">
+                    <option value="">中国</option>
+                    <option value="">日本</option>
+                    <option value="">韩国</option>
+                </select>
+                <select name="" id="sheng">
+                    <option value="">河南</option>
+                    <option value="">山东</option>
+                    <option value="">天津</option>
+                </select>
+                <select name="" id="shi">
+                    <option value="">郑州</option>
+                    <option value="">平顶山</option>
+                    <option value="">信阳</option>
+                </select>
+            </div>
+            <div>
+                <label for="demo4">手机号</label>
+                <input type="text" id="demo4">
+            </div>   
+            <div>
+                <span>可通过手机号快速找回密码</span>
+                <span>中国大陆地区以外手机号<a href="">点击这里</a></span>
+            </div>
+            <a><button>立即注册</button></a>
+            <div>
+                <span><input type="checkbox">同时开通QQ空间</span>
+                <span><input type="checkbox">我已阅读并同意相关服务条款和隐私政策</span>
+            </div>
+        </form>
+        </main>
+    </body>
+</html>

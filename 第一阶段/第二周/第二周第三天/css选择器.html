@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>选择器部分总结</title>
+        <style>
+            body{ 
+                  font-size: 50px;
+                /*样式继承：默认字体大小、颜色、字体粗细等
+                跟字体有关样式都是可以继承的，与盒模型相关
+                的样式是不能继承的*/
+            }
+            a{
+                /*font-size: 50px;*/
+            }  
+             
+            a:visited{
+                color: red;
+            }
+            /*已访问过的链接的显示效果*/
+            a:link{
+                color: peru;
+            }
+            /*未访问过的链接效果
+            link 和 visited 只针对超链接标签，
+            其他使用大部分标签*/
+            a:hover{
+                color:green;
+            }
+            /*鼠标指针在标签之上的显示效果*/
+            a:focus{
+                color: black;
+            }
+            /*焦点显示效果：鼠标右键按着不松手显示效果*/         
+            a:active{
+                color: lightcoral;
+            }            
+            /*鼠标左键按着不松手的效果          */
+            :empty:before{
+                content: '前缀';
+            }
+            :empty::after{
+                content: '后缀';
+            }
+            /*:empty 代表选中所有的空标签；
+            有空格的标签不算空标签*/
+            *{
+                color: cadetblue;
+            }
+            /*   *{}代表选中所有的标签    */
+            a[target]:hover{
+                color: gray;
+            }
+            /*属性选择器：选择带有target属性的标签*/
+            a[title$=索]{
+                color: yellow;
+            }
+            /*选择title属性最后一个值为指定值的标签设定样式*/
+            a[title^=淘]{
+                color: brown;
+            }
+            /*选择title属性第一个值为指定值的标签设定样式*/
+            
+            
+            /*1em = 16px；*/
+            /*em以父标签的字号作为标准进行计算。
+            如果父元素也是em字号，则可以逐级相乘，
+            直到到达有明确字号定义标签*/
+        </style>
+    </head>
+    <body>
+        <!--target=_blank 在新窗口打开链接-->
+        <a href="http://baidu.com" target="_blank">百度搜索</a>
+        <a href="http://bing.com" title="必应、搜索">必应搜索</a>
+        <a href="http://taobao.com" title="淘宝网页">淘宝网</a>
+        <a href="http://weibo.com">微博</a>
+        <a href="">爱奇艺</a>
+        <span></span>
+        <p></p>
+    </body>
+</html>

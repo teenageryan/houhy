@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="" method="post">
+    <!--name属性必须写-->
+    <input type="text" name="uname" placeholder="请输入昵称" required="" pattern="^[0-9a-zA-Z\u4e00-\u9fa5]{2,16}"/>
+    <br/>
+    <input type="password" name="pwd" placeholder="请输入密码" required="" pattern="^[0-9a-zA-Z\u4e00-\u9fa5]{2,16}"/>
+    <br/>
+    <input type="submit" value="登录"/>
+    <input type="button" onclick="location.href = 'zhuce.html'" value="注册新用户"/>
+</form>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $(function () {
+        $('form').submit(function(ev){
+            ev.preventDefault()
+            var data =$('form').serialize()
+            $.post('/user/login',data,function(res){
+                console.log(res)
+                if(res.code == 'success'){
+                    location.href = '/'
+                }
+                else{
+                    alert( res.message )
+                }
+            })
+        })
+    })
+</script>
+</html>

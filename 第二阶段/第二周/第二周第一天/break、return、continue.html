@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<p>点击按钮，测试带有 break 语句的循环。</p>
+<button onclick="myFunction()">点击这里</button>
+<p id="demo"></p>
+<script>
+// function myFunction(){
+    
+// for(var i = 0;i<10;i++){
+	
+//      if(i==3){
+//        break; 
+//      }
+         
+//      var x = i;
+//     //  alert(x)
+//      document.getElementById('demo').innerHTML += x;
+//   }
+// 	alert(x)
+    
+  
+//   return是使整个函数返回的，后面的不管是循环里面还是循环外面的都不执行   
+//   return语句是将函数的值返回主调函数。
+  
+  
+// break语句通常用在循环语句和开关语句中,当break语句用于do-while、for、while循环语句中时,可使程序终止循环而执行循环后面的语句, 通常break语句总是与if语句联在一起,即满足条件时便跳出循环,break是用来跳出循环的，例如for，while，do-while都可以跳出，但不跳出函数
+
+
+// 还有一个continue语句的作用是跳过循环本中剩余的语句而强行执行下一次循环。continue语句只用在for、while、do-while等循环体中,常与if条件语句一起使用,用来加速循环  
+//     for(var i = 0;i<10;i++){
+	
+//      if(i==3){
+//        continue; 
+//      }
+         
+//      var x = i;
+//     //  alert(x)
+//      document.getElementById('demo').innerHTML += x;
+//   }
+// 	alert(x)
+
+
+
+// for(var i = 0;i<10;i++){
+	
+//      if(i==3){
+//        return; 
+//      }
+         
+//      var x = i;
+//     //  alert(x)
+//      document.getElementById('demo').innerHTML += x;
+//   }
+// 	alert(x)
+   
+   
+// }
+	// alert(x)
+function myFunction() {
+    var y = "John";
+	//alert(typeof(y));
+    var x;
+    x = + y;
+	//alert(typeof(x));
+    document.getElementById("demo").innerHTML =
+		typeof x + "<br>" + x;
+}
+
+// var a = '5'
+// var b = 1
+// console.log(typeof(a - b))
+// var   str= '012.345 ';
+// var   x   =   str-0;
+// console.log(x)
+// x   =   x*1;
+// console.log(x)
+
+
+ var a = 100;
+    var b = "100";
+    console.log(b- a);
+    console.log(typeof (b- a));
+    console.log(a + b - a);
+    console.log(typeof (a + b - a));
+    console.log(a + b);
+    console.log(typeof (a + b));
+    console.log(a + b - b);
+    console.log(typeof (a + b - b));
+    console.log(a + b - b - b);
+    console.log(typeof (a + b - b - b));
+
+    console.log(true + 1);        //2 ,true被转化为1，false转化为0
+
+    console.log(true + "1");     //true1,true被转化为字符串“true”
+    
+    //  由此可知道JS在进行这样的运算时 只会在2个值相加时优先判断为string类型 其他情况下(例如“-”，
+    // “*”，“/”)都默认为number型运算！！！！
+</script>
+
+</body>
+</html>

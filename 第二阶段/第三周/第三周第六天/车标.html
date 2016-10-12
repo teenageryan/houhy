@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>车标</title>
+        <style>
+            main{
+                width: 70%;
+                text-align: center;
+                margin: 0 auto;
+                border: 1px solid black;
+            }
+            ul{
+                list-style: none;
+                padding: 0px;
+            }
+            li{
+                display: inline-block;
+                width: 120px;
+                height: 120px;
+                /*background: lightblue;*/
+                /*border: 1px solid wheat;*/
+                margin: 10px;
+                position: relative;
+            }
+            span{
+                display: block;
+            }
+            img{
+                left: -10px;
+                opacity: 0.3;
+                /*top: -10px;*/
+                /*width: 140px;*/
+                /*height: 140px;*/
+                /*display: none;*/
+                position: absolute;
+                border:1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>
+                车标识别车牌
+            </h1>
+            <section>
+                <ul>
+                    <li><img src="img/1.jpg" alt="">
+                    <!--<span>bmw</br>宝马</span>-->
+                    </li>
+                    <li><img src="img/2.jpg" alt="">
+                    <!--<span>alph</br>阿尔法·罗密欧</span>-->
+                    </li>
+                    <li><img src="img/3.jpg" alt="">
+                    <!--<span>skeda</br>斯柯达</span>-->
+                    </li>
+                    <li><img src="img/4.jpg" alt="">
+                    <!--<span>dazhong</br>大众</span>-->
+                    </li>
+                    <li><img src="img/5.jpg" alt="">
+                    <!--<span>sabo</br>萨博</span>-->
+                    </li>
+                    <li><img src="img/6.jpg" alt="">
+                    <!--<span>lanbo</br>兰博基尼</span>-->
+                    </li>
+                    <li><img src="img/7.jpg" alt="">
+                    <!--<span>boshijie</br>保时捷</span>-->
+                    </li>
+                    <li><img src="img/8.jpg" alt="">
+                    <!--<span>biaozhi</br>标致</span>-->
+                    </li>
+                    <li><img src="img/9.jpg" alt="">
+                    <!--<span>bens</br>奔驰</span>-->
+                    </li>
+                    <li><img src="img/10.jpg" alt="">
+                    <!--<span>bieke</br>别克</span>-->
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <script>
+            var lis = document.querySelectorAll('li')
+            var spans = document.querySelectorAll('span')
+            var imgs = document.querySelectorAll('img')
+            for(var i=0;i < lis.length;i++){
+                lis[i].index = i
+                lis[i].onmouseover = function(){
+                    this.style.cursor = 'crosshair'
+                    imgs[this.index].style.opacity = '1'
+                }
+            // }
+            // for(var i=0;i < lis.length;i++){
+            //     lis[i].index = i
+            //     lis[i].onmouseover = function(){
+            //         // for(var i=0; i < lis.length;i++){
+            //         //     imgs[i].style.display = 'none'
+            //         // }
+            //         // imgs[this.index].style.display = 'block'
+            //         // imgs[this.index].style.border = '1px solid black'
+            //         // this.style.border = 'none'  
+            //         this.style.cursor = 'crosshair'
+            //         imgs[this.index].style.opacity = '1'
+                    
+            //     }
+                 lis[i].onmouseleave = function(){
+                //     spans[this.index].style.display = ''  
+                //     imgs[this.index].style.display = 'none'
+                //     this.style.border = ''
+                    imgs[this.index].style.opacity = ''
+                 }
+            }
+        </script>
+    </body>
+</html>

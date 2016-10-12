@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 轮播图 </title>
+    <script src="jquery.js"></script>
+    <style>
+        body{
+            background:#000; margin:0;
+        }
+        ul{
+            list-style:none; margin:0; padding:0;
+        }
+        .banner{
+            width:1000px; height:390px; margin:50px auto; position: relative;
+        }
+        .list{
+            position:relative;
+        }
+        .list li{
+            position: absolute; width: 100%;  
+        }
+        .list img{
+            width:100%;
+        }
+        .tab{
+            position: absolute;  bottom:10px; right:20px;  z-index: 10;
+        }
+        .tab li{
+            width:30px; height:30px; line-height:30px; background:red; text-align: center; display: inline-block; color:#fff; border-radius: 50%; cursor: pointer;
+        }
+        .tab .current{
+            background:yellow; color:green;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <ul class="list">
+            <li> <img src="img/1.jpg" alt=""> </li>
+            <li> <img src="img/2.jpg" alt=""> </li>
+            <li> <img src="img/3.jpg" alt=""> </li>
+            <li> <img src="img/4.jpg" alt=""> </li>
+            <li> <img src="img/5.jpg" alt=""> </li>
+        </ul>
+        <ul class="tab">
+            <li> 1 </li>
+            <li> 2 </li>
+            <li> 3 </li>
+            <li> 4 </li>
+            <li> 5 </li>
+
+        </ul>
+    </div>
+    <script>
+       $(function(){
+        //    初始化当前的轮播图显示
+            $(".list li").first().css("z-index", "3")
+            $(".tab li").first().addClass("current")
+           
+        //    手动轮播
+            
+            // $(".tab li").each(function(){
+            //     $(this).hover(function(){
+            //         $(".tab li").eq( $(this).index() ).addClass("current").siblings().removeClass("current")
+            //         $(".list li").eq( $(this).index() ).css("z-index", "3").siblings().css("z-index", "1")
+            //     })
+            // })
+            
+            // 自动轮播
+            var pic_start = 1
+            var pic_end = $(".list li").length
+            var timer = null
+            function active(){
+                if( pic_start >= pic_end ){
+                    pic_start = 0
+                }
+                $(".tab li").eq( pic_start ).addClass("current").siblings().removeClass("current")
+                $(".list li").eq( pic_start ).css("z-index", "3").siblings().css("z-index", "1")
+                pic_start++
+            }
+            timer = setInterval( active, 1000 )
+            // 手动切换图片
+            $(".tab li").hover(function(){
+                clearInterval( timer )
+                $(".tab li").eq( $(this).index() ).addClass("current").siblings().removeClass("current")
+                $(".list li").eq( $(this).index() ).css("z-index", "3").siblings().css("z-index", "1")
+            }, function(){
+                pic_start = $(this).index() + 1
+                active()
+                timer =   setInterval( active, 1000 )
+            })
+            
+       })
+    </script>
+</body>
+</html>

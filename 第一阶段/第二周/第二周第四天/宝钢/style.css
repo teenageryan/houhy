@@ -1,0 +1,178 @@
+body{
+    margin: 0px;
+}
+header{
+    background: #eee;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+}
+header>div{
+    width: 80%;
+    margin: 0 auto;
+}
+body>span{
+    /*position: relative;*/
+    /*display: block;*/
+    width: 100%;
+    display: inline-block;
+    margin-top: 80px;
+    /*行内元素想设置上下内外边距和text-align: ，
+    要转化为块或者行内块元素*/
+}
+body>span img{
+    display: block;   
+}
+header>div>img{
+    width: 150px;
+}
+ul{
+    list-style: none;
+    line-height: 2;
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+    color: gray;
+}
+.r-1{
+    float: right;
+}
+li{
+    display: inline-block;
+}
+header>div>div ul li a{
+    display: block;
+    padding: 20px;
+}
+header>div>div ul li a:hover{
+    color: black;
+    border-bottom: 2px solid blue;
+    padding-bottom: 5px;
+}
+body>span>img{
+    width: 100%;
+}
+main>div{
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: -45px;
+}
+main{
+    background: #eee;
+    height: 350px;
+}
+main>div>div
+{
+    position: relative;
+    float: left;
+    width: 30%;
+    height: 315px;
+    display: inline-block;
+    margin-right: 40px;
+    background: white;
+    border: 1px solid gray;
+}
+main>div>div>p{
+    color: white;
+}
+main section:nth-of-type(1) img{
+    width: 120px;
+    margin: 20px;
+}
+main>div>div:first-child>p
+{
+    background: blue;
+    padding: 10px 10px;
+    margin: 0px;
+    
+}
+main>div>div:nth-child(2)>p
+{
+    background: black;
+    padding: 10px 10px;
+    margin: 0px;
+}
+main>div>div:nth-child(2)>span>p{
+    padding-left: 10px;
+}
+.m-left>p{
+    padding-left: 10px;
+}
+main>div>div:last-child>p
+{
+    background: blue;
+    padding: 10px 10px;
+    margin-top: 0px;
+}
+main>div>div section:last-child ul{
+    padding: 10px;
+    border-top:1px dashed black;   
+}
+h3{
+    margin: 10px;
+}
+.m-left{
+    width: 60%;
+    float: right;
+    /*浮动之后宽度会继承父级元素*/
+}
+.m-left a,.m-middle a{
+    float: right;
+}
+main>div>div section:nth-of-type(1){
+    overflow: hidden;
+}
+main>div>div>section>p{
+    margin: 0px;
+    margin-left: 10px;
+}
+main>div>div>section:nth-of-type(2)>ul>li>span{
+    float: right;
+}
+main>div>div>section:nth-of-type(2)>ul>li{
+    width: 100%;
+}
+.m-middle section:nth-of-type(2){
+    border-top: 1px dashed black;
+}
+.m-middle section{
+    display: inline-block;
+}
+.m-right div{
+    width: 360px;
+    height: 100px;
+    margin: 0 auto;
+}
+.m-right div>img{
+    width: 100%;
+    height: 100%;
+}
+.m-right ul{
+    padding: 0px;
+    text-align: center;  
+}
+.m-right ul li ul li{
+    margin: 10px 10px;
+    padding: 10px 20px;
+    background: #888;
+    width: 170px;
+    box-sizing: border-box;
+}
+footer{
+    clear: both;
+}
+footer ul{
+    margin: 0;
+    padding-bottom: 5px;
+    float: right;
+}
+footer ul a{
+    padding: 0 20px;
+}
+footer>div{
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 0;
+}

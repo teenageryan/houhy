@@ -1,0 +1,20 @@
+{{include 'same/header'}}
+<form action="">
+    <textarea name="message" id="" cols="30" rows="10" placeholder="请输入内容" required=""></textarea></br></br>
+    <input type="submit" value="提交留言"/>
+</form>
+<script src="js/jquery.js"></script>
+<script>
+    $('form').submit(function(ev){
+        ev.preventDefault()
+        var datas = $(this).serialize()
+        $.post('/message',datas,function(res){
+            if(res.code == 'success'){
+                alert(res.message)
+                location.href = '/'
+            }
+        })
+    })
+</script>
+</body>
+</html>

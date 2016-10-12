@@ -1,0 +1,45 @@
+HTML中每一个元素都是一个节点：
+   1.整个文档是一个文档节点
+   2.所有HTML元素是元素节点
+   3.文本插入到HTML元素是文本节点
+   4.还有注释节点
+Document 对象是Window 对象的一部分，可通过window.document属性进行访问。
+addEventListener()，可以给元素添加监听事件，可以添加多个监听事件，并且不会覆盖已存在事件
+        document.addEventListener("click", myFunction);
+        document.addEventListener("click", someOtherFunction);
+        事件名不能加‘on’前缀
+也可以写三个参数：document.addEventListener(event, function, useCapture)
+useCapture指定事件是捕获还是冒泡阶段；
+捕获是从大范围到小范围，冒泡是从小范围到大范围
+ className 属性设置或返回元素的class属性（字符串）
+ classList 属性返回元素的类名，输出为数组形式
+ element.classList.add()在元素中添加一个或多个类名，存在的不能再添加
+ element.classList.contains()判断指定类名是否存在，返回布尔值
+ element.classList.remove()移除一个或多个类名
+ element.classList.toggle(class,true|false)  第二个参数选填，存在类名移除，不存在添加
+ element.clientHeight 在页面上返回内容的可视高度（不包括边框，边距或滚动条）
+ element.clientWidth  在页面上返回内容的可视宽度（不包括边框，边距或滚动条）
+ element.cloneNode() 	克隆某个元素
+ element.compareDocumentPosition() 方法按照文档顺序，比较当前节点与指定节点的文档位置。
+查看以上实例，返回值可能是：
+1：没有关系，这两个节点不属于同一个文档。
+2： 第一节点（P1）位于第二个节点后（P2）。
+4：第一节点（P1）定位在第二节点（P2）前。
+8： 第一节点（P1）位于第二节点内（P2）。
+16： 第二节点（P2）位于第一节点内（P1）。
+32:没有关系的，或是两个节点在同一元素的两个属性。
+注意： 返回值可以是一个组合的值。即返回20意味着在P1 P2和P1（16） 定位在P2（4）前。
+element.contentEditable 属性用于设置或返回元素的内容是否可编辑。
+element.dir 属性设置或返回元素的文字方向。   HTMLElementObject.dir=text-direction
+element.firstChild 属性返回被选节点的第一个子节点。    如果选定的节点没有子节点，则该属性返回 NULL。
+element.focus() 方法用于为元素设置焦点（如果可以设置）。
+element.insertBefore(newnode,existingnode)   可在已有的子节点前插入一个新的子节点。
+element.innerHTML=text
+element.id=id
+element.hasFocus()   返回布尔值   true - 文档获取焦点
+element.hasChildNodes() 方法可在某节点用于任何子节点 有时返回 true
+element.hasAttributes() 方法如果某节点有任何属性  有时返回 true
+element.getAttribute(attributename)   getAttribute() 方法通过名称获取属性的值。
+element.getElementsByClassName(classname)
+element.getElementsByTagName(tagname)
+element.getAttributeNode(attributename)    如果你想返回属性请使用 getAttributeNode 方法。

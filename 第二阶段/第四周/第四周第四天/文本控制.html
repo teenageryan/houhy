@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>文本控制</title>
+        <script src="jquery.js"></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <span>请输入内容，您还可以输入<span>140</span>个字</span>
+       <textarea name="" id="" cols="30" rows="10" maxlength="140" placeholder="请您输入内容"></textarea>
+    </body>
+    <script>
+        $(function(){
+            // console.log($('textarea'))
+        //    console.log($('textarea').text().length)
+        // .val() 文本框内的值      trim（）去掉文本框首尾空格
+        //    console.log($("textarea").val().trim().length) 
+        $('textarea').val('')
+           
+        //   $('span>span').eq(0).html( num )
+           $('textarea').keyup(function(){
+               var text = 0
+           var textL = $('textarea').attr('maxlength')
+        //    console.log($('textarea').attr('maxlength'))
+           var num = textL - $('textarea').val().trim().length
+                $('span>span').eq(0).html( num )
+                if(num == 0){
+                    alert('不能再输了！')
+                }
+           })
+                
+            
+        })
+    </script>
+</html>

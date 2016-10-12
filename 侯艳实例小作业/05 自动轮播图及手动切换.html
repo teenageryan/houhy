@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 轮播图 </title>
+    <script src="jquery.js"></script>
+    <style>
+        body{
+            background:#000; margin:0;
+        }
+        ul{
+            list-style:none; margin:0; padding:0;
+        }
+        .banner{
+            width:1000px; height:390px; margin:50px auto; position: relative;
+        }
+        .list{
+            position:relative;
+        }
+        .list li{
+            position: absolute; width: 100%;  
+        }
+        .list img{
+            width:100%;
+        }
+        .tab{
+            position: absolute;  bottom:10px; right:20px;  z-index: 10;
+        }
+        .tab li{
+            width:30px; height:30px; line-height:30px; background:red; text-align: center; display: inline-block; color:#fff; border-radius: 50%; cursor: pointer;
+        }
+        .tab .current{
+            background:yellow; color:green;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <ul class="list">
+            <li> <img src="images/slide-1.jpg" alt=""> </li>
+            <li> <img src="images/slide-2.jpg" alt=""> </li>
+            <li> <img src="images/slide-3.jpg" alt=""> </li>
+            <li> <img src="images/slide-4.jpg" alt=""> </li>
+            <li> <img src="images/slide-5.jpg" alt=""> </li>
+        </ul>
+        <ul class="tab">
+            <li> 1 </li>
+            <li> 2 </li>
+            <li> 3 </li>
+            <li> 4 </li>
+            <li> 5 </li>
+
+        </ul>
+    </div>
+    <script>
+      $(function(){
+          var tim = 0
+          $('.list li').eq(0).css('z-index','5')
+          $('.tab li').eq(0).addClass('current')
+          function hand(){
+               $('.tab li').hover(function(){
+                $(this).addClass('current').siblings().removeClass('current')
+                $('.list li').eq($(this).index()).css('z-index',5).siblings().css('z-index','1')
+                i = $(this).index()
+            })
+          }
+          hand()
+          var i =0
+          var len = $('.list li').length
+          console.log( len )
+          function show(){
+              i++
+              if(i > len -1){
+                  i = 0
+              }
+              $('.tab li').eq(i).addClass('current').siblings().removeClass('current')
+              $('.list li').eq(i).css('z-index','5').siblings().css('z-index','2')
+          }
+         tim = setInterval(show,1000)
+         $('.tab li').hover(function(){
+             clearInterval( tim )
+         },function(){
+            tim = setInterval(show,1000)
+         })
+      })
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>css过渡</title>
+        <style>
+            html{
+                height:100%;
+            }
+            body{
+                margin: 0px;
+                height: 100%;
+                background: black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            div{
+                width: 300px;
+                height: 300px;
+                background: orange;
+                border-radius: 50%;
+                /*transition: width 2s 15s linear,height 5s;*/
+                /*transition: 简写属性
+                transition-property: 指定css属性的名称；
+                transition-duration: 过渡持续时间
+                transition-delay: 过渡延迟时间
+                transition-timing-function: 过渡过程的速度曲线*/
+                
+            }
+            /*div:hover{
+                box-shadow: 5px 5px 90px aquamarine;
+                width: 500px;
+                height: 400px;
+            }*/
+            .active{
+                /*过渡：从一个效果到另一个效果中间经历的过程,需要事件触发*/
+                /*动画：可以自动执行，不需要事件触发*/
+                transition: 5s;
+                width: 500px !important;
+                /*强制性让他优先级变最高*/
+                transform: rotate(360deg) translate(100px) scale(0.5);
+            }
+        </style>
+    </head>
+    <body>
+        <!--点击触发一个事件，action（）方法-->
+        <!--<div id="demo" class="active" onclick="action();">-->
+        <div id="demo" onclick="action();" class="active">
+          <!--内联样式优先级最高  然后是id优先级--> 
+        </div>
+    </body>
+    <!--<script src="demo.js">
+        // script  引用js文件
+    </script>-->
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>事件入门</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <button type="button" onclick="click1();"> 点击</button>
+        <button type="button"> 点击</button>
+        <script>
+            // 先获取事件发生的元素，获取第一个标签
+            var button = document.querySelector('button')
+            //触发事件的时候执行的方法
+            function click1(){
+                console.log('这是第一种调用方法')
+            }
+            //第一种执行方法：把事件作为属性添加到开始标签里边
+            //写法： <button onName="要执行的函数">
+            
+            // 第二种调用方法：
+            button.onclick = function (){
+                console.log('这是第二种调用方法')
+            }
+            
+            // 第三种调用方法：addEventListener()给元素添加监听事件,事件名称不能加on前缀on
+            // addEventListener(event,function,useCapture) 添加监听事件不会影响已有事件
+            function click2(){
+                console.log('第三种调用方法')
+            }
+            button.addEventListener('click',click2)
+        </script>
+    </body>
+</html>

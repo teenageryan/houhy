@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>form表单提交在当前页面显示</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<form action="/login" target="result" method="post">
+    <input type="text" name="sex" placeholder="请输入性别"/>
+    <input type="text" name="name" placeholder="请输入姓名"/>
+    <button type="submit">提交</button>
+    <!--<button type="button" id="get">发起Ajax-get请求</button><br><br>-->
+    <!--<button type="button" id="post">发起Ajax-post请求</button>-->
+</form>
+<!--<script src="get.js"></script>-->
+<iframe src="" frameborder="0" name="result"></iframe>
+</body>
+</html>

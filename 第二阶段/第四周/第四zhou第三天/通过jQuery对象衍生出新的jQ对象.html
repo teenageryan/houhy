@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>通过jQuery对象衍生出新的jQuery对象</title>
+        <script src="jquery.js"></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <ol>
+            <li>第一项<span>jjj</span></li>
+            <li name='j'>第二项</li>
+            <li>第三项</li>
+            <li>第四项</li>
+            <li>第五项</li>
+            <li>第六项</li>
+            <li>第七项</li>
+        </ol>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>jQuery</li>
+        </ul>
+        <script>
+            console.log(document.getElementsByName('j'))
+            console.log(document.getElementsByTagName('li')[0].outerHTML)
+            console.log(document.getElementsByTagName('li')[0].innerText)
+            console.log(document.getElementsByTagName('li')[0].innerHTML)
+            $(function(){
+                console.log($('li').parents())   //取得元素的祖先元素集合（不包含根元素）
+                console.log($('li').parent())    //取得元素的唯一父元素集合。
+                
+                // 过滤：选中符合条件的元素进行设置
+                $('li').filter(':nth-child(2n)').css('color','red')
+                $('ul').has('li').css('font-size','20px')   //包含特定标签
+                // :odd索引为奇数的li
+                $('ol>li:odd,ul>li:odd').not('ol>li').css('color','lightblue')   //排除一部分标签
+                // console.log( $('ol>li:odd,ul>li:odd'))
+                // 通过jQuery对象衍生出新的jQuery对象，通过调用特定的方法
+                // 链式调用方法
+            })
+        </script>
+    </body>
+</html>

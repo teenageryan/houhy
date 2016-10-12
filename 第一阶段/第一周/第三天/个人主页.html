@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="charles">
+        <title>个人主页</title>
+        <!--样式-->
+        <style>
+            body{
+                /*清除body默认的8像素外边距*/
+                margin: 0px;
+            }
+            #header
+            {
+                height: 50px;
+                width: 100%;
+                background-color: lemonchiffon;
+                position: fixed;
+                z-index: 3;
+            }
+            #header_img{                
+                width: 300px;
+                height: 100%;
+                /*修改显示属性为行内块元素，让其右侧空间可以被利用，
+                不然会另起一行，其默认为block块元素*/
+                display: inline-block;   
+            }
+            #header_img>img{
+                /*让图片的高度是其父元素高度的高度*/   
+                height: 100%;
+            }
+            #header_navbar{
+                /*让导航菜单浮动到右侧*/
+                float: right;
+                /*相对于原来的位置*/
+                position: relative;
+                right: 100px;
+                margin: 12px 0px;
+            }
+            #header_navbar>a{
+                font-size: 20px;
+                /*去掉文本装饰*/
+                text-decoration: none;
+                /*修改字体颜色*/
+                color: black;
+            }
+            /*当鼠标放到链接标签时颜色发生变化*/
+            /*大于号右边是左边的直接子元素*/
+            #header_navbar>a:hover{
+                color: rosybrown;
+            }
+            #special_div{
+                /*填充背景图片*/
+                background-image: url("素材/3.jpg");
+                /*让div定宽居中*/
+                width: 80%;
+                height: 600px;
+                margin: 10px auto;
+                /*防止图片重复*/
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                /*给子元素设置参考坐标系*/
+                position: relative;
+            }
+            /*获取div中所有图片中的第一个图片*/
+            #special_div>img:nth-of-type(1){
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                border: 2px solid white;
+                /*定位，相对于父元素坐标系*/
+                position: absolute;
+                top: 100px;
+                left: 50px;                 
+            }
+            #special_div>img:nth-of-type(2){
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                border: 2px solid white;
+                /*定位，相对于父元素坐标系*/
+                position: absolute;
+                top: 260px;
+                left: 450px;                 
+            }
+            #special_div>img:nth-of-type(3){
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                border: 2px solid white;
+                /*定位，相对于父元素坐标系*/
+                position: absolute;
+                top: 140px;
+                left: 650px;                 
+            }
+            #special_div>img:nth-of-type(4){
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                border: 2px solid white;
+                /*定位，相对于父元素坐标系*/
+                position: absolute;
+                top: 170px;
+                left: 850px;                 
+            }
+            .tianchong{
+                width: 100%;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <!--头部导航条-->
+        <!--id选择器，用于标注页面中唯一元素-->
+        <section id="header">
+            <!--左侧图片-->
+            <div id="header_img">
+                <!--src:图片的路径 （最好让图片资源与html文件处于同一级目录）-->
+                <!--alt：当图片未能正常显示的时候，给用户一个有意义的提示-->
+                <img src="素材/30.jpg" alt="logo"></div>
+            <!--右侧导航菜单选项-->
+            <div id="header_navbar">
+                <a href="#jieshao">我的介绍&#x3000;&#x3000;</a>
+                <a href="#tongxue">我的同学&#x3000;&#x3000;</a>
+                <a href="#laoshi">我的老师&#x3000;&#x3000;</a>
+            </div>
+        </section>
+        <!--内容部分展示-->
+        <section>
+            <div class="tianchong"></div>
+            <div id="jieshao">
+                <h3>我的介绍</h3>
+                <!--<img src="素材/3.jpg" alt="">-->
+                <div id="special_div">
+                    <img src="素材/4.jpg" alt="乡村美景">
+                    <img src="素材/10.jpg" alt="城市景观">
+                    <img src="素材/11.jpg" alt="公路景观">
+                    <img src="素材/20.jpg" alt="公路美景">
+                </div>
+                <!--快速填充内容 lorem + tab-->
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Minus beatae quia dolores quisquam facilis, dignissimos 
+                    dolore omnis optio! Blanditiis quo soluta sint maiores 
+                    dolor rem tenetur quibusdam ipsa itaque molestiae.
+                    </p>
+            </div>
+            <div class="tianchong"></div>
+            <div>
+                <h3 id="tongxue">我的同学</h3>
+                <!--<img src="素材/3.jpg" alt="">-->
+                <div id="special_div">
+                    <img src="素材/4.jpg" alt="乡村美景">
+                    <img src="素材/10.jpg" alt="城市景观">
+                    <img src="素材/11.jpg" alt="公路景观">
+                    <img src="素材/20.jpg" alt="公路美景">
+                </div>
+                <!--快速填充内容 lorem + tab-->
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Minus beatae quia dolores quisquam facilis, dignissimos 
+                    dolore omnis optio! Blanditiis quo soluta sint maiores 
+                    dolor rem tenetur quibusdam ipsa itaque molestiae.
+                    </p>
+            </div>
+              <div class="tianchong"></div>
+            <div>
+                <h3 id="laoshi">我的老师</h3>
+                <!--<img src="素材/3.jpg" alt="">-->
+                <div id="special_div">
+                    <img src="素材/4.jpg" alt="乡村美景">
+                    <img src="素材/10.jpg" alt="城市景观">
+                    <img src="素材/11.jpg" alt="公路景观">
+                    <img src="素材/20.jpg" alt="公路美景">
+                </div>
+                <!--快速填充内容 lorem + tab-->
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Minus beatae quia dolores quisquam facilis, dignissimos 
+                    dolore omnis optio! Blanditiis quo soluta sint maiores 
+                    dolor rem tenetur quibusdam ipsa itaque molestiae.
+                    </p>
+            </div>
+        </section>
+        <hr>
+        <!--页脚版权信息声明-->
+        <section>
+            <span>@copyright 版权信息个人所有</span>
+            <span>&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;作者：xxx</span>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>获取当前时间</title>
+        <style>
+            body{
+                margin: 0px;
+                font-size: 20px;
+            }
+            main{
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .point{
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                background: floralwhite;
+                position: absolute;
+                left: calc(50% - 15px);
+                top: calc(50% - 15px);
+                z-index: 10;
+            }
+            .pan{
+                height: 500px;
+                width: 500px;
+                background: lightskyblue;
+                border-radius: 50%;
+                position: relative;
+            }
+             #sw,#mw,#hw{
+                height: 20px;
+                width: 100%;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                left: calc(50% - 250px);
+                top: calc(50% - 10px);
+            }
+             #sw{
+                animation: rotate 60s linear infinite;
+                animation-delay: -15s;
+            }
+             #mw{
+                animation: rotate 3600s linear infinite;
+                animation-delay: -900s;
+            }
+             #hw{
+                animation: rotate 43200s linear infinite;
+                animation-delay: -10800s;
+            }
+            .h{
+              width: 50%;
+              height: 6px;
+              background: darkcyan;  
+              margin-right: 120px;
+            }
+            .m{
+                width: 60%;
+                height: 4px;
+                background: violet;
+              margin-right: 120px;
+            }
+           .s{
+                width: 70%;
+                height: 2px;
+                background: olivedrab;
+              margin-right: 120px;
+            }
+            #y{
+                height: 50px;
+                width: 80px;
+                background: white;
+                position: absolute;
+                top: calc(50% - 25px);
+                left: 20px;
+                text-align: center;
+                padding-top: 20px;
+            }
+            #mo{
+                height: 50px;
+                width: 80px;
+                background: white;
+                position: absolute;
+                top: calc(50% - 25px);
+                left: 130px;
+                text-align: center;
+                padding-top: 20px;
+            }
+            #d{
+                height: 50px;
+                width: 80px;
+                background: white;
+                position: absolute;
+                top: calc(50% - 25px);
+                right: 130px;
+                text-align: center;
+                padding-top: 20px;
+            }
+            #w{
+                height: 50px;
+                width: 80px;
+                background: white;
+                position: absolute;
+                top: calc(50% - 25px);
+                right: 20px;
+                text-align: center;
+                padding-top: 20px;
+            }
+            @keyframes rotate{
+                0%{
+                    transform: rotate(0deg);
+                }
+                100%{
+                    transform: rotate(360deg);
+                }
+            }
+            #show{
+                height: 70px;
+                width: 200px;
+                position: absolute;
+                bottom: 80px;
+                background: white;
+                left: calc(50% - 100px);
+                font-size: 40px;
+                padding: 8px 17px;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="pan">
+                <div id="y"></div>
+                <div id="mo"></div>
+                <div id="d"></div>
+                <div id="w"></div>
+                <div id="show"></div>
+                <div class="point"></div>
+                <div id="sw">
+                    <div class="s"></div>
+                </div>
+                <div id="mw">
+                    <div class="m"></div>
+                </div>
+                <div id="hw">
+                    <div class="h"></div>
+                </div>
+            </div> 
+        </main>
+    </body>
+    <script src="time.js"></script>
+</html>

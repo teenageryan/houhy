@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>js九九乘法表</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <form action="">
+            <!--autocomplete="off"清空历史记录-->
+            <input type="text" placeholder="请输入数字" autocomplete="off" id="num2">
+            <input type="text" placeholder="请输入数字" autocomplete="off" id="num1">
+            <button type="button" onclick="calc();">提交</button>
+        </form>
+        <p id="result">计算结果为：</p>
+        <script>
+            var result = document.getElementById('result');
+            function calc(){
+// 方法一
+            //     // 获取的输入框内容
+            //    var num1 = document.getElementById('num1').value;
+            //    var num2 = document.getElementById('num2').value;
+                
+            //     // 解析字符串（获取内容为字符串）
+                
+            //     if( isNaN(num1) || isNaN(num2) ){
+            //         alert('不是数字')
+            //     }
+            //     else{
+            //         if(parseInt(num1)!=num1 || parseInt(num2)!=num2){
+            //             alert('不是整数')
+            //         }
+            //         else{
+            //             num1 = parseInt(num1);
+            //             num2 = parseInt(num2);
+            //             if( num1 <= 0 || num2 <= 0 ){
+            //                 alert('数字太小')
+            //             }
+            //             else if(num1>9 || num2>9){
+            //                 alert('数字太大')
+            //             }
+            //             else{
+            //             result.innerHTML = num1 * num2; 
+            //             }
+            //     }
+            //     }
+            
+            
+ // 方法二
+                var num3 = document.getElementById('num1').value;
+                var num4 = document.getElementById('num2').value;
+                num1 = parseInt(num3);
+                num2 = parseInt(num4);
+                if(isNaN(num3) || isNaN(num4)){
+                    alert('您输入的不是数')
+                }
+                else if(num1 != parseFloat(num3) || num2 != parseFloat(num4)){
+                    alert('您输入的内容为小数')
+                }
+                else if(num1 <= 0 ||num2 <= 0){
+                    alert('您输入的为负数')
+                }
+                else if(num1 > 9 || num2 > 9){
+                    alert('您输入的太大')
+                }
+                else{
+                    result.innerHTML = num1 * num2;
+                }    
+            }
+        </script>
+    </body>
+</html>

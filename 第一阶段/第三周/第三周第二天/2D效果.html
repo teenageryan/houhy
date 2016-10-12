@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>2D图形效果</title>
+        <style>
+            html{
+                height: 100%;
+            }
+            body{
+                background: black;
+                margin: 0px;
+                height: 100%;
+                display: flex;
+                /*开启弹性布局，处理的是子元素对齐方式*/
+                justify-content: center;
+                /*水平方向上居中*/
+                align-items: center;
+                /*竖直方向居中*/
+            }
+            main{
+                height: 500px;
+                width: 500px;
+                background: bisque; 
+            }
+            div{
+                width: 100%;
+                height: 100%;
+                background: red;
+                opacity: 0.5;
+                font-size: 30px;
+                transform: translate(100%,100%);
+                /*translate：平移
+                一个正值时表示水平向右移动，一个负值表示水平向左移动
+                两个正直分别表示向右，向下移动，x轴正右负左，y轴正下负上，
+                百分比是根据自己的宽高而定的*/
+                transform: rotate(30deg);
+                /*rotate:旋转，正直顺时针，负值逆时针，默认以中心为基点*/
+                transform-origin: 0 0;
+                /*基点位置，默认值为50% 50%；
+                当设置一个值时为x轴的值，另一个值默认为50%*/
+                transform: rotateY(30deg);
+                /*图片沿Y轴旋转，平面宽度会变小*/
+                transform: scale(0.5,0.8);
+                /*scale()按比例缩放，两个值：水平方向，竖直方向；一个值代表整体*/
+                transform: scale(-0.5,1);
+                /*x轴为负，沿y轴镜像
+                y轴为负，沿x轴镜像*/
+                transform: scale(-1);
+                /*代表两个方向都是负一*/
+                transform: skew(30deg);
+                transform: skewX(30deg);
+                /*skew:倾斜，向x轴倾斜，角度为倾斜线与y轴夹角；*/
+                transform: skewY(30deg);
+                /*向y轴倾斜，角度为倾斜线与x轴夹角*/
+                transform: skew(30deg,50deg);
+                transform: skew(50deg,30deg);
+                transform: rotate(30deg) translate(100px,100px) scale(0.5);
+                transform: translate(100px,100px) rotate(30deg) scale(0.5);
+                transform: scale(0.5) translate(100px,100px) rotate(30deg);
+                /*书写顺序不一样，结果不一样*/
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div>
+                我
+            </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>循环点击图片</title>
+        <script src="jquery.js"></script>
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <style>
+            ul{
+                list-style: none;
+                padding: 0;
+                /*width: 1300px;*/
+                position: relative;
+                font-size: 0;
+            }
+            li{
+                display: inline-block;
+            }
+            .fa{
+                background: gray;
+                font-size: 80px;
+                position: relative;
+                top: -15px;
+            }
+            .imgbox{
+                overflow: hidden;
+                width: 800px;
+                display: inline-block;
+            }
+            .big{
+                width: 68%;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="big">
+                <span class="fa fa-angle-left" id="pre"></span>
+                <div class="imgbox">
+                    <ul class="img">
+                        <li><img src="imgs/sl-1.jpg" alt=""></li>
+                        <li><img src="imgs/sl-2.jpg" alt=""></li>
+                        <li><img src="imgs/sl-3.jpg" alt=""></li>
+                        <li><img src="imgs/sl-4.jpg" alt=""></li>
+                        <li><img src="imgs/sl-5.jpg" alt=""></li>
+                        <li><img src="imgs/sl-6.jpg" alt=""></li>
+                        <li><img src="imgs/sl-4.jpg" alt=""></li>
+                        <li><img src="imgs/sl-1.jpg" alt=""></li>
+                        <li><img src="imgs/sl-2.jpg" alt=""></li>
+                        <li><img src="imgs/sl-3.jpg" alt=""></li>
+                    </ul>
+                </div>
+                <span class="fa fa-angle-right" id="next"></span>
+            </div>
+            
+        </main>
+        <script>
+            $(function(){
+                var cou = 0
+                // var widt = $('li').width()
+                var len = $('li').length
+                var wid = $('li img').width()
+                $('.img').css('width',len * wid)
+                
+                $('#pre').click(function(){
+                    $('ul').animate({
+                        left:- wid
+                    },300,function(){
+                        $('ul').css('left','0').children().first().appendTo('ul')
+                    })
+                })
+                 $('#next').click(function(){
+
+                        $('ul').animate({
+                            left:wid
+                        },300,function(){
+                            $('ul').css('left','0').children().last().prependTo('ul')
+                        })
+                  
+                })
+            })
+        </script>
+ 
+    </body>
+</html>

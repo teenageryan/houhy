@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="charles">
+        <title>列表标签</title>
+        <style>
+            #yihaodian{
+                /*去掉无序列表中的小圆点*/
+                list-style: none;
+               float: right;
+            }
+            #yihaodian>li{
+                /*列表子项默认为垂直排列，设置为水平排列*/
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <p>有序列表：</p>
+        <ol>
+            <li>打开冰箱门</li>
+            <li>把大象放进去</li>
+            <li>关上冰箱门</li>
+        </ol>
+        <p>无序列表：</p>
+        <ul>
+            <li>雪碧</li>
+            <li>可乐</li>
+            <li>凉茶</li>
+        </ul>
+          <ul id="yihaodian">
+            <li>
+                <!--#代表空网页-->
+                <a href="#">我的一号店&#x3000;</a>
+            </li>
+            <li>收藏夹&#x3000;</li>
+            <li>掌上一号店</li>
+        </ul>
+    </body>
+</html>

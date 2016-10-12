@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插件的写法</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<div></div>
+</body>
+<script>
+    console.log($) //function jQuery()
+    console.log($()) //object{ }
+
+    console.log($.extend()) //object{} === 合并参数以及参数值
+    console.log($.fn) //object{jQuery方法}，有属性和方法
+
+
+//    $.fn.swim = function(){
+//        console.log('iii')
+//    }
+//    console.log($.fn)
+//    $().swim()
+//
+//
+//    console.log($.extend('a','b','c','a')) //a
+//    console.log($.extend({
+//        names:'o',
+//        age:3,
+//        sex:'female'
+//    },
+//            {
+//                names:'f',
+//                age:'4'
+//            }
+//    ))
+//    //names:'f',age:'4',sex:'female'
+//    console.log($.extend(
+//            {names:'i',age:8},
+//            'fd',
+//            100))
+//    //Object { 0: "f", 1: "d", names: "i", age: 8 }
+//
+//    console.log($.extend(
+//            {names:'i',age:8},
+//            'fd',
+//            100,[1,2,3]))
+//    //Object { 0: 1, 1: 2, 2: 3, names: "i", age: 8 }
+
+    $.fn.myswim = function(options){
+        var defaults = {
+            width:200,
+            height:200,
+            background:'red'
+        }
+        var set = $.extend(defaults,options)
+        console.log(set)
+        console.log($(this)) //this指代div
+        $(this).css(set)
+    }
+    $('div').myswim({
+        width:100,
+        height:100,
+        background:'black'
+    })
+    function obj(op,i){
+        return op
+    }
+    var obj2 = obj({name:'h',age:8})
+    console.log(obj2)
+</script>
+</html>

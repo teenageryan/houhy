@@ -1,0 +1,15 @@
+之前的js运行在浏览器，
+nodejs 是一个js运行的工作环境，是对Chrome V8引擎的封装。
+
+  npm：node package manager 包管理工具 -node js内部的各种模块包
+
+  cd：打开文件路径
+  e：切换到e盘
+  cd.. 返回到上一级
+  ipconfig ：获取本级IP地址
+
+   npm init  初始化一个包管理工具的配置文件
+   npm install express  安装模块包
+   npm install express --save   在配置文件中添加依赖项
+   node index.js     启动当前服务器（index.js）
+   Ctrl + c     关闭当前服务器

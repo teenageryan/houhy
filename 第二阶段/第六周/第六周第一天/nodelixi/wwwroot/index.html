@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>form表单FormData数据</title>
+</head>
+<body>
+<form action="" method="post" target="iii">
+    <!--必须写出标签中的name属性，否则输出对象结果为空-->
+    <input type="text" name="name"/>
+    <input type="text" name="age"/>
+    <input type="submit" value="提交信息"/>
+</form>
+<iframe src="" id="iii"></iframe>
+<script>
+var form = document.querySelector('form')
+    form.onsubmit = function(ev){
+        ev.preventDefault()
+        var xhr = new XMLHttpRequest()
+//        请求事件发生改变时要触发onreadystatechange事件
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4){
+//                返回响应信息
+                console.log(xhr.responseText)
+            }
+        }
+//        可以用一个已有的<form>元素来初始化FormData对象,只需要把这个form元素作为参数传入FormData构造函数即可:
+        var data = new FormData(form)
+//        设置请求信息的类型和路径
+        xhr.open('post','/login')
+        xhr.send(data)
+    }
+</script>
+</body>
+</html>

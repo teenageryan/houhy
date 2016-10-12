@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>选项卡</title>
+        <style>
+            
+            main{
+                width: 45%;
+                margin: 0 auto;
+                height: 200px;
+                border: 1px solid black;
+            }
+           
+            #o{
+                list-style: none;
+                background: black;
+                padding: 0px;
+                margin: 0px;
+            }
+            div>ul{
+                margin: 0px;
+                display: none;
+                position: absolute;
+                line-height: 2;
+            }
+           main #o>li{
+                display: inline-block;
+                padding: 10px 30px;
+                border: 1px solid black;
+                color: white;
+                
+            }
+            .current{
+                display: block;
+            }
+     /*js中要应用的改变样式类名路径要与style中样式路径相同，或者更详细*/
+            #o li.curli{
+                background: lightblue;
+                color: black;    
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <section>
+                 <ul id="o">
+                    <li class="curli">第一项</li>
+                    <li>第二项</li>
+                    <li>第三项</li>
+                </ul>
+            </section>
+           
+            <div>
+                <ul id="t" class="current">
+                    <li>网页特效原理</li>
+                    <li>网页特效原理</li>
+                    <li>网页特效原理</li>
+                    <li>网页特效原理</li>
+                </ul>
+                <ul id="th">
+                    <li>网页技术支持</li>
+                    <li>网页技术支持</li>
+                    <li>网页技术支持</li>
+                    <li>网页技术支持</li>
+                </ul>
+                <ul id="f">
+                    <li>网页特效原理</li>
+                    <li>网页特效原理</li>
+                    <li>网页特效原理</li>
+                    <li>网页特效原理</li>
+                </ul> 
+                </main>   
+            </div>
+            
+    </body>
+    <script>
+        var lis = document.querySelectorAll('#o li')
+        var uls = document.querySelectorAll('div ul')
+        // console.log(uls)
+        // console.log(lis)
+        
+        for(var i=0; i < lis.length;i++){
+            lis[i].index = i
+            lis[i].onmouseover = function(){
+                for(var i=0;i < uls.length;i++){
+                    uls[i].className = ''
+                    lis[i].className = ''
+                }
+                uls[this.index].className = 'current'
+                this.className = 'curli'
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,11 @@
+span:nth-child(2){
+    border: 4px solid khaki;
+    background: white;
+}
+li{
+    background: forestgreen;
+    border: 1px solid khaki;
+}
+body{
+    background: fuchsia;
+}

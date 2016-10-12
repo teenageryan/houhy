@@ -1,0 +1,373 @@
+body{
+    margin: 0px;
+    background: #F5F5F5;
+}
+ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+    color: #9C9C9C;
+}
+header a{
+    font-size: 15px;
+    display: block;
+    padding: 10px 10px 0 15px;
+}
+p{
+    margin: 0;
+}
+header div{
+    height: 5px;
+    margin: 0 10px 10px 10px;
+    border: 1px solid #9C9C9C;
+    border-top: none;
+}
+#shouye>img{
+    width: 100%;
+}
+#index ul:first-child img{
+    width: 100%;
+}
+#index ul:first-child li:nth-of-type(1) img{
+    margin-top: 2px
+}
+#index ul:first-child li:nth-of-type(2) img{
+    margin-top: 4px
+}
+#index ul:first-child li{
+    display: inline-block;
+    width: 29%;
+    margin: 5px;
+    text-align: center;
+    color: red;
+    background: white;
+    padding-top: 4px;
+}
+#index ul:nth-of-type(2) li{
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+    margin: 5px;
+    background: white;
+    padding-top: 10px;
+}
+#index ul:nth-of-type(2) li img:first-child{
+    width: 25%;
+    float: left;
+    margin: 15px;
+}
+#index>img{
+    width: 100%;
+}
+#index ul:nth-of-type(2) li>img:nth-of-type(2){
+    width: 15%;
+    position: absolute;
+    top: 15px;
+    left: 8px;
+}
+#index small{
+    display: block;
+    color: #B0B0B0;
+    margin-bottom: 10px;
+}
+#index small span{
+    color: red;
+    display: block;
+    padding-top: 3px;
+}
+#index{
+    margin-bottom: 60px;
+}
+footer{
+    position: fixed;
+    bottom: 0px;
+    background: #FFFFFF;
+    width: 100%;
+}
+footer img{
+    width: 25%;
+    display: block;
+}
+footer>ul{
+    border-top: 1px solid #d0d0d0;
+}
+footer li{
+    display: inline-block;
+    margin: 5px;
+}
+footer li a img{
+    position: relative;
+    left: 23px;
+}
+footer li a{
+    display: block;
+    padding:8px;
+    font-size: 12px;
+    text-align: center;
+}
+footer li a:visited{
+    color: orangered;
+}
+/*sousuo页面*/
+.head{
+    text-align: center;
+    margin-top: 10px;
+}
+.head .fa{
+    font-size: 25px;
+    padding: 0 10px;
+    color: #999999;
+}
+.head>form{
+    display: inline-block;
+}
+.head>form>input{
+    width: 250px;
+    height: 30px;
+}
+.sou{
+    font-size: 14px;
+    color: #333333;
+}
+.sou>ul>li{
+    padding: 10px;
+}
+.sou>ul:first-child li{
+    background: #F5F0EE;
+    border:1px solid lightcoral;
+    display: inline-block;
+}
+.sou>ul:nth-of-type(2) li{
+    display: inline-block;
+    background: #E4E4E4;
+    margin: 10px 0px;
+}
+.sou>ul{
+    margin: 15px;
+}
+/*商品分类页面*/
+.fenlei .fa{
+    font-size: 20px;
+    padding: 10px;
+}
+.fenlei span:nth-child(2){
+   position: absolute;
+   left: calc(50% - 32px);
+   top: 10px;
+}
+.fenlei>a:nth-of-type(2) span{
+    float: right;
+}
+.fenlei{
+    color: #666666;
+}
+.phone{
+    background: white;
+    padding: 20px 0px;
+    margin: 10px;
+}
+.phone li{
+    display: inline-block;
+    width: 23%;
+    text-align: center;
+    margin: 10px 0;
+}
+.phone li img{
+    width: 100%;
+    display: block;
+}
+.phone ul{
+    width: 90%;
+    margin: 10px auto;
+}
+.phone ul span{
+    font-size: 12px;
+}
+.phone>span{
+    display: block;
+    text-align: center;
+}
+/*购物车页面*/
+.car section:first-child img{
+    float: left;
+    width: 80px;  
+    padding:0 10px;  
+}
+.car{
+    background: white;
+    font-size: 14px;
+    padding: 10px;
+}
+.car section:first-child{
+    overflow: hidden;
+}
+.wenzi{
+    width: 70%;
+    float: right;
+}
+.wenzi>p>span:nth-of-type(1){
+    color: #838383
+}
+.wenzi>p>span:nth-of-type(2){
+    color: #c4c4c4;
+}
+.wenzi>div{
+    overflow: hidden;
+}
+.wenzi>div>span{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #aaa;
+    float: left;
+    text-align: center;
+    padding-top: 6px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    color: #c4c4c4;
+}
+.wenzi>div>span:nth-of-type(2n+1){
+    background: #eee;
+}
+.fa-trash{
+    float: right;
+    font-size: 25px;    
+    color: #ddd;
+    margin-top: 10px;
+}
+.car>section:nth-of-type(2){
+    clear: both;
+    width: 95%;
+    margin: 10px auto;
+    background: #F5F5F5;
+    padding: 10px;
+}
+.car>section:nth-of-type(2) img{
+    width: 20px;
+    float: left;
+}
+.car>section:nth-of-type(2)>span:nth-of-type(1){
+    font-size: 12px;
+    
+}
+.car>section:nth-of-type(2)>span:nth-of-type(2){
+    float: right;
+    color: red;
+}
+.car>section:nth-of-type(3) span{
+    font-size: 11px;
+    color: #c4c4c4;
+}
+.c-m>section form{
+    font-size: 12px;
+    color: #a4a4a4;
+}
+.c-m>section form span{
+    float: right;
+    color: #e2e2e2;
+    padding: 12px 0 12px 12px;
+    border-left: 1px solid #e2e2e2;
+}
+.c-m{
+    background: white;
+    padding-bottom:160px;
+    margin-top: 10px;
+}
+.c-m p{
+    line-height: 3;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 0 10px;
+}
+.footer{
+    overflow: hidden;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    border: 1px solid #F5F0EE;
+}
+.footer div{
+    width: 33.33%;
+    float: left;
+    text-align: center;
+    padding: 23px 0;
+}
+.footer div:first-child{
+    background: white;
+    padding: 10px 0;
+}
+.footer div:nth-of-type(3){
+    background: orange;
+}
+.footer div:first-child{
+    color: gray;
+}
+.footer span{
+    color: red;
+    font-weight: bolder;
+    font-size: 18px;
+}
+.footer>div:nth-child(2) a{
+    color: black;
+}
+.footer>div:nth-of-type(3) a{
+    color: white;
+}
+/*服务页面*/
+.servise>div:first-child{
+    height: 100px;
+    background: orangered;
+    text-align: center;
+}
+.servise>div>img{
+    width: 80px;
+    padding-top: 30px;
+}
+.se-xq>ul>li{
+    overflow: hidden;   
+    display: inline-block;
+    width: 50px;
+    font-size: 12px;
+    padding:0px 25px;  
+    border-right: 1px solid #c4c4c4;
+    margin: 30px 0;
+    text-align: center;
+}
+.se-xq>ul>li span{
+    padding: 10px 0px;
+    display: block;
+    border-bottom: 1px solid darkcyan;
+    
+}
+.se-xq>ul>li:last-child{
+    border-right: none;
+}
+.servise ul>li img{
+    width: 50%;
+}
+.se-xq{
+    width: 90%;
+    margin: 0 auto;
+}
+.color{
+    background: white;
+}
+.servise>ul>li{
+    overflow: hidden;   
+    height: 40px;
+    font-size: 14px;
+    margin:10px 0px;
+    background: white;
+    text-align: left;
+    padding-left: 20px;
+}
+.servise>ul>li img{
+    width: 10%;
+    float: left;
+    padding-top: 5px;
+}
+.servise>ul>li span{
+    position: relative;
+    top: 10px;
+    padding-left: 10px;
+}

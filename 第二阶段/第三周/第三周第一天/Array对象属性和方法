@@ -1,0 +1,35 @@
+concat() 连接两个或多个数组，返回结果    array1.concat(array2,array3,...,arrayX)
+
+every() 检测每个元素是否都符合条件    array.every(function, thisValue)  thisValue 可不写
+
+fliter() 检测数值元素，返回符合条件的数组     array.filter(function, thisValue)   thisValue 可不写
+
+indexOf() 数组中开始位置之后元素首次出现位置，并返回位置     array.indexOf(要查找元素,开始位置)
+
+join() 数组所有元素放入一个字符串     array.join(separator)  指定要使用的分隔符。如果省略该参数，则使用逗号作为分隔符。
+
+lastIndexOf(item,start) 返回字符串最后出现位置index值     在一个字符串中的指定位置从后向前搜索       start开始检索的位置   省略该参数，则将从字符串的最后一个字符处开始检索
+
+map(function, thisValue) 通过指定函数处理数组每个元素，返回处理后数组    thisValue 可不写
+
+pop() 删除数组最后一个元素并返回删除的元素
+
+push() 向数组末尾添加一个或多个元素，并返回新长度
+
+reverse() 反转数组元素顺序
+
+shift() 删除并返回数组第一个元素
+unshift() 方法可向数组的开头添加一个或更多元素，并返回新的长度。
+
+slice(start,end) 选取数组一部分，并返回一个选取的新数组，start开始位置，截取到end之前，end为负，就从尾部开始算起
+
+array.toString()   把数组转换为字符串，并返回结果。      数组中的元素之间用逗号分隔。
+
+array.splice(index,howmany,item1,.....,itemX)   index规定从何处添加/删除元素。  howmany规定应该删除多少元素规定应该删除多少元素         item可选。要添加到数组的新元素
+
+array.sort(sortfunction)      默认排序顺序为按字母升序。     sortfunction可选。规定排序顺序。必须是函数。        使用数字排序，你必须通过一个函数作为参数来调用。函数指定数字是按照升序还是降序排列。
+
+
+some(function, thisValue)    如果有一个元素满足条件，则表达式返回true , 剩余的元素不会再执行检测。 如果没有满足条件的元素，则返回false。    some() 不会对空数组进行检测。   不会改变原始数组。 thisValue 可不写
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播插件(1)</title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"/>
+</head>
+<script src="js/jquery.js"></script>
+<style>
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 1550px;
+        position: absolute;
+        font-size: 0;
+    }
+    li{
+        display: inline-block;
+        height: 300px;
+        width: 200px;
+    }
+    li img{
+        width: 100%;
+        height: 100%;
+    }
+    .box{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .imbox{
+        width: 1000px;
+        margin: 50px auto;
+        overflow: hidden;
+        position: relative;
+        height: 300px;
+    }
+    .fa{
+        font-size: 80px;
+    }
+    .box>span:first-child{
+        position: relative;
+        top: 240px;
+    }
+    .box>span:last-child{
+        position: relative;
+        top: -240px;
+        left: 1150px;
+    }
+</style>
+<body>
+<div class="box">
+    <span class="fa fa-angle-left"></span>
+    <div class="imbox">
+        <ul class="sld">
+            <li><img src="img/6.jpg" alt=""/></li>
+            <li><img src="img/9.jpg" alt=""/></li>
+            <li><img src="img/1.jpg" alt=""/></li>
+            <li><img src="img/12.jpg" alt=""/></li>
+            <li><img src="img/2.jpg" alt=""/></li>
+            <li><img src="img/7.jpg" alt=""/></li>
+            <li><img src="img/8.jpg" alt=""/></li>
+        </ul>
+    </div>
+    <span class="fa fa-angle-right"></span>
+</div>
+<div class="box">
+    <span class="fa fa-angle-left"></span>
+    <div class="imbox">
+        <ul class="sld">
+            <li><img src="img/6.jpg" alt=""/></li>
+            <li><img src="img/9.jpg" alt=""/></li>
+            <li><img src="img/1.jpg" alt=""/></li>
+            <li><img src="img/12.jpg" alt=""/></li>
+            <li><img src="img/2.jpg" alt=""/></li>
+            <li><img src="img/7.jpg" alt=""/></li>
+            <li><img src="img/8.jpg" alt=""/></li>
+        </ul>
+    </div>
+    <span class="fa fa-angle-right"></span>
+</div>
+</body>
+<script src="js/Lunbo.js"></script>
+<script>
+    $('.box').lunbo({
+        direction:'left',
+        speed:1000,
+        preClass:'fa-angle-left',
+        nextClass:'fa-angle-right',
+        moveClass:'sld',
+        listClass:'imbox'
+    })
+</script>
+</html>

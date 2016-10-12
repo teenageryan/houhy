@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="" method="post">
+    <!--name属性必须写-->
+    <input type="text" name="uname" placeholder="请输入昵称" required="" pattern="^[0-9a-zA-Z\u4e00-\u9fa5]{2,16}"/>
+    <br/>
+    <input type="password" name="pwd" placeholder="请输入密码" required="" pattern="^[0-9a-zA-Z\u4e00-\u9fa5]{2,16}"/>
+    <br/>
+    <input type="password" placeholder="请输入密码" required="" pattern="^[0-9a-zA-Z\u4e00-\u9fa5]{2,16}"/>
+    <br/>
+    <input type="radio" name="male" id="male"/>
+    <label for="male">男士</label>
+    <input type="radio" name="male" id="female"/>
+    <label for="female">女士</label>
+    <br/>
+    <input type="email" name="email" placeholder="请输入邮箱"/>
+    <br/>
+    <input type="submit" value="注册"/>
+</form>
+<script src="jquery.js"></script>
+<script>
+    $(function () {
+        $('form').submit(function(ev){
+            ev.preventDefault()
+            var data = $(this).serialize()
+            var pass = $(':password').map(function(){
+                return $(this).val()
+            })
+            if( pass[0] == pass[1]){
+                console.log('两次密码一致，可以提交内容')
+                $.post('/user/zhuce',data,function(res){
+                    console.log(res)
+                    alert(res.message)
+                    if(res.code == 'success'){
+                        location.href = 'login.html'
+                    }
+
+                })
+            }
+            else{
+                alert('两次密码不一致，请重新输入')
+            }
+
+        })
+    })
+</script>
+</body>
+</html>

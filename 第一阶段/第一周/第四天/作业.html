@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title></title>
+        <style>
+            body{
+                background-color: #333;
+                margin: 0px;
+                
+            }
+            #all{
+                background-color: white;
+                width: 80%;
+                height: 550px;
+                margin: 0px auto;
+                /*加一个和阴影效果，突出表格的相识区域
+                x轴方向偏移量 y轴方向偏移量 阴影宽度 阴影颜色*/
+                box-shadow: 0 0 10px orange;
+            }
+            #tab{
+                width: 80%;
+                height: 400px;
+                border-collapse: collapse;
+                margin: 0px auto;
+                top: 30px;
+                position: relative;
+            }
+            hr{
+                width: 40%;
+                margin: 0px auto;
+               
+                
+            }
+            #head{
+                font-size: 20px;
+                margin: 0px;
+            }
+            #middle{
+                font-size: 15px;
+               display: inline-block;
+               margin: 5px;
+            }
+            #fujian{
+                float: right;
+                font-size: 15px;
+                display: inline-block;
+                margin: 5px;
+            }
+            .jubu{
+                text-align: center;
+            }
+            #qiantao{
+                border-collapse: collapse;
+                width: 100%;
+                height: 100%;
+                /*嵌套表格隐藏边框*/
+                border-style: hidden;
+              
+            }
+            .td{
+                width: 15%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="all">
+            
+        <table border="1" id="tab">
+            <caption>
+                <p id="head">费&#x3000;用&#x3000;报&#x3000;销&#x3000;单</p>
+                <hr>
+                <div id="middle">报销日期&#x3000;&#x3000;年
+                    &#x3000;&#x3000;月&#x3000;&#x3000;日</div>
+                   <div id="fujian">附件&#x3000;&#x3000;&#x3000;&#x3000;张&#x3000;</div>
+            </caption>
+           
+            <tr>
+                <td class="jubu">费&#x3000;用&#x3000;项&#x3000;目</td>
+                <td class="jubu" style="width:15%;">类&#x3000;别</td>
+                <td class="jubu" style="width:15%;">金&#x3000;额</td>
+                <td rowspan="2">负责人（签章）</td>
+                <td rowspan="2" style="width:100px;"></td>
+            </tr>
+            <tr>
+                <td style="height:30px;"></td>
+                <td></td>
+                <td></td>
+                <!--<td></td>-->
+                <!--<td></td>-->
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td rowspan="2">审&#x3000;查&#x3000;意&#x3000;见</td>
+                <td rowspan="2"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <!--<td></td>-->
+                <!--<td></td>-->
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td rowspan="2">报销人（签章）</td>
+                <td rowspan="2"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <!--<td></td>-->
+                <!--<td></td>-->
+            </tr>
+            <tr>
+                <td class="jubu">报&#x3000;销&#x3000;金&#x3000;额&#x3000;合&#x3000;计</td>
+                <td></td>
+                <td></td>
+                <td>￥</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="5">核实金额（大写）&#x3000;佰&#x3000;拾&#x3000;万&#x3000;
+                    仟&#x3000;佰&#x3000;拾&#x3000;元&#x3000;角&#x3000;分&#x3000;￥</td>
+                <!--<td></td>
+                <td></td>
+                <td></td>
+                <td></td>-->
+            </tr>
+            <tr>
+                <td colspan="5" style="padding:0px;">
+                <table border="1" id="qiantao">
+                    <tr>
+                        <td class="jubu">借&#x3000;款&#x3000;数</td>
+                        <td class="td"></td>
+                        <td  class="jubu">应&#x3000;退&#x3000;金&#x3000;额</td>
+                        <td class="td"></td>
+                        <td  class="jubu">应&#x3000;补&#x3000;金&#x3000;额</td>
+                        <td class="td"></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>            
+        </table>
+        <br>
+        <p class="jubu" style="margin:25px;">审&#x3000;核&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;出&#x3000;纳</p>
+        <p></p>
+        </div>
+    </body>
+</html>

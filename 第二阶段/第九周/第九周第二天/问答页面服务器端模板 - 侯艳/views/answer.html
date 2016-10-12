@@ -1,0 +1,52 @@
+{{include 'same/header'}}
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">智游教育</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">
+                    <span class="glyphicon glyphicon-user"></span><span id="log"></span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <form action="">
+        <textarea name="text" id="" cols="30" rows="10" placeholder="请输入内容"></textarea>
+        <input type="submit" value="提交"/>
+    </form>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title">智游教育</h4>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--bootstrap是基于jQuery的框架-->
+<script src="js/jquery.cookie.js"></script>
+<script src="js/answer.js"></script>
+</html>

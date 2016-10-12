@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>对象的常用操作（访问、插入、删除）</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <script>
+            // 以学生为例，添加姓名，性别，身高
+            var obj = {  }
+            // 给对象添加内容
+            obj.name = 'zza'
+            obj.shengao = '156'
+            obj.sex = 'femeal'
+            console.log(obj)
+            //Object { name: "zza", shengao: "156", sex: "femeal" }
+            obj.sing = function(){
+                console.log('cg')
+            }
+            console.log(obj)
+            //Object { name: "zza", shengao: "156", sex: "femeal", sing: obj.sing() }
+            
+            obj.name = 'hy'
+            console.log(obj)
+            //删除属性或方法
+            delete obj.shengao
+            console.log(obj)
+            
+            //获取对象所有的元素：遍历 for /in 语句
+            // 循环遍历对象的属性
+            // for(var in object){
+            //     执行语句
+            // }
+            // var：对象中的属性名称
+            // object：要遍历的对象
+            
+            
+            // 常用的两种对象调用方法：
+            // 进行访问,所以有的时候对象也可以被叫做关联数组，访问对象的属性时要写为字符串类型
+            console.log(obj.name)
+            console.log(obj['name'])
+            var text = "";
+            var x;
+            for (x in obj) {
+                console.log(x)   //x 表示属性名称
+      // console.log('x')
+                text = obj[x];
+                console.log(text)
+            }
+            
+            
+            
+            var arrLi = [
+                1,
+                'name',
+                2,
+                'yan',
+                {
+                    nea:'me',
+                    num:function(){
+                        alert('y')
+                    }
+                },
+                function (){
+                    alert('5')
+                }
+            ]
+            console.log(arrLi[5])
+            //Array [ 1, "name", 2, "yan", Object ]
+        </script>
+    </body>
+</html>

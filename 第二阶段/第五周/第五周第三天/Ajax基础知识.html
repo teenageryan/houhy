@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="author" content="kyu"/>
+        <title>AJAX基础知识</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <pre>
+            HTML 超文本标记语言---hyper text markup language     ==显示数据
+            HTTP 超文本传输协议---hyper text transfer protocol
+            AJAX 异步的JavaScript 和 XML    Asynchronous JavaScript and xml（传输和存储数据）
+            其核心对象：XHR -- XMLHttpRequest： 在不重载当前页面的情况下，与服务器进行数据交换
+        </pre>
+        <div>
+            原来内容，通过不重载页面前提下，与服务器进行数据交换
+        </div>
+        <button type="button" onclick="show()">更新</button>
+        <script>
+            // 现在的浏览器都支持XHR对象，但有老版本浏览器支持的时ActiveXObject
+            var xmlhttp
+            function show(){
+                //1. 创建XHR对象
+                // 判断浏览器兼容对象
+                if( window.XMLHttpRequest ){
+                    xmlhttp = new XMLHttpRequest()
+                }
+                else{
+                    xmlhttp = new ActiveXObject()
+                }
+                
+                // 连接服务器，发送请求的数据到服务器
+//                open 创建新的http请求，并指定此情求方法、请求url、是否异步
+//                send 发送请求到http服务器并接受回应
+                // open( 请求类型（GET，POST），请求URL，是否异步（true异步，false同步）)
+                // 2.设置发送的请求信息
+                xmlhttp.open('GET','ceshi.html',true)
+                //3. 发送请求到服务器
+                xmlhttp.send()
+                
+                
+                //4. 请求状态变化会触发 onreadystatechange 事件
+                xmlhttp.onreadystatechange = function(){
+                    // readystate 属性：请求状态的变化
+                    // 0- 对象被创建，open方法未调用
+                    // 1- open方法被调用
+                    // 2- send 方法被调用，请求被接收
+                    // 3- 请求处理中
+                    // 4- 请求已处理，响应已就绪
+                    // status属性： http状态码  404 ---未找到当前页面；200 --ok
+                    if( xmlhttp.readyState == 4 && xmlhttp.status == 200 )
+                    // response 属性：获取当前对象的响应信息
+                    // xml运行时所有标签都要闭合
+                    document.querySelector('div').innerHTML = xmlhttp.response 
+                }
+            }
+        </script>
+    </body>
+</html>

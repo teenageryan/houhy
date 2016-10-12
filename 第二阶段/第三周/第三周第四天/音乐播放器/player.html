@@ -1,0 +1,201 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>播放器</title>
+        <link rel="stylesheet" href="glyphicon.css">
+        <style>
+            body{
+                background-color: #333;
+                cursor: default;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                flex-direction: column;
+            }
+            main{
+                box-shadow: 2px 4px 8px #111;
+                border-radius: 11px;
+                width: 300px;
+                height: 300px;
+                background-image: url(wf.png);
+                background-size: 300px;
+                background-repeat: no-repeat;
+                animation-duration: 0.5s;
+            }
+            @keyframes slideBg {
+                0%{
+                    background-position: 300px 0px;
+                }
+                100%{
+                    background-position: 0px 0px;
+                }
+            }
+            header{
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                height: 96px;
+                background-color: rgb(22,22,22);
+                box-sizing: border-box;
+                opacity: 0.95;
+            }
+            
+            progress{
+                box-sizing: border-box;
+                opacity: 0.95;
+                border: none;
+                height: 4px;
+                padding: 0;
+                margin: 0;
+                width: 300px;
+                background: #111;
+            }
+            /*兼容性写法 chrome和safari是webkit内核*/
+            ::-webkit-progress-bar{
+                background-color: rgb(200,87,88);
+            }
+            /*兼容性写法，兼容firefox浏览器*/
+            ::-moz-progress-bar{
+                background-color: rgb(200,87,88);
+            }
+            footer{
+                height:200px;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                background-color: rgb(106,35,42);
+                box-sizing: border-box;
+                opacity: 0.95;
+            }
+            h1{
+                text-align: center;
+                margin: 0;
+                padding-top: 15px;
+                color: rgb(174,164,154);
+                font-weight: normal;
+                font-size: 30px;
+            }
+            h2{
+                text-align: center;
+                margin: 0;
+                color: rgb(174,164,154);
+                font-weight: normal;
+                font-size: 15px;
+            }
+            time{
+                color: rgb(134,124,114);
+                text-align: center;
+                display: block;
+                margin: 0px auto;
+                padding: 24px;
+                font-size: 32px;
+                font-weight: 100;
+                font-family: '华文黑体';
+            }
+            ul,li{
+                margin: 0;
+                padding: 0;
+                /*去掉无序列表自带的样式  无序列表前边自带的一个黑色圆圈*/
+                list-style: none;
+            }
+            li:nth-child(1){
+                width: 45px;
+                height: 45px;
+                background-image: url(buttons/prev.png);
+            }
+            li:nth-child(2){
+                width: 45px;
+                height: 45px;
+                background-image: url(buttons/start.png);
+            }
+            li:nth-child(3){
+                width: 45px;
+                height: 45px;
+                background-image: url(buttons/next.png);
+            }
+            section{
+                text-align: center;
+                color: rgb(134,124,114);
+                font-weight: normal;
+            }
+            section span:nth-child(1):hover{
+                color: white;
+                text-shadow: 0px 0px 20px rgb(175,165,155);
+            }
+            section span:nth-child(2):hover{
+                color: white;
+                text-shadow: 0px 0px 30px rgb(175,165,155);
+            }
+            section span:nth-child(3):hover{
+                color: white;
+                text-shadow: 0px 0px 20px rgb(175,165,155);
+            }
+            section span:nth-child(1){
+                font-size: 32px;
+                position: relative;
+                top: -13px;
+                left: -25px;
+            }
+            section span:nth-child(2){
+                font-size: 64px;
+                line-height: 64px;
+            }
+            section span:nth-child(3){
+                font-size: 32px;
+                position: relative;
+                top: -13px;
+                left: 20px;
+            }
+            aside{
+                padding-top: 20px;
+                text-align: center;
+                color: rgb(134,124,114);
+            }
+            aside progress{
+                width: 100px;
+                height: 2px;
+                position: relative;
+                top: -8px;
+                left: -2px;
+            }
+            aside span:hover{
+                color: white;
+                text-shadow: 0px 0px 10px rgb(175,165,155);
+            }
+            address{
+                font-style: normal;
+                margin: 100px auto 30px auto;
+                color: #555;
+                text-shadow: 0 0 1px #111;
+                font-size: 13px;
+            }
+        </style>
+    </head>
+    <body>
+        <audio></audio>
+        <main>
+            <header>
+                <h1>音乐播放器</h1>
+                <h2>歌手</h2>
+            </header>
+            <progress value="0"></progress>
+            <footer>
+                <time>1:00</time>
+                <section>
+                    <span class="glyphicon glyphicon-backward" onclick="prev();"></span>
+                    <span class="glyphicon glyphicon-pause" onclick="playPause();"></span>
+                    <span class="glyphicon glyphicon-forward" onclick="next();"></span>
+                </section>
+                <aside>
+                    <span class="glyphicon glyphicon-volume-down" onclick="volumeDown();"></span>
+                    <progress value="0.5"></progress>
+                    <span class="glyphicon glyphicon-volume-up" onclick="volumeUp();"></span>
+                </aside>
+            </footer>
+        </main>
+        <address>Powered by Zhiyou</address>
+        <script>
+            var 
+        </script>
+    </body>
+</html>

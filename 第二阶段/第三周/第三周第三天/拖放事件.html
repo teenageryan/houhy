@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>拖动事件drag、drop</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li draggable="true">HTML5</li>
+            <li draggable="true">CSS#</li>
+            <li draggable="true">PHP</li>
+            <li draggable="true">JAVASCRIPT</li>
+            <li draggable="true">PYTHON</li>
+        </ul>
+        <!--拖放元素，需要将元素设置为可拖动，即draggable = true 图片默认可拖动 这是H5新特性-->
+        <script>
+            var lis = document.querySelectorAll('li')  
+            for(var i=0;i<lis.length;i++){
+                var li = lis[i]
+                // console.log(li)
+                
+                // 获取拖动事件的属性对象
+                li.ondragstart = function(ev){
+                    console.log(ev)
+                    // dataTransfer设置拖动元素的数据（传输数据）
+                    // effectAllowed设置元素的拖动效果
+                    // move移动到新的位置
+                    // 设置当前托动元素的id
+                    ev.target.id = 'draging'
+                    ev.dataTransfer.effectAllowed = 'move'
+                    // setData(type,data)  设定数据类型以及相应数据：在拖动元素的时候，浏览器会调用setData（）方法，将拖动的元素数据以text格式保存在对象中
+                    ev.dataTransfer.setData('text',ev.target.id)
+                    
+                    // 数字是鼠标距图片的距离（0，0）左上角
+                    ev.dataTransfer.setDragImage(ev.target,0,20)
+                }
+                //当拖动元素进入标签范围时
+                li.ondragenter = function(ev){
+                    console.log('进入标签')
+                    console.log(ev.target)
+                    // ev.target.style.color = 'yellow'
+                    ev.preventDefault()
+                    // ev.currenTarget.style.borderTop = 'solid 1px blue'
+                    // ev.currentTarget.style.color = 'yellow'
+                    this.style.color = 'red'
+                    this.style.borderTop = 'solid 1px blue'
+                }
+                // 当拖动元素离开标签范围时
+                li.ondragleave = function(ev){
+                    console.log('离开了')
+                    ev.preventDefault()
+                    this.style.color = ''
+                    this.style.borderTop = ''
+                }
+                // 当拖动元素在标签之上时
+                li.ondragover = function(ev){
+                    console.log('在上面')
+                    // 设置拖动元素实际上的放置效果，即设置或返回拖放目标上允许发生的拖动行为
+                    ev.dataTransfer.dropEffect = 'move'
+                    ev.preventDefault()
+                }
+                // 拖动结束的时候，触发的事件
+                li.ondragend = function(ev){
+                    console.log('拖动结束')
+                    // ev.preventDefault()
+                    ev.target.id = ''
+                }
+                // 释放：鼠标在元素上松开时触发
+                li.ondrop = function(ev){
+                    console.log('释放')
+                    ev.preventDefault()   //不写页面会重新刷新  避免某些默认行为触发
+                    // var ul = li.parentNode
+                    var ul = document.querySelector('ul')
+                    var id = ev.dataTransfer.getData('text')
+                   // console.log(ev.dataTransfer.getData('text'))   //输出之前赋的id值
+                    var li = document.getElementById(id)
+                    ul.insertBefore(li,ev.currentTarget)
+                    
+                    // 阻止剩下事件处理程序被执行
+                    // 该方法可阻止事件在DOM树中冒泡
+                    ev.stopImmediatePropagation()
+                }
+            }      
+        </script>
+    </body>
+</html>

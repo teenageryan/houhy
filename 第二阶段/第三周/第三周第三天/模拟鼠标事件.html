@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>模拟鼠标事件</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <!--鼠标事件构造函数：mouseEvent()-->
+        <script>
+            // 原是事件对象
+            // window.onclick = function(ev){
+            //     console.log(ev)
+            // }
+            // click { target: <html>, buttons: 0, clientX: 506, clientY: 250, layerX: 506, layerY: 250 }
+            
+            document.body.addEventListener('click',function(e){
+                console.log('事件成功')
+                console.log(e)
+            })
+            
+           
+            window.onkeydown = function(ev){
+                 // 创建一个新的鼠标事件
+                var evs = new MouseEvent('click',{
+                    buttons:1,
+                    clientX:112,
+                    clientY:343
+                })
+            // 派发事件/绑定事件
+            document.body.dispatchEvent(evs)
+            }
+        </script>
+    </body>
+</html>

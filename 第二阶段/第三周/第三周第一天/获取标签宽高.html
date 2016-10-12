@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>标签大小和位置</title>
+        <style>
+            body{
+                margin: 0;
+            }
+            main{
+                width: 300px;
+                height: 300px;
+                background: red;
+                border: 20px solid green;
+                margin: 300px;
+                /*padding: 20px;*/
+                /*box-sizing: border-box;*/
+                line-height:200px;
+                overflow: auto;
+                overflow: scroll;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            当前元素位置和大小
+            当前元素位置和大小
+            当前元素位置和大小
+        </main>
+        <script>
+            var main = document.querySelector('main')
+            // 输出为标签内容大小（不包括边框）
+            console.log(main.clientWidth)
+            console.log(main.clientHeight)
+            // 输出为标签正常大小（包括边框和内边距）
+            console.log(main.offsetWidth)
+            console.log(main.offsetHeight)
+            console.log(main.scrollWidth)    //返回整个元素宽度包含被滚动条影藏部分，但是不包含滚动条宽度
+            console.log(main.scrollTop)      //滚动条滚过的距离
+            console.log(main.scrollHeight)   //返回整个元素高度包含被滚动条隐藏部分，但是不包含滚动条高度
+        </script>
+    </body>
+</html>

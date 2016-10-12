@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+<body>
+<div>
+    之前内容
+</div>
+<button type="button" onclick="show()">
+    更新
+</button>
+<script>
+//var xmlhttp
+//    function show(){
+//        if( window.XMLHttpRequest ){
+//            xmlhttp = new XMLHttpRequest()
+//        }
+//        else{
+//            xmlhttp = new ActiveXObject()
+//        }
+//        xmlhttp.open('GET','ceshi.html',true)
+//        xmlhttp.send()
+//        xmlhttp.onreadystatechange = function(){
+//            if(xmlhttp.readyState == 4 && xmlhttp.status == 200 )
+//            document.querySelector('div').innerHTML = xmlhttp.response
+//        }
+//    }
+
+//    var xmlhttp
+//    function show(){
+//        if(window.XMLHttpRequest ){
+//            xmlhttp = new XMLHttpRequest()
+//        }
+//        else{
+//            xmlhttp = ActiveXObject()
+//        }
+//        xmlhttp.open('GET',"ceshi.html",true)
+//        xmlhttp.send()
+//        xmlhttp.onreadystatechange = function (){
+//            if(xmlhttp.readystate == 4 && xmlhttp.status == 200 )
+//            document.querySelector('div').innerHTML = xmlhttp.response
+//        }
+//
+//    }
+var xmlhttp
+    function show(){
+        if( window.XMLHttpRequest ){
+            xmlhttp = new XMLHttpRequest()
+        }
+        else{
+            xmlhttp = new ActiveXObject()
+        }
+        xmlhttp.open('GET','ceshi.html',true)
+        xmlhttp.send()
+        xmlhttp.onreadystatechange = function(){
+            if( xmlhttp.readyState == 4&&xmlhttp.status ==200 ){
+                document.querySelector('div').innerHTML = xmlhttp.response
+            }
+        }
+    }
+    var xmlhttp
+    function show(){
+        if( window.XMLHttpRequest){
+            xmlhttp = XMLHttpRequest()
+        }
+        else{
+            xmlhttp = ActiveXObject()
+        }
+        xmlhttp.open('GET','ceshi.js',true)
+        xmlhttp.send()
+        xmlhttp.onreadystatechange = function(){
+
+            if(xmlhttp.readyState ==4&&xmlhttp.status ==200){
+                document.querySelector('div').innerHTML = xmlhttp.response
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

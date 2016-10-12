@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>jQ遍历元素及hover（）方法</title>
+        <script src="jquery.js"></script>
+        <style>
+            .current{
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>第一个标签</li>
+            <li>第二个标签</li>
+            <li>第三个标签</li>
+            <li>第四个标签</li>
+            <li>第五个标签</li>
+            <li>第六个标签</li>
+        </ul>
+        <script>
+            $(function(){
+                // .each()遍历数组和对象
+                $('li').each(function(){
+                    //当鼠标经过标签的时候触发的事件
+                    $('li').hover(function(){
+                        $(this).css('background','red')
+                        $(this).addClass('current').siblings().removeClass('current')
+                    },
+                    // 当鼠标指针离开标签时触发的效果
+                    function(){
+                        $(this).css('background','blue')
+                        // $(this).removeClass('current')
+                    })
+                })
+            })
+            
+        </script>
+    </body>
+</html>

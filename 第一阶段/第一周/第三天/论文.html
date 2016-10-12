@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>论文</title>
+        <style>
+           body{
+             
+               background-color: gray;
+               margin: 0px;
+               
+           }
+           #zhengti{               
+               width: 800px;
+               margin: 0px auto;
+               background-color: white;
+              border: 30px solid white;
+               
+           }
+            #toubu{
+                text-align: center;
+            }           
+            .zhaiyao{
+                width: 80%;
+                margin: 0px auto;
+                font-family: "楷书";
+            }
+            #yingwen{
+                width: 85%;
+                margin: 0px auto;
+                text-align: center;
+            }
+            p{
+                margin: 0px;
+            }
+            .quotes{
+                color: blue;
+                quotes: '[' ']';
+            }
+            .duanluo{
+                text-indent: 2em;
+            }
+            hr{
+                width: 40%;
+                margin-left: 0px;
+            }
+            #footer{
+                font-size: 14px;
+            }
+            #dierye{
+                margin: 10px auto; 
+                text-indent: 2em;
+            }
+            #disanye{
+                margin: 20px 0px;
+            }
+            #tupian{
+                width: 70%;
+                margin: 0px auto;
+            }
+            #tupian1{
+                 width: 40%;
+                margin: 0px auto;
+            }
+            #tu{
+                width: 100%;
+            }
+            .quote{
+                quotes: '[' ']';
+            }
+            li{
+                list-style: none;
+            }
+            h1{
+                /*取消h1的默认外边距*/
+                margin: 0px;
+                padding: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="zhengti">
+        <div id="toubu">
+        <h1>基于HTML5的移动阅读内容展示方式</h1>
+      
+      
+        <p>李青， 王晨升</p>
+        <p>（北京邮电大学自动化学院，北京 100876）</p>
+        </div>
+        <div class="zhaiyao"><strong>摘要：</strong>据“2 014中国数字阅读白皮书”的大数据显示，在2014年底，手机阅读用户接近3个亿，手机阅读明显已经成为手机网民在重拾碎片时间中的主要活动之一。目前的移动阅读平台由Native App主导，Native App生命周期短、占据用户设备内存资源、上架审核流程复杂、版本更新慢的劣势日益显现。基于<abbr title="Hypertext Markup Language">HTML5</abbr>的移动阅读Web App，采用自适应的网页布局方式，自动识别设备屏幕宽度，适配不同分辨率的设备填充文本内容，对内容资源进行版式与流式的排版展现。满足了用户打开移动设备浏览器就能进行阅读的需求，提升阅读体验。<br>
+         <strong>关键词：</strong>Web；Native App；Web App；阅读<br>
+         <strong>中图分类号：</strong>TP303.2</div>
+         <div id="yingwen"><h1>The Content Display Method of Mobile Reading Based on HTML5</h1>
+         <p>LI Qing, WANG Chensheng</p>
+         <p>(Automation School,Beijing University of Posts and Telecommunications,Beijing 100876)</p></div>
+         <div class="zhaiyao"><strong>Abstract:</strong>According to the "2014 China Digital Reading white paper",at the end of 2014, the mobile phone users to read nearly 3 hundred million, mobile phone reading has become one of the main activities of mobile users in the time of repicking up the debris. The currentmobile reading platform is  dominated by App Native, the App Native has a short life cycle, which has  the disadvantages of occupying user's device memory resource, the complexity of the audit process and the slow version of the update.The Mobile reading Web App,which is based on HTML5,adapt of different resolutions of the device to fill the text content. It meetsthe needs of the user to open the mobile browser to read the mobile device to enhance the reading experience.<br>
+         <strong>Key words:</strong>Web; Native App; Web App; reading
+         </div>
+         <div class="zhaiyao"><h2>0&#x3000引言</h2>
+        <div class="duanluo"> 随着Wifi、4G等网络技术的不断发展，数据网络传输变得更加快捷与便利，带动了移30动设备的智能化发展、智能移动设备应用的爆发性增长。在应用市场中，移动阅读相关应用市场占有量突出。目前的移动阅读平台由都Native app主导。而Native App应用的劣势也日益显现。对于开发者而言，Native App应用需要针对各种手机操作系统开发多个版本，同时Android版本碎片化问题给开发带来了更大的阻力。随着W3C对HTML5规范的制定<sup><q class="quotes">1</q></sup>，web app使用的网页语言在大部分操作系统和浏览器中都兼容，有效节省了开发成本，跨平台性、35版本迭代更新简单等巨大优势显现。基于HTML5的移动阅读应用使用户只需打开浏览器，便能随时随地看书<sup><q class="quotes">2</q></sup>。</div>
+        <div class="duanluo">Web App开发的重要特性是一套代码适配所有手机设备。但是，移动端设备屏幕尺寸碎片化严重。对于Android主流的分辨率就有480x800、480x854、540x960、720x1280、1080x1920。随着苹果公司推出iPhone6 与iPhone6  Plus，iPhone系列分辨率有以下几种：40640x960、640x1136、750x1334、1242x2208。Ethan  Marcotte在2010提出了“自适应网页设计”，即自动识别设备屏幕宽度、做出相应网页调整。</div>
+        <hr>
+        <pre id="footer">
+<strong>作者简介：</strong>李青（1990-），女，在读研究生，自动化与自动控制
+<strong>通信联系人：</strong>王晨升，男，副教授，虚拟现实技.E-mail:chenshengwang@gmail.com
+        </pre>
+         </div>
+         <div class="zhaiyao">
+            <div id="dierye">数字阅读终端内容可分为纯图片与图文混排两种内容形式。内容展示过程中的滑屏效果需要表现的类似于纸质书籍阅读的效果，更贴近用户需求。本文主要针对版式排版的展示效果实现与流式排版展示效果实现加以说明。</div> 
+            <h2>1&#x3000;用户触摸屏事件</h2>
+            <h3>1.1&#x3000;&#x3000;Touch事件处理机制</h3>
+            <div class="duanluo">移动阅读要实现和纸质类书籍阅读类似的阅读体验，需要对用户触摸屏动作做出滑屏或者翻页的效果处理。处理过程即设备屏幕受到用户滑动屏幕后，页面试图区域随手指的移动而移动，手指抬起时根据移动方向判断用户进行上页或是下页的操作，自动移动切换到目标50页面。</div>
+            <div class="duanluo">用户点按触摸屏设备，会触发Touch事件<sup><q class="quotes">3</q></sup>。Touch事件包含了Touchstart（手指触摸屏幕上的时候触发）、Touchmove（手指在屏幕上移动的时候触发）和Touchend（手指从屏幕上拿起的时候触发）、Touchcancel（系统取消touch事件的时候触发）。在这一系列的Touch事件触发过程中，伴随有页面的移动，移动效果的处理过程可使用css3中的translate55（）方法实现。由于用户在触摸屏设备的屏幕上进行滑动或多点手势操作时往往会触发浏览器行为，例如滚动和缩放。为保证对用户触摸屏事件处理的可控性，需要在html文档的头部加上</div>
+            <code>
+    &#x3000; &#x3000;&lt;meta name="viewport" content="width=device-width,<br>
+     &#x3000; &#x3000;minimum-scale=1.0,maximum-scale=1.0user-scalable=no"/&gt;
+            </code>
+    <div class="duanluo">禁止视图区域滚动和缩放。</div>
+</pre>
+             <h2>1.2&#x3000;&#x3000;Click事件处理机制</h2>
+             <h1>2&#x3000;页面切换效果实现方法的比对</h1>
+             <h2>2.1&#x3000;&#x3000;Touch事件与translate( )方法实现</h2>
+             <div class="duanluo">
+                 <pre>
+对应的html文档层级关系如下：
+       &lt;div class="wrap" id="viewBox" &gt;&#x3000;&#x3000;&#x3000;&#x3000;//视图区域
+          &lt;div id="readFld"&gt;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;//内容填充区域
+              ......
+          &lt;/div&gt;   
+       &lt;/div&gt;
+</pre>
+</div>
+        <div>
+             <pre>    具体实现的流程图如图1所示：</pre>
+             <div id="tupian">
+             <img src="素材/03.jpg" alt="流程图" id="tu">
+             </div>
+             <div id="toubu">图1 用户触摸屏事件翻页效果处理</div>
+             <div id="toubu">Fig. 1 The processing of page-flipping because of the touchesevent</div>
+         </div>
+         <h3>2.2&#x3000;&#x3000;借助Swiper插件实现</h3>
+         <div id="tupian1">
+             <img src="素材/16.jpg" alt="流程图" id="tu">
+             </div>
+             <div id="toubu">图2页面初始化处理</div>
+             <div id="toubu">Fig.2 The processing of Page initialization</div>
+             上述处理过程中，使用到的监听事件回调函数有以下几种，代码片段如下：
+             <pre>
+var mySwiper = new Swiper('.swiper-container',{  //创建swiper
+        onSliderMove: function(swiper, event){          //监测用户滑屏事件
+            slideEvent();
+        },
+        onTap: function(swiper){                        //监测用户点击事件
+            clickEvent();
+        },
+        onSlideChangeStart: function(swiper){ //滑块释放时如果触发slider切换则执行
+        },
+        onSlideChangeEnd: function(swiper){ //slider切换结束时执行190
+        }
+    });
+</pre>
+<div class="duanluo">其中onSlideChangeEnd方法是关键。它表示视图区域的slide完全切换，即脱离视图区域时候进行的回调。在加载slide与删除slide的事件操作就是在这个回调函数中完成的，上述过程的实现均基于onSlideChangeEnd这个回调函数。</div>
+             <div id="disanye"><strong><q class="quote">参考文献</q>(Reference)</strong></div> 
+             <div id="footer">            
+                 <li><q class="quote">1</q>&#x3000;刘华星, 韩庚. HTML5--下一代Web开发标准研究[J]. 计算机技术与发展, 2011，21（8）：54-59.</li>
+                 <li><q class="quote">2</q>&#x3000;王兆, 胡锦. 从用户需求分析如何初步定义产品功能[J]. 艺术与设计(理论)，2011：203-205</li>
+                 <li><q class="quote">3</q>&#x3000;黄競. 基于jQuery框架的Web前端系统构建方法的研究与应用[D].北京：北京邮电大学, 2012.</li>
+                 <li><q class="quote">4</q>&#x3000;黄永慧,陈程凯.HTML5在移动应用开发上的应用前景[J]. 计算机技术与发展,2013，（7）：207-210</li>
+                 <li><q class="quote">5</q>&#x3000;朱聚豹. 移动Web前端性能与图片优化的研究[D]. 武汉：华中师范大学，2013.</li>
+                 <li><q class="quote">6</q>&#x3000;戚琪. 移动平台网页自适应云转换机制研究[D].武汉：华中科技大学，2013</li>
+                 <li><q class="quote">7</q>&#x3000;刘斌.HTML5-未来网络应用的核心技术研究[J].自动化与仪器仪表，2010，（4）：30-33</li>                
+             </div>
+         </div>  
+         </div>       
+    </body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>图片点击</title>
+        <script src="jquery.js"></script>
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <style>
+            main{
+                width: 80%;
+                margin: 0 auto;
+                position: relative;
+                height: 700px;
+            }
+            ul{
+                list-style: none;
+                padding: 0px;
+                margin: 0px;
+                position: relative;
+                height: 455px;
+            }
+            #o li{
+                position: relative;
+            }
+            #o li img{
+                position: absolute;
+                height: 450px;
+                width: 100%;
+            }
+            section{
+                /*position: relative;*/
+                height: 125px;
+                /*top: 480px;*/
+            }
+           .fa{
+               background: gray;
+               font-size: 120px;
+               position: absolute;
+           }
+           section .fa:nth-of-type(1){
+               left: -50px;
+               top: 450px;
+           }
+          section .fa:nth-of-type(2){
+               left: 1030px;
+               top: 450px;
+           }
+           div{
+               /*position: absolute;
+               bottom: 10px;*/
+               overflow: hidden;
+           }
+           #t{
+               width: 165%;
+               display: inline-block;
+               position: relative;
+               height: 125px;
+           }
+           #t li{
+               display: inline-block;
+               width: 197px;
+               height: 100px;
+               margin-right: 5px;
+           }
+           #t li img{
+               width: 100%;
+               height: 100%;
+           }
+           .tli{
+               border: 1px solid olivedrab;
+           }
+        </style>
+    </head>
+    <body>
+        <main>
+           <ul id="o">
+               <li><img src="img/big0.jpg" alt=""></li>
+               <li><img src="img/big1.jpg" alt=""></li>
+               <li><img src="img/big2.jpg" alt=""></li>
+               <li><img src="img/big3.jpg" alt=""></li>
+               <li><img src="img/big4.jpg" alt=""></li>
+               <li><img src="img/big5.jpg" alt=""></li>
+               <li><img src="img/big7.jpg" alt=""></li>
+               <li><img src="img/big8.jpg" alt=""></li>
+           </ul>
+           <section>
+               <span class="fa fa-angle-left"></span>
+               <div>
+                   <ul id="t">
+                        <li class="tli"><img src="img/0.jpg" alt=""></li>
+                        <li><img src="img/1.jpg" alt=""></li>
+                        <li><img src="img/2.jpg" alt=""></li>
+                        <li><img src="img/3.jpg" alt=""></li>
+                        <li><img src="img/4.jpg" alt=""></li>
+                        <li><img src="img/5.jpg" alt=""></li>
+                        <li><img src="img/7.jpg" alt=""></li>
+                        <li><img src="img/8.jpg" alt=""></li>
+                    </ul>
+               </div>
+               <span class="fa fa-angle-right"></span>
+           </section>
+        </main>
+        <script>
+            $(function(){
+              $('#t li').each(function(){
+                $('#t li').click(function(){
+                        // console.log($(this).index())
+                        $('#o li').eq($(this).index()).css('display','block').siblings().css('display','none')
+                    })
+                    // $(this).addClass('.tli').siblings().removeClass('.tli')
+                })
+                $('span').hover(function(){
+                    $(this).css('cursor','pointer')
+                })
+                var origin = 0
+                function span(){
+                    // console.log($('#t').position().left)
+                    origin = $('#t').position().left
+                    if(origin > -600){
+                        var leftL = origin -210
+                        $('#t').animate({
+                            left:leftL
+                        }) 
+                    }
+                     else{
+                        $('span').css('cursor','default')
+                    }
+                     
+                }
+                
+               $('span').eq(0).click(function(){
+                        sright()
+               })
+               function sright(){
+                   origin = $('#t').position().left
+                   if(origin < 0){
+                       var leftR = origin + 210
+                    $('#t').animate({
+                            left:leftR
+                        })
+                   }
+                    else{
+                        $('span').css('cursor','default')
+                    }
+               }
+                $('span').eq(1).click(function(){
+                        span()
+                    })
+            })
+        </script>
+    </body>
+</html>

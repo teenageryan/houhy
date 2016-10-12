@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+//    var a = 10;
+//    function test() {
+//        a = 100;
+//        alert(a);    //100
+//        var a;
+//        alert(a);    //100
+//    }
+    alert("1" +  23);   //123
+    alert("1" -  23);   //-22
+
+//    test();
+    var a = 100;
+    function test(){
+        alert(a);    //100
+        a = 10;
+        alert(a);    //10
+    }
+    test();
+//alert( typeof(null) )//object
+//alert( typeof(undefined) )//undefined
+//alert( typeof(NaN) )//number
+//alert( NaN == undefined )//false
+//alert( NaN == NaN )//false
+var str = '123abc';
+alert(typeof (str))//string
+alert( typeof(str++) )//number
+alert( typeof(str) )//number
+var b1 = false;
+var b2 = new Boolean(false);
+console.log(typeof(b2))   //object
+//下面会弹出哪个问候语?
+if(b2) {
+    alert('你好')    //会弹出
+} else {
+    alert('hello')
+}
+
+</script>
+
+</body>
+</html>

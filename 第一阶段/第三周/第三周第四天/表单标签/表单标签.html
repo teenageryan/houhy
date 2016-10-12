@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>表单标签</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <!--表单：包含表单元素的区域  文本、输入框、单选框、复选框等-->
+        <form action="">
+            <!--input 输入框，type 类型：可以更改 ； placeholder预留的提示信息 ;
+            required 提交表单前必须输入字段，否则输入框变红-->
+            <input type="text" placeholder="输入账户名称" required>
+            <!--文本域-->
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <!--单选框  checked: 默认选中预留的选项-->
+            <input type="radio" name="sex" value="male"> male
+            <input type="radio" name="sex" value="female"> female
+            <input type="radio" name="se" value="pig" checked> pig
+            <input type="checkbox" name="choice" value="baoma">baoma
+            <input type="checkbox" name="choice" value="bentian">bentian
+            <!--提交按钮-->
+            <input type="submit" value="提交">
+            <!--button类型，创建按钮-->
+            <input type="button" value="播放">
+            <!--button标签定义提交按钮-->
+            <button>暂停</button>
+            <!--select定义下拉列表
+            option 下拉列表选项-->
+            <select name="" id="">
+                <option value="baoma">baoma</option>
+                <option value="ba" selected>b</option>
+                <option value="baoma">ba</option>
+                <option value="baoma">bao</option>
+            </select>
+            <select name="" id="">
+                <!--optgroup:选项组，相关选项归类为一组
+                label：标记每一类的总称
+                selected: 预留的被选中选项-->
+                <optgroup label="cars1">
+                    <option value="baoma">baoma</option>
+                    <option value="ba" selected>b</option>
+                    <option value="baoma">ba</option>
+                    <option value="baoma">bao</option>
+                </optgroup>
+                <optgroup label="cars2">
+                    <option value="baoma">baoma</option>
+                    <option value="ba" selected>b</option>
+                    <option value="baoma">ba</option>
+                    <option value="baoma">bao</option>
+                </optgroup>
+            </select>
+            <br>
+            <!--文字也是由标签构成的-->
+            <!--label标签  标记相对应的input标签-->
+            <!--for="id名"  将当前label与对应的id名标签绑定在一起-->
+            <label for="demo2">姓名</label> 
+            <input id="demo1" type="text" placeholder="请输入名称">
+            <br>
+            <!--文字也是有标签构成的-->
+            <label for="demo1">姓名</label> 
+            <input id="demo2" type="text" placeholder="请输入名称">
+            
+        </form>
+    </body>
+</html>

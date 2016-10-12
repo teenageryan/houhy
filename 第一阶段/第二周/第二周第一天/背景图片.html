@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>背景图片</title>
+        <style>
+            html{
+                height: 100%;
+            }
+            body{
+                height: 100%;
+                background-color: red;
+                background-image: url(leaf.jpg);
+                /*当背景图片大小小于标签大小时，背景图片会在两个方向上（水平和垂直）平铺，
+                直到填满整个空间*/
+                background-repeat: no-repeat;   
+                /*处理背景图片在两个方向上是否重复；*/
+                /*background-repeat: repeat-x;*/
+                /*处理背景图片在x轴重复*/
+                /*background-repeat: repeat-y;*/
+                /*处理图片在y轴重复*/
+                background-position:100px 50px; 
+                background-position: 50px;    
+                /*固定值：
+                两个值时：x轴，y轴；
+                一个值时：x轴；y轴自动处理，默认为50%；*/
+                /*background-position: 100% 100%;*/
+                /*右下角*/
+                /*background-position: bottom right;*/
+                /*右下角
+                top left;top center; top right;
+                center left;center center;center right;
+                bottom left;bottom center;bottom right;*/
+                background-size: 100% 100%;
+                /*百分比是根据当前的标签大小而定的，
+                一个值时，为背景图片的宽度，高度是按比例变化的；
+                两个值时，为宽度和高度*/
+                /*简写属性写样式时，先写简写属性，再单独处理直接属性*/
+                background: red url(leaf.jpg) no-repeat;
+                background-position: 100px;
+                background-size: 20%;
+            }
+            /*流式布局：从上到下，从左到右，尽可能少的占用空间*/
+        </style>
+    </head>
+    <body>
+        
+    </body>
+</html>

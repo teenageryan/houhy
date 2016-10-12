@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>导航变化</title>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                margin: 0;
+                color: white;
+                
+            }
+            main{
+                width: 50%;
+                margin: 30px auto;
+            }
+            ul{
+                list-style: none;
+                padding: 0px;
+                margin: 10px;
+                text-align: center;
+            }
+            li{
+                display: inline-block;
+            }
+            div{
+                margin-left: 50px;
+            }
+            span{
+                display: inline-block;
+                height: 15px;
+                width: 15px;
+                background: red;
+                border: 1px solid red;
+            }
+            #s>li{
+                padding:10px 30px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/g.css">
+    </head>
+    <body>
+        <main>
+            <div>
+                <span id="g"></span>
+                <span id="f"></span>
+                <span id="e"></span>
+            </div>
+            <ul id="s">
+                <li>首页</li>
+                <li>内容</li>
+                <li>详情</li>
+                <li>关于</li>
+                <li>联系</li>
+            </ul>
+        </main>
+        <script>          
+            var spans = document.querySelectorAll('span')
+            var link = document.querySelector('link')
+            for(var i =0;i < spans.length;i++){
+                // span[i].index = i;
+                spans[i].onclick = function(){
+                    link['href'] = 'css/' + this.id +'.css'
+                }
+            }
+        </script>
+    </body>
+</html>

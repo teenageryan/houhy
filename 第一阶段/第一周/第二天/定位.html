@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="charles">
+        <title>定位</title>
+        <style>
+            div{
+                height: 600px;
+                width: 600px;
+                /*设置边框弧度*/
+                /*border-radius:20px;*/
+                /*设置为圆形*/
+                border-radius:50%;
+                background-image:url("1.jpg");
+                border: 20px dotted lightblue;
+                /*border-right:10px dotted lightblue;*/
+        /*border：solid 实线   dotted 点  dashed 虚线*/
+            }
+        </style>
+    </head>
+    <body>
+        <!--position：relative、absolute、fixed-->
+        <!--fixed可以将某块属性固定显示在窗口某个位置，配合z-index，
+        层级越高（数字越大），显示越靠前-->
+        <!--a链接标签配合id选择器，实现页面内跳转-->
+        <ul>
+            <li><a href="#dier">第二</a></li>
+            <li><a href="#disan">第三</a></li>
+            <li><a href=""></a></li>
+        </ul>
+        <h2 id="dier"><img src="1.jpg" alt=""></h2>
+        <h2 id="disan"><img src="1.jpg" alt=""></h2>
+        <h2></h2>
+        <!--设置圆角-->
+        <div></div>
+    </body>
+</html>

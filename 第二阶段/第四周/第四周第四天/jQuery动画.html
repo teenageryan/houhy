@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>jQuery自定义动画</title>
+        <script src="jquery.js"></script>
+        <style>
+            div{
+                width: 200px;
+                height: 100px;
+                background: red;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            div标签创建自定义动画
+        </div>   
+        <button id="start">开始动画</button> 
+        <button id="stop">停止动画</button>
+        <button id="stopAll">停止所有动画</button>
+        <button id="end">结束动画</button>
+        <script>
+            
+            // jQuery提供了自定义创建动画的方法 $(selector).animate({
+            //     name:value           样式名称-样式值
+            // },time)
+            
+            $(function(){
+                $('#start').click(function(){
+                    $('div').animate({
+                        // width:'500px',
+                        // height:'400px',
+                        fontSize:'30px'
+                    },5000)
+                    $('div').animate({
+                        width:'500px',
+                        height:'400px'
+                    },5000)
+                })
+                
+                // 停止当前正在执行的动画，如果动画没有执行完，点击开始可以继续执行
+                $('#stop').click(function(){
+                    $('div').stop()
+                })
+                
+                //停止所有动画的执行，如果动画没有执行完毕，点击开始可以继续
+                 $('#stopAll').click(function(){
+                    $('div').stop(true)
+                })
+                
+                //快速完成当前动画，点击开始还会执行下一个动画
+                 $('#end').click(function(){
+                    $('div').stop(true,true)
+                })
+            })
+        </script>    
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滚动轮播插件及面向对象</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+<style>
+    div{
+        height: 400px;
+        overflow: hidden;
+        width: 300px;
+        margin: 0 auto;
+        position: relative;
+    }
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+    }
+    .img>li{
+        width: 300px;
+        height: 400px;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    .num{
+        text-align: center;
+        position: relative;
+        top: 350px;
+
+    }
+    .num>li{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid gray;
+        display: inline-block;
+    }
+    .cur{
+        background: lightblue;
+    }
+    .img{
+        position: absolute;
+    }
+</style>
+<main>
+    <div class="box">
+        <ul class="img">
+            <li><img src="img/3.jpg" alt=""/></li>
+            <li><img src="img/6.jpg" alt=""/></li>
+            <li><img src="img/11.jpg" alt=""/></li>
+        </ul>
+        <ul class="num">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <div class="box">
+        <ul class="img">
+            <li><img src="img/3.jpg" alt=""/></li>
+            <li><img src="img/6.jpg" alt=""/></li>
+            <li><img src="img/11.jpg" alt=""/></li>
+        </ul>
+        <ul class="num">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+</main>
+</body>
+<script src="js/scroSlid.js"></script>
+<script>
+    $('.box').maria()
+</script>
+</html>

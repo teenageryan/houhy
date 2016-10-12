@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二级导航</title>
+    <script src="jquery.js"></script>
+</head>
+<style>
+    .nav{
+        margin: 150px 0;
+    }
+    ul{
+        padding: 0;
+        list-style: none;
+        margin: 0 auto;
+        width: 60%;
+        text-align: center;
+    }
+    .one{
+        background: lemonchiffon;
+    }
+    .one li{
+        display: inline-block;
+        margin: 10px;
+    }
+    a{
+        text-decoration: none;
+        color: #000000;
+        padding:20px 53px;
+        display: block;
+        background: wheat;
+    }
+    .one>li:nth-of-type(2){
+        position: relative;
+    }
+    .two{
+        display: none;
+        position: absolute;
+        left: -10px;
+        width: 100%;
+    }
+    .two>li{
+        width: 100%;
+    }
+    .two a{
+        width: 100%;
+        padding:30px 0;
+    }
+    /*li:nth-of-type(2):hover .two{*/
+        /*display: block;*/
+    /*}*/
+</style>
+<body>
+<nav class="nav">
+    <ul class="one">
+        <li><a href="">er</a></li>
+        <li><a>ji</a>
+            <ul class="two">
+                <li><a href="">xiao</a></li>
+                <li><a href="">dao</a></li>
+            </ul>
+        </li>
+        <li><a href="">dao</a></li>
+        <li><a href="">hyang</a></li>
+    </ul>
+</nav>
+<nav class="nav">
+    <ul class="one">
+        <li><a href="">er</a></li>
+        <li><a>ji</a>
+            <ul class="two">
+                <li><a href="">xiao</a></li>
+                <li><a href="">dao</a></li>
+            </ul>
+        </li>
+        <li><a href="">dao</a></li>
+        <li><a href="">hyang</a></li>
+    </ul>
+</nav>
+</body>
+<script src="erdao.js"></script>
+<script>
+//    $(function(){
+//        $('.one>li').eq(1).hover(function(){
+//            $('.two').css('display','block')
+//        },function(){
+//            $('.two').css('display','none')
+//        })
+//    })
+
+$(function(){
+    $('.nav').myswim()   //引用当前方法即可指向点击事件
+})
+
+</script>
+</html>

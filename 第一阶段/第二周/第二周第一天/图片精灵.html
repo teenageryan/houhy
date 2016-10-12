@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>图片精灵</title>
+        <style>
+            body{
+                background: #333;
+            }
+            main{
+                height: 400px;
+                width: 400px;
+                margin: 50px auto;
+                 
+            }           
+            div{
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                /*将div转化为行内块元素*/
+                background: #fff url(icons.jpg);
+                background-size: 700%;
+                /*百分比是按照标签大小处理的*/
+                
+            }
+            div:nth-child(2){
+                background-position: -50px 0;
+            }
+            div:nth-child(3){
+                background-position: -100px 0;
+            }
+            div:nth-child(4){
+                background-position: -150px 0;
+            }
+            div:nth-child(5){
+                background-position: -200px 0;
+            }
+            div:nth-child(6){
+                background-position: -250px 0;
+            }
+            div:nth-child(7){
+                background-position: -300px 0;
+            }
+            /*main div:nth-child(8){
+                background-position: 0 -50px;
+            }*/
+           section:nth-child(2) div:nth-child(1){
+                background-position: 0 -50px;
+            }
+            section:nth-child(2) div:nth-child(2){
+                background-position: -50px -50px;
+            }
+            section:nth-child(2) div:nth-child(3){
+                background-position: -100px -50px;
+            }
+            section:nth-child(2) div:nth-child(4){
+                background-position: -150px -50px;
+            }
+            section:nth-child(2) div:nth-child(5){
+                background-position: -200px -50px;
+            }
+            section:nth-child(2) div:nth-child(6){
+                background-position: -250px -50px;
+            }
+            section:nth-child(2) div:nth-child(7){
+                background-position: -300px -50px;
+            }
+            section:nth-child(3) div:nth-child(1){
+                background-position: 0px -100px;
+            }
+            section:nth-child(3) div:nth-child(2){
+                background-position: -50px -100px;
+            }
+            section:nth-child(3) div:nth-child(3){
+                background-position: -100px -100px;
+            }
+            section:nth-child(3) div:nth-child(4){
+                background-position: -150px -100px;
+            }
+            section:nth-child(3) div:nth-child(5){
+                background-position: -200px -100px;
+            }
+            section:nth-child(3) div:nth-child(6){
+                background-position: -250px -100px;
+            }
+            section:nth-child(3) div:nth-child(7){
+                background-position: -300px -100px;
+            }
+            section:nth-child(4) div:nth-child(1){
+                background-position: 0px -150px;
+            }
+            section:nth-child(4) div:nth-child(2){
+                background-position: -50px -150px;
+            }
+            section:nth-child(4) div:nth-child(3){
+                background-position: -100px -150px;
+            }
+            section:nth-child(4) div:nth-child(4){
+                background-position: -150px -150px;
+            }
+            section:nth-child(4) div:nth-child(5){
+                background-position: -200px -150px;
+            }
+            section:nth-child(4) div:nth-child(6){
+                background-position: -250px -150px;
+            }
+            section:nth-child(4) div:nth-child(7){
+                background-position: -300px -150px;
+            }
+            section:nth-child(5) div:nth-child(1){
+                background-position: 0px -200px;
+            }
+            section:nth-child(5) div:nth-child(2){
+                background-position: -50px -200px;
+            }
+            section:nth-child(5) div:nth-child(3){
+                background-position: -100px -200px;
+            }
+            section:nth-child(5) div:nth-child(4){
+                background-position: -150px -200px;
+            }
+            section:nth-child(5) div:nth-child(5){
+                background-position: -200px -200px;
+            }
+            section:nth-child(5) div:nth-child(6){
+                background-position: -250px -200px;
+            }
+            section:nth-child(5) div:nth-child(7){
+                background-position: -300px -200px;
+            }
+            section:nth-child(6) div:nth-child(1){
+                background-position: 0px -250px;
+            }
+            section:nth-child(6) div:nth-child(2){
+                background-position: -50px -250px;
+            }
+            section:nth-child(6) div:nth-child(3){
+                background-position: -100px -250px;
+            }
+            section:nth-child(6) div:nth-child(4){
+                background-position: -150px -250px;
+            }
+            section:nth-child(6) div:nth-child(5){
+                background-position: -200px -250px;
+            }
+            section:nth-child(6) div:nth-child(6){
+                background-position: -250px -250px;
+            }
+            section:nth-child(6) div:nth-child(7){
+                background-position: -300px -250px;
+            }
+            section:nth-child(7) div:nth-child(1){
+                background-position: 0px -300px;
+            }
+            section:nth-child(7) div:nth-child(2){
+                background-position: -50px -300px;
+            }
+            section:nth-child(7) div:nth-child(3){
+                background-position: -100px -300px;
+            }
+            section:nth-child(7) div:nth-child(4){
+                background-position: -150px -300px;
+            }
+            section:nth-child(7) div:nth-child(5){
+                background-position: -200px -300px;
+            }
+            section:nth-child(7) div:nth-child(6){
+                background-position: -250px -300px;
+            }
+            section:nth-child(7) div:nth-child(7){
+                background-position: -300px -300px;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+        <section>
+            <!--第一行-->
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>  
+            <div> </div>         
+        </section>
+        <section>
+            <!--第二行-->
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>  
+            <div> </div> 
+        </section>
+        <section>
+            <!--第三行-->
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+        </section>
+        <section>
+            <!--第四行-->
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+        </section>
+        <section>
+            <!--第五行-->
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+        </section>
+        <section>
+            <!--第六行-->
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+        </section>
+        <section>
+            <!--第七行-->
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
+        </section> 
+        </main>  
+        <!--main>(div>(div*2))*2 
+        <main>
+            <div>
+                <div></div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+                <div></div>
+            </div>
+        </main>        -->
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数的继承 -- call继承</title>
+</head>
+<body>
+<script>
+    function Stu(name){
+        this.name = name
+        this.age = 18
+    }
+    Stu.prototype.sing = function(){
+        alert( this.name + '会唱歌')
+    }
+//    通过call(),改变了stu函数中this的指向，使其指向low
+    function low(name,color){
+        Stu.call(this)
+        this.name = name
+        this.color = color
+    }
+
+    low.prototype = new Stu()
+    low.prototype.constructor = low
+    var ming = new low('小明','白色')
+//构造函数内部自定义的属性和方法可以调用，其原型链中的方法和属性不能调用
+
+
+    console.log(ming)
+    ming.sing()
+//    构造函数内部自定义的属性和方法可以被继承，其原型链中的方法和属性不能被继承
+    console.log(ming.__proto__)
+</script>
+</body>
+</html>

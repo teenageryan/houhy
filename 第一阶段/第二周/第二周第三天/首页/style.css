@@ -1,0 +1,134 @@
+body{
+    margin: 0px;
+}
+header{
+    height: 80px;
+    width: 100%;
+    background-color: honeydew;
+}
+header>div{
+    margin: 0 auto;
+}
+header>div>span:first-child{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-image: url(h.jpg);
+    background-size: 100%;
+    margin-top:10px;
+    margin-left: 230px;
+    /*background-repeat: no-repeat;*/
+}
+header>div>span:nth-child(2){
+    position: absolute;
+    margin-top:10px;
+    margin-left: 300px;
+    font-size: 25px;
+}
+header>div>span:nth-child(2) small{
+    display: block;
+    font-size: 15px;
+}
+ul{
+    float: right;
+    list-style: none;
+    margin: 30px 200px;
+}
+ul>li{
+    float: left;
+    padding: 0 10px;       
+    font-size: 12px;
+}
+header ul>li{
+    border-right: 1px solid gray;
+}
+main{ 
+    background-repeat: no-repeat;
+    background-size: 100%;  
+    position: relative;  
+}
+main section:nth-child(1)>span:first-child{
+    height: 400px;
+    width: 100%;
+}
+main section:nth-child(1)>span:first-child>img{
+    height: 100%;
+    width: 100%;
+}
+main>span{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    bottom: 10px;
+    left: 650px;    
+}
+main>span:nth-child(2){
+    left: 670px;
+    background-color: white;
+}
+main>span:nth-child(3){
+    left: 690px;
+    background-color: white;
+}
+main>section{
+    position: relative;
+    margin: 0 auto;
+
+}
+main section:nth-of-type(2)>ul>li>h5{
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+}
+main section:nth-of-type(2)>ul>li{  
+    margin: 50px;
+    height:160px;
+    width: 200px;
+    float: left;
+    border-right: none; 
+}
+main section:nth-child(2)>ul>li>img{
+    width: 300px;
+    height: 160px;
+}
+footer{
+    clear: both;
+}
+footer section{
+    height: 40px;
+    width: 100%;
+    position: relative;
+}
+footer section:first-child{ 
+    
+    /*top: 500px;*/
+    background-color: lightgray;
+}
+footer section:nth-child(2){
+    /*top: 500px;  */
+    background-color: wheat;
+}
+footer section:nth-child(1)>ul{
+    position: absolute;
+}
+footer section:nth-child(2)>ul{
+    position: relative;
+    border-right: none; 
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: gray;
+    font-size: 15px;
+}
+a:active{
+    color: rosybrown;
+}
+/*a:visited{
+    color: skyblue;
+}*/
+
+

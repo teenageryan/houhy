@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>日历</title>
+        <style>
+            main{
+                width: 30%;
+                margin: 0 auto;
+                color: olive;
+                background: #d9d9d9;
+                padding: 10px;
+            }
+            ul{
+                list-style: none;
+                padding: 0;
+                text-align: center;
+            }
+            li{
+                width: 100px;
+                display: inline-block;
+                border: 1px solid black;
+                background: #a9d9a9;
+                padding: 10px;
+                margin: 10px;
+                text-align: center;
+                box-sizing: border-box;
+            }
+           ul li span{
+                display: block;
+            }
+            div{
+                background: #a9a9a9;
+                width: 90%;
+                margin: 10px auto;
+                border: 1px solid white;
+                /*margin: 10px;*/
+            }
+            div p{
+                padding: 10px 0;
+            }
+            div p span:nth-of-type(2){
+                padding: 10px;
+            }
+            .active{
+                background: #aaa3a3;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <ul>
+                <li class="active"><span>1</span><span>JAN</span></li>
+                <li><span>2</span><span>FEB</span></li>
+                <li><span>3</span><span>MAR</span></li>
+                <li><span>4</span><span>APR</span></li>
+                <li><span>5</span><span>MAY</span></li>
+                <li><span>6</span><span>JUN</span></li>
+                <li><span>7</span><span>JUL</span></li>
+                <li><span>8</span><span>AUG</span></li>
+                <li><span>9</span><span>SEP</span></li>
+                <li><span>10</span><span>OCT</span></li>
+                <li><span>11</span><span>NOV</span></li>
+                <li><span>12</span><span>DEC</span></li>
+            </ul>
+            <div>
+                <p><span id="yue"></span><span>月节</span></p>
+                <p id="ri"></p>
+            </div>
+        </main>
+    </body>
+    <script src="rili.js"></script>
+    <script>
+        function test(){
+            this.x = 1;
+            alert(x);
+        }
+        test();
+    </script>
+</html>

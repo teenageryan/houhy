@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>全选和全不选</title>
+        <style>
+            main{
+                margin: 0 auto;
+                width: 40%;
+            }
+            form{
+                border: 1px solid #999;
+                width: 170px;
+                padding: 30px;
+                box-sizing: border-box;
+                line-height: 2;
+                margin: 0 auto;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <form action="">
+                <input type="checkbox"><span>全选</span> <span>反选</span><br>
+                <hr>
+                <input type="checkbox">选项1<br>
+                <input type="checkbox">选项2<br>
+                <input type="checkbox">选项3<br>
+                <input type="checkbox">选项4<br>
+                <input type="checkbox">选项5<br>
+                <input type="checkbox">选项6<br>
+                <input type="checkbox">选项7<br>
+                <input type="checkbox">选项8<br>
+                <input type="checkbox">选项9<br>
+                <input type="checkbox">选项10<br>
+            </form>
+        </main>
+        <script>
+            var inpt = document.querySelectorAll('input')
+            var span = document.querySelector('span')
+            var sp = document.querySelectorAll('span')[1]
+            // 判断选项卡是否全部被选中
+            // 选项被选中，inpt[i].checked为true，否则，为false，
+            // 判断每一个选项卡是否被选中，inpt[i].checked为真，或者为假
+            
+            // for(var i=1 n=0;i < inpt.length;i++){
+            //     console.log(i)
+            //     console.log(inpt[i].checked)
+            //     if(inpt[i].checked){
+            //         n++
+            //     }
+            // }
+            // console.log(n)    // 当前被选中的选项卡为n个
+            // 点击时执行函数
+           function action(){
+               for(var i=1,n=0;i < inpt.length;i++){
+                    // console.log(i)
+                    // console.log(inpt[i].checked)
+                    // if(inpt[i].checked){
+                    //     n++
+                    // }
+                    inpt[i].checked && n++
+                }
+                // console.log(n)
+                // 当n=10时，第一个input也被选中，即inpt[0].checked为true
+                // console.log(n == inpt.length - 1)     输出为true或false
+                inpt[0].checked = (n == inpt.length - 1)
+                // 当全选为true的时候，文字内容为全不选，否则全选
+                span.innerHTML = inpt[0].checked ? '全不选':'全选'
+           }
+        //    实时监测当前checked的真假
+           for(var i=1;i < inpt.length;i++){
+               inpt[i].onclick = function(){
+                   action()
+               }
+           }
+        //    当第一个被选中时，下面选项全部被选中，如果全部已被选中，则全不选
+        // 第一个input.checked的值，与选项卡的值，是一一对应的
+        inpt[0].onclick = function(){
+            for(var i=1;i < inpt.length;i++){
+                inpt[i].checked = this.checked
+            }
+            action()
+        }
+        // 循环取反
+        sp.onclick = function(){
+            for(var i=1;i < inpt.length;i++){
+                inpt[i].checked = !inpt[i].checked
+            }
+            action()
+        }
+        
+        //    var inpt = document.querySelectorAll('input')
+        //    var span = document.querySelector('span')
+        //    var sp = document.querySelectorAll('span')[1]
+        //    inpt[0].onclick = function click(){
+        //         // console.log(inpt[0].checked)
+        //         if(inpt[0].checked){
+        //             for(var i=1;i < inpt.length;i++){
+        //                 inpt[i].checked = true
+        //             }
+        //           span.innerHTML = '全不选'
+        //         }
+        //         else{
+        //             for(var i=1;i < inpt.length;i++){
+        //                 inpt[i].checked = false
+        //             }
+        //           span.innerHTML = '全选'
+        //         }
+        //     }
+        //    sp.onclick = function(){
+        //        console.log(sp)
+        //         for(var i=1;i < inpt.length;i++){
+        //             if(inpt[i].checked){
+        //                 inpt[i].checked = false
+        //             }
+        //             else{
+        //                 inpt[i].checked = true
+        //             }
+        //         }
+        //     }
+        //     var count = 0
+        //    for(var j =1;j < inpt.length;j++){
+        //        inpt[j].onclick = function(){
+        //              for(var i=1;i < inpt.length;i++){
+        //                  inpt[i].index = i
+        //                 if(this.checked == true){
+        //                     count ++
+        //                 }
+                        
+        //             }
+        //             console.log(count)
+        //             if( count == inpt.length-1){
+        //                 inpt[0].checked = true
+        //                 //  console.log(inpt[0].checked)
+                        
+        //             }
+        //             else{
+        //                 inpt[0].checked = false
+                        
+        //             }
+        //         }
+        //    }
+                
+            
+        </script>
+    </body>
+</html>

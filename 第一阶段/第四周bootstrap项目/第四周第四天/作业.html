@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!--language:中文语言-->
+<html lang="zh-CN">
+
+<head>
+    <!--字符编码：简体中文-->
+    <meta charset="utf-8">
+    <!--设置IE浏览器兼容性，以最新的IE版本兼容当前网页-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--width 属性控制设备的宽度。假设您的网站将被带有不同屏幕分辨率的设备浏览，那么将
+        它设置为 device-width 可以确保它能正确呈现在不同设备上。-->
+    <!--initial-scale=1.0 确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放。-->
+    <!--maximum-scale=1.0 与 user-scalable=no 一起使用。这样禁用缩放功能后，用户只能滚动屏幕-->
+    <!--最后两个值视情况可以不写-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--<meta name="author" content="常伟">-->
+    <title>Bootstrap</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        header{
+            width: 100%;
+            background-color: #CF4646;
+            overflow: hidden;
+        }
+        main{
+            margin-top: 50px;
+        }
+        .navbar-inverse{
+            background-color: #CF4646;
+            border-color: #CF4646;
+        }
+        .navbar{
+            margin-bottom: 0px;
+        }
+        .navbar-inverse .navbar-brand{
+            color: #E8EFEF;
+        }
+        .navbar-inverse .navbar-nav > li > a{
+            color: #DFD5E8;
+        }
+        .carousel-inner .item>img{
+            height: 500px;
+            width: 100%;
+        }
+        .navbar-inverse .navbar-nav > .open > a:focus{
+            background-color: #CF4646;
+        }
+        main>.container>.row{
+            margin: 60px 0;
+        }
+        .navbar-collapse{
+            float: right;
+        }
+        p{
+            font-size: 18px;
+        }
+        .badge{
+            float: right;
+        }
+        footer>span{
+            display: block;
+            text-align: center;
+            color: #B8AAC5;
+        }
+        .navbar-inverse .navbar-toggle:focus{
+            background-color: #CF4646;
+        }
+        .navbar-inverse .navbar-toggle{
+            border-color: #CF4646;
+        }
+        .navbar-inverse .navbar-toggle:hover{
+            background-color: #CF4646;
+        }
+        .navbar-inverse .navbar-collapse{
+            border-color: #CF4646;
+        }
+        .navbar-inverse .navbar-nav > .open > a{
+            background-color: #CF4646;
+        }
+        /*解决导航条不在一行问题*/
+        @media (max-width:990px) and (min-width:768px){
+            .nav > li > a{
+                padding:15px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+  <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+            <div class="navbar-header">
+                 <button type="button" class="navbar-toggle" data-toggle="collapse" 
+                    data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" data-toggle="modal" data-target="#myModal">Gulp中文网</a>
+            </div>
+            <div  class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">中文文档</a></li>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">中文文档</a></li>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">中文文档</a></li>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">中文文档</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        入门指南 <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">API</a></li>
+                            <li><a href="#">插件开发</a></li>
+                            <li><a href="#">常见问题</a></li>
+                            <li><a href="#">使用技巧</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+</header>
+<main>
+    <div id="myCarousel" class="carousel slide">
+        <!-- 轮播（Carousel）指标 -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+        <!-- 轮播（Carousel）项目 -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="img/e.jpg" alt="First slide">
+            </div>
+            <div class="item">
+                <img src="img/c.jpg" alt="Second slide">
+            </div>
+            <div class="item">
+                <img src="img/d.jpg" alt="Third slide">
+            </div>
+            <div class="item">
+                <img src="img/g.jpg" alt="Fourth slide">
+            </div>
+        </div>
+        <!-- 轮播（Carousel）导航 -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>易于使用</h2>
+                <p>
+                    通过代码优于配置的策略，Gulp 让简单的任务简单，复杂的任务可管理。
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h2>构建快速</h2>
+                <p>
+                    利用 Node.js 流的威力，你可以快速构建项目并减少频繁的 IO 操作。
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h2>插件高质</h2>
+                <p>
+                    Gulp 严格的插件指南确保插件如你期望的那样简洁高质得工作。
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h2>易于学习</h2>
+                <p>
+                    通过最少的 API，掌握 Gulp 毫不费力，构建工作尽在掌握：如同一系列流管道。
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <ul id="myTab" class="nav nav-tabs">
+                    <li class="active"><a href="#home" data-toggle="tab">
+      W3Cschool Home</a>
+                    </li>
+                    <li><a href="#ios" data-toggle="tab">iOS</a></li>
+                    <li class="dropdown">
+                        <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">Java <b class="caret"></b>
+      </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+                            <li><a href="#jmeter" tabindex="-1" data-toggle="tab">
+            jmeter</a>
+                            </li>
+                            <li><a href="#ejb" tabindex="-1" data-toggle="tab">
+            ejb</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade in active" id="home">
+                        <p>W3Cschoool菜鸟教程是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。</p>
+                    </div>
+                    <div class="tab-pane fade" id="ios">
+                        <p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS
+                            X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+                    </div>
+                    <div class="tab-pane fade" id="jmeter">
+                        <p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+                    </div>
+                    <div class="tab-pane fade" id="ejb">
+                        <p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" 
+          href="#collapseOne">
+          点击我进行展开，再次点击我进行折叠。第 1 部分
+        </a>
+      </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                vice lomo.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" 
+          href="#collapseTwo">
+          点击我进行展开，再次点击我进行折叠。第 2 部分
+        </a>
+      </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                vice lomo.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" 
+          href="#collapseThree">
+          点击我进行展开，再次点击我进行折叠。第 3 部分
+          <span class="badge">50</span>
+        </a>
+      </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                vice lomo.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+        <a data-toggle="collapse" 
+          href="#collapseFour">
+          点击我进行展开，再次点击我进行折叠。第 4 部分
+        </a>
+      </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                vice lomo.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+ </main>
+ <footer>
+     <span>&copy;Gulp 中文网 2015</span>
+     <span>京ICP备11008151号 | 京公网安备11010802014853</span>
+ </footer>
+
+<!--<button class="btn btn-primary btn-lg" data-toggle="modal" 
+   data-target="#myModal">
+   开始演示模态框
+</button>-->
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               模态框（Modal）标题
+            </h4>
+         </div>
+         <div class="modal-body">
+            在这里添加一些文本
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">关闭
+            </button>
+            <button type="button" class="btn btn-primary">
+               提交更改
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+</div><!-- /.modal -->
+</div>
+
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--bootstrap是基于jQuery的框架-->
+
+</html>
+<script>
+    $('.slide').carousel({
+  interval: 4000
+})
+//    $(function () {
+//       $('#myTab li:eq(1) a').tab('show');//默认选取第二个标签页（从 0 开始索引）
+//    });
+</script>

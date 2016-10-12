@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>yemian</title>
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <style>
+            html{
+                height: 100%;
+            }
+            body{
+                margin: 0px;
+                height: 100%;
+                color: white;
+            }
+            main{
+                height: 100%;
+                background-image: url(ni.jpg);
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: space-between;
+            }
+            #middle{
+                height: 150px;
+                width: 150px;
+                border-radius: 50%;
+                background-image: url(f.jpg);
+            }
+            .midd{
+                width: 55%;
+                display: flex;
+                justify-content: center;
+            }
+            .fa{
+                font-size: 50px;
+            }
+            main>div:nth-of-type(1){
+                display: flex;
+                justify-content: space-between;
+                width: 90%;
+            }
+            main>div:nth-of-type(1)>div:nth-of-type(2){
+                font-size: 20px;
+            }
+            .pass{
+                width: 55%;
+                border-bottom: 1px solid white;
+                padding: 5px 0;
+            }
+            .pass>div:nth-of-type(1){
+                border-bottom: 1px solid white;
+                padding: 5px 0;
+                margin: 20px 0px;
+            }
+            
+            #footer{
+                display: flex;
+                justify-content: space-between;
+                width: 70%;
+            }
+            #login{
+                width: 70%;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            } 
+            #log{
+                background-color: chartreuse;
+                border-radius: 15px;
+                width:  80%;
+                margin-bottom: 30px;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                font-size: 20px;
+            }
+            #head{
+                display: flex;
+                align-items: baseline;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div id="head">
+                <div>
+                    返回 
+                </div>
+                <div> 登录</div>
+                <div>注册</div>
+            </div>
+            <div class="midd">
+                <div id="middle"></div>
+            </div>    
+            <div class="pass">
+                <div>账号 2222222222222222   
+                </div>
+                <div>密码 33333333</div>
+            </div>
+            <div id="login">
+                <div id="log"><div>登 录</div></div>
+                <div id="in">忘记密码？</div>
+            </div>
+            <div id="footer">
+                <div class="fa fa-weibo"></div>
+                <div class="fa fa-qq"></div>
+                <div class="fa fa-weixin"></div>
+            </div>
+        </main>
+    </body>
+</html>

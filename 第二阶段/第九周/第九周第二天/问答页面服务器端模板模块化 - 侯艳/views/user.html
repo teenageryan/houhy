@@ -1,0 +1,45 @@
+{{include 'same/header'}}
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid container">
+        <div class="navbar-header">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </div>
+        <div class="reg">
+            <ul class="nav navbar-nav">
+                <li><a href="#">个人资料</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <!--<form action="/user/photo" method="post" enctype="multipart/form-data">-->
+        <!--&lt;!&ndash;name属性必须写&ndash;&gt;-->
+
+        <!--<input type="file" name="photo" value="浏览……"/>-->
+        <!--<br/>-->
+        <!--<input type="submit" value="上传头像" accept=".jpg/"/>-->
+    <!--</form>-->
+
+    <form action="/user/photo" method="POST" enctype="multipart/form-data">
+        <!--<div class="form-group">-->
+            <input type="file" name="photo" required accept=".jpg,.png">
+        <!--</div>-->
+        <input type="submit" value="上传头像"/>
+    </form>
+</div>
+
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--bootstrap是基于jQuery的框架-->
+<script src="js/jquery.js"></script>
+<script src="js/user.js"></script>
+</html>

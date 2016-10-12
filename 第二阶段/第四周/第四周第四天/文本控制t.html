@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>文本控制</title>
+        <script src="jquery.js"></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <form action="">
+            <textarea name="" id="text" cols="30" rows="10" maxlength="280"></textarea>
+        </form>
+        <p>请输入内容，
+            <span>可以</span>
+            输入<span>140</span>个字
+         </p>
+         <script>
+              $(function(){
+                    $('#text').val('')
+                // 两个字母/数字算一个汉字
+                // 当Unicode编码值大于255的时候，可以当做文字
+                // val（）获取文本框内容
+                // var len = $('#text').val().length
+                // console.log(typeof($('#text').val()))
+                function action(){
+                    // console.log('111')
+                    var total = 140
+                    var len = $('#text').val().length
+                    var temp = 0
+                    $('span').eq(0).html('你还可以')
+                    // 判定输入的内容（字符串）中的字符是文字还是字母
+                    for(var i=0;i < len;i++){
+                        if($('#text').val().charCodeAt(i) > 256){
+                            temp +=1
+                        }
+                        else{
+                            temp +=0.5
+                        }
+                    }
+                    var result = Math.ceil( total - temp )
+                    if( result >=0 ){
+                        $('span').eq(1).html( result )
+                    }
+                    else{
+                        // alert('不能再输了')
+                    }
+                }
+                
+                // 获取焦点时执行
+                $('#text').focus(function(){
+                    action()
+                })
+                
+                // 用户输入时执行   jquery中没有input（）方法，可以通过绑定实现.on('input',function(){})
+                $('#text').on("input",function(){
+                    action()
+                })
+            })
+            // var texts = document.querySelector('#text')
+            // texts.oninput = function(){
+            //     console.log(texts.value.length)
+            // }
+         </script>
+        
+    </body>
+</html>

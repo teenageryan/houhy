@@ -1,0 +1,64 @@
+<!DOCTPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="晓公举">
+        <title>正则表达式3</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <script>
+            // 1. '()' 用来分组 可以把一组看成一个字符
+            // reg1.exec(str1) 返回值是一个数组 如果有匹配值
+            // 数组中的第一个值:匹配出来的第一个值
+            // 数组其它的值：是分组的值
+            var reg1 = /(goole)(baidu)/
+            var str1 = 'goolegoolebaidu'
+            console.log(reg1.exec(str1)) //["goolegoolebaidu", "goole", "baidu"]
+            // RegExp.$1 首先执行后，就可以 RegExp.$+num 形式来访问到第几个分组的值
+            console.log(RegExp.$1) //goole
+            console.log(RegExp.$2) //baidu
+
+            console.log(str1.replace(reg1,'$2$1'))  //goolebaidugoole
+
+            var reg2 = /(\b[a-zA-Z-])([a-zA-Z-]*)([a-zA-Z-]?\b)/g
+            var str2 = 'this iS an a aPplE'
+            // console.log(reg.exec(str2))
+            console.log(str2.replace(reg2,function(a,b,c,d){
+                return b.toUpperCase() + c.toLowerCase() + d.toLowerCase()
+            })) //This Is An Apple
+
+            // 2.贪婪模式  * +
+            var reg3 = /go+/
+            var str3= 'goooooooofsljfl'
+            console.log(reg3.exec(str3)) 
+            // 3.惰性模式
+            var reg4 = /go+?/
+            var str4= 'goooooooofsljfl'
+            console.log(reg4.exec(str4))
+
+            var reg5 = /8(.*?)8/g
+            var str5= '8goole8 8biying8 8baidu8 8sougou8'
+            var str = str5.replace(reg5,'<strong>$1</strong>')
+            document.body.innerHTML = str
+            // console.log(str)
+
+            // 4.()捕获性分组  (?:) 非捕获性分组
+            var reg6 = /8(?:.*?)8/g
+            var str6 = '8goole8 8biying8 8baidu8 8sougou8'
+            console.log(reg6.exec(str6)) //8goole8
+
+            // 5.嵌套分组
+            var reg7 = /(a(b(c)))(d)/
+            var str7 = 'abcdefg'
+            console.log(reg7.exec(str7))  // ["abcd", "abc", "bc", "c", "d"]
+            // 第一步：全部的内容 abcd
+            // 第二步：第一个括号中 abc 
+            // 第三步：第一个括号中 第一个括号 bc
+            // 第四步：第一个括号内第一个括号再括号内 c
+            // 第五步：第二个括号中 d
+        </script>
+    </body>
+<html>

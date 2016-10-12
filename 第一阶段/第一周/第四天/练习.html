@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title></title>
+        <style>
+            table{
+                width: 80%;
+                height: 300px;
+                /*合并边框*/
+                border-collapse: collapse;
+                text-align: center;
+            }
+            td{
+                border: 2px solid green;
+            }
+        </style>
+    </head>
+    <body>
+        <!--table声明表格
+        th声明表头（第一行）
+        tr声明一行
+        td声明一个单元格
+        caption声明表格标题-->
+        <!--colspan表示横向合并单元格-->
+        <!--colspan=“2”表示横向合并2个单元格-->
+        <!--rowspan表示纵向合并单元格-->
+        <!--rowspan=“2”表示纵向合并单元格-->
+        <table border="1">
+            <caption>HTML5课程</caption>
+            <tr>
+                <th>星期一</th>
+                <th>星期二</th>
+                <th>星期三</th>
+                <th>星期四</th>
+                <th>星期五</th>
+                <th>星期六</th>
+                <th>星期日</th>
+            </tr>
+            <tr>
+                <td colspan="6">HTML5</td>
+               <!--<td>HTML5</td>
+                <td>HTML5</td>
+                <td>HTML5</td>
+                <td>HTML5</td>
+                <td>HTML5</td>-->
+                <td rowspan="3">休息</td>
+            </tr>
+            <tr>
+                <td>HTML5</td>
+                <td>HTML5</td>
+                <td>HTML5</td>
+                <td>HTML5</td>
+                <td>HTML5</td>
+                <td>自习</td>
+                <!--<td>休息</td>-->
+            </tr>
+            <tr>
+                <td>HTML5</td>
+                <td>HTML5</td>
+                <td>HTML5</td>
+                <td>HTML5</td>
+                <td>HTML5</td>
+                <td>休息</td>
+                <!--<td>休息</td>-->
+            </tr>
+            
+        </table>
+    </body>
+</html>

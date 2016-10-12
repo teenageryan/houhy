@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>变量及函数的作用域</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <script>
+            // 全局变量和局部变量
+            // 局部变量：只能在局部的作用域内更改变量的值
+            // 在方法执行的时候创建，结束的时候自动销毁
+            var score = 65;
+            if(score>60){
+                var i = 0;
+                // console.log(i);
+            }
+            // 当条件为真时，执行的是语句：var i = 0
+            console.log(i)
+            
+            
+            function calc(){
+                var j = 10
+                console.log(j)
+                i = 100;
+           // i 不写 var 自动识别为全局变量
+            }
+            calc()
+            // console.log(j)
+            console.log(score)
+            console.log(i)
+            // text = 300
+            
+            function show(){
+                var j = 50;
+                // console.log(text)
+            }
+            show()
+           // 全局变量：1.在函数作用域之外var声明变量
+           // 2.变量在函数作用域之内直接赋值，没有进行声明（即没有var 关键字）
+        </script>
+        <br>
+        函数的作用域
+        <script>
+            
+            function myFun(){
+                function num(a){
+                    return a;
+                }
+                num(4)
+            }
+            myFun()
+            
+            function myFun(){
+                function num(){
+                    console.log('函数')
+                }
+                num();
+            }
+            myFun();
+        </script>
+    </body>
+</html>

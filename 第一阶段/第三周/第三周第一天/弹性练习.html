@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>tanxinglianxi</title>
+        <style>
+            html{
+                height:100%;
+            }
+            body{
+                height: 100%;
+                margin: 0px;
+            }
+            main{
+                display: flex;
+                height: 100%;
+                /*flex-direction: row;*/
+                /*flex-direction: row-reverse;*/
+                flex-wrap: wrap;
+                /*flex-wrap: wrap-reverse;*/
+                /*flex-flow: column wrap;*/
+                /*justify-content: flex-end;*/
+                /*justify-content: center;*/
+                /*justify-content: space-around;*/
+                /*justify-content: space-between;*/
+                /*align-items: flex-start;*/
+                /*align-items: flex-end;*/
+                /*align-items: center;*/
+                /*不同行之间都有居中轴线*/
+                /*align-items: baseline;*/
+                /*align-items: stretch;*/
+                /*align-content: flex-start;*/
+                /*align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用*/
+                /*align-content: flex-end;*/
+                align-content: center;
+                /*所有内容居于整个容器的中间，只有一条中心轴线，其高度统一为最高高度*/
+                align-content: space-between;
+                align-content: space-around;
+                align-content: stretch;
+           }
+            section{
+                border: 1px solid black;
+                width: 20%;
+                font-size: 30px;
+                /*height: 50px;*/
+            }
+            section:nth-of-type(2){
+                font-size: 90px;
+                
+                flex-basis: 400px; 
+            }
+            section:nth-of-type(4){
+                font-size: 5px;
+            }
+            span{
+                  border: 2px solid cyan; 
+                  width: 10%; 
+                  /*height: 100px;*/
+                  font-size: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <section>1</section>
+            <section>2</section>
+            <section>3</section>
+            <section>4</section>
+            <span>your mailbox is seven minutes from mine and i </span>
+            <span>shewould getdown</span>
+            <span>sotheygive</span>
+            <span>housenoveon</span>
+            <span>smalltown</span>
+        </main>
+    </body>
+</html>

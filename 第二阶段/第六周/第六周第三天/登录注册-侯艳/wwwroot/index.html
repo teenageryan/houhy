@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<form action="">
+    <lable>昵称：</lable><input type="text" placeholder="请输入昵称" name="name" required="required" autocomplete="off" id="nic"/><br/><br/>
+    <lable>密码：</lable><input type="password" placeholder="请输入密码" name="pwd" required="required" id="pwd"/><br/><br/>
+    <input type="submit" value="登录" id="log"/>
+    <input type="button" value="注册" onclick="location.href = 'zhuce.html'"/>
+</form>
+</body>
+<script>
+   $('form').submit(function (ev) {
+       ev.preventDefault()
+       var data = $('form').serialize()
+       $.get('/login',data,function(res){
+console.log(res)
+           var f = JSON.parse(res)
+           console.log(f)
+           if(res.send('获取失败')){
+               alert('用户名不存在')
+           }
+       })
+   })
+</script>
+</html>

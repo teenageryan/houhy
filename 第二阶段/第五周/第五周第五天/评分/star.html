@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>评分</title>
+    <script src="jquery.js"></script>
+</head>
+<style>
+    main{
+        width: 50%;
+        margin: 0 auto;
+        font-size: 13px;
+        position: relative;
+    }
+    #first{
+        /*height: 30px;*/
+        /*overflow: hidden;*/
+    }
+    #first>span{
+        color: #333;
+        position: relative;
+        top: -5px;
+    }
+    #img{
+        display: inline-block;
+        height: 20px;
+        overflow: hidden;
+        margin: 0 30px 0 10px;
+    }
+    #img>img{
+        position: relative;
+    }
+    #score{
+        /*display: none;*/
+        display: inline-block;
+        width: 310px;
+        height: 20px;
+        overflow: hidden;
+    }
+    #score>span{
+       position: absolute;
+    }
+    #score>span>span{
+        color: orangered;
+    }
+    #bottom>span{
+        border: 1px solid gray;
+        width: 150px;
+        position: absolute;
+    }
+    #bottom>span:first-child{
+        left: 50px;
+    }
+    #bottom>span:nth-of-type(2){
+        left: 70px;
+    }
+    #bottom>span:nth-of-type(3){
+        left: 90px;
+    }
+    #bottom>span:nth-of-type(4){
+        left: 110px;
+    }
+    #bottom>span:nth-of-type(5){
+        left: 130px;
+    }
+    #bottom>span>span{
+        display: block;
+        color: orangered;
+    }
+    .current{
+        display: none;
+    }
+</style>
+<body>
+<main>
+    <div id="first">
+        <span>点击星星就能评分</span>
+        <div id="img">
+            <img src="star.png" alt=""/>
+            <img src="star.png" alt=""/>
+            <img src="star.png" alt=""/>
+            <img src="star.png" alt=""/>
+            <img src="star.png" alt=""/>
+        </div>
+        <div id="score">
+            <span><span>1分</span>(差得太离谱，与卖家描述的严重不符，非常不满)</span>
+            <span><span>2分</span>(部分有破损，与卖家描述的不符，不满意)</span>
+            <span><span>3分</span>(质量一般，没有卖家描述的那么好)</span>
+            <span><span>4分</span>(质量不错，与卖家描述的基本一致，还是挺满意的)</span>
+            <span><span>5分</span>(质量非常好，与卖家描述的完全一致，非常满意)</span>
+        </div>
+    </div>
+    <div id="bottom">
+        <span><span>1分 很不满意</span>差得太离谱，与卖家描述的严重不符，非常不满</span>
+        <span><span>2分 不满意</span>部分有破损，与卖家描述的不符，不满意</span>
+        <span><span>3分 一般</span>质量一般，没有卖家描述的那么好</span>
+        <span><span>4分 满意</span>质量不错，与卖家描述的基本一致，还是挺满意的</span>
+        <span><span>5分 非常满意</span>质量非常好，与卖家描述的完全一致，非常满意</span>
+    </div>
+</main>
+</body>
+<script>
+    $(function () {
+        var imgs = $('#img>img')
+        $('#bottom>span,#score>span').addClass('current')
+        $('#img>img').each(function(){
+            $('#img>img').hover(function(){
+                $(this).nextAll().css('top','0px')
+                $(this).css('top','-28px').prevAll().css('top','-28px')
+                $('#bottom>span').eq($(this).index()).removeClass('current')
+            },function(){
+                $('#bottom>span').addClass('current')
+                $(this).css('top','0px').prevAll().css('top','0px')
+                $('#img>img').eq(n).css('top','-28px').prevAll().css('top','-28px')
+            })
+        })
+
+
+         var n
+        $('#score>span').each(function () {
+            $('#img>img').click(function(){
+                n=$(this).index()
+                $('#score>span').addClass('current')
+                $(this).css('top','-28px').prevAll().css('top','-28px')
+                $('#score>span').eq($(this).index()).removeClass('current')
+            })
+        })
+
+    })
+</script>
+</html>
+<!--"很不满意|差得太离谱，与卖家描述的严重不符，非常不满",-->
+<!--"不满意|部分有破损，与卖家描述的不符，不满意",-->
+<!--"一般|质量一般，没有卖家描述的那么好",-->
+<!--"满意|质量不错，与卖家描述的基本一致，还是挺满意的",-->
+<!--"非常满意|质量非常好，与卖家描述的完全一致，非常满意"-->

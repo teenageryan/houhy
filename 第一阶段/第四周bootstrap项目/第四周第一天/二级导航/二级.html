@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>二级导航</title>
+        <style>
+            div{
+                width: 80%;
+                margin: 0 auto;
+            }
+            ul{
+                list-style: none;
+                padding: 0px;
+                margin: 0px;
+                text-align: center;
+                background: palevioletred;
+                line-height: 70px;
+            }
+            a{
+                color: #999;
+                text-decoration: none;
+                display: block;
+                padding:0px 50px;
+                background: indianred;
+                margin: 10px 20px;
+            }
+            li{
+                display: inline-block;
+                /*margin: 0 20px;*/
+            }
+            span{
+                text-align: center;
+            }
+            div>ul>li:nth-of-type(3){
+                position: relative;
+            }
+            .nav{
+                position: absolute;
+                background: none;
+                width: 100%; 
+                /*display: none;*/
+                visibility: hidden;
+            }
+            .nav li{
+                display: block;
+            }
+            div>ul>li:nth-of-type(3):hover .nav{
+                /*display: block;*/
+                visibility: visible;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <span>fjiehghjuie</span>
+            <ul>
+                <li><a href="">e</a></li>
+                <li><a href="">er</a></li>
+                <li><a href="">erj</a>
+                    <ul class="nav">
+                        <li><a href="">er</a></li>
+                        <li><a href="">ji</a></li>
+                        <li><a href="">dao</a></li>
+                        <li><a href="">hang</a></li>
+                    </ul>
+                </li>
+                <li><a href="">erji</a></li>
+                <li><a href="">erjidao</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

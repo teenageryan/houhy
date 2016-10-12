@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>获取标签的属性</title>
+        <script src="jquery.js"></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <div title="名称" id="demo" class="d1" style="background:red;color:#eee">
+            获取标签的属性，添加、删除等
+            <span>新加span标签</span>
+        </div>  
+        <p>第一个段落</p>
+        <p>第二个段落</p>
+        <p>第三个段落</p>  
+        <script>
+            $(function(){
+               console.log( $('#demo').attr('style'))
+            //    设置一个属性 attr(key,value)
+               $('p').attr('class','p1')
+            //    设置多个属性 attr({name:value,name:value})   
+               $('p').attr({
+                   'id':'d',
+                   'title':'e',
+                   'style':'background:red'
+                })
+                //移除某个属性
+                $('p').removeAttr('title')
+                // 增加或者移除类名
+                // 增加类名不影响之前类名存在
+                $('#demo').addClass('current de').removeClass('de')
+                $('#demo').html('替换内容 <p>haha</p> ')
+                // text()只能添加文本内容；html()可以添加标签和内容
+                // $('#demo').text('通过text替换内容 <p>haha</p> ')
+            })
+        </script>
+    </body>
+</html>

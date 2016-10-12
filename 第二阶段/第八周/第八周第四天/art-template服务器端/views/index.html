@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<article>
+    {{if boo.length == 0}}
+    <h1>无推荐书目</h1>
+    {{else}}
+    {{each boo as bo index}}
+    {{bo.name}}
+    {{bo.price}}
+    {{/each}}
+    {{/if}}
+</article>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>jQuery对象结构和作用</title>
+        <script src="jquery.js"></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <pre>
+             Dom对象和jQuery对象
+            Dom对象，通过原生js获得的对象，即通过HTML Dom规定的方法获取的对象：document.getElementById('')
+            jQuery对象，通过jQuery包装Dom对象后产生的对象，jQ独有的对象，可使用jQ方法
+            对象都有属于自己独有的属性和方法，不可以串用
+            
+            改变标签内容：
+            DOM方法：.innerHTML
+            JQ方法：.html(),.text()
+        </pre>
+        <div>
+            这是第一个DIV标签，通过两种方法获取
+        </div>
+        <div>
+            这是第二个DIV标签，通过两种方法获取
+        </div>
+        <div>
+            这是第三个DIV标签，通过两种方法获取
+        </div>
+        <p></p>
+        <script>
+            $(function(){
+                // 通过Dom方法获取标签
+                console.log( document.getElementsByTagName('div'))       //HTMLCollection
+                console.log(document.querySelector('div'))       //<div>
+                // console.log( document.getElementsByTagName('div')[0].innerHTML)
+                // console.log(document.querySelector('div').innerHTML)
+                
+                // 通过jQquery方法获取标签
+                console.log($('div'))      //object
+                console.log($())        //一个空的object
+                
+                // $()创建的是一个没有标签元素的空jquery对象
+                // $(selector)可以创建jQuery对象
+                
+                // 如果JQ封装的方法没有我们需要的方法
+                // 比如方法里并没有改变标签元素的内容方法，那么我们要怎么处理
+                // 需要把jq对象转换成dom对象，然后使用dom的方法
+                 
+                //  jQuery提供了两种方法转换成dom对象，1.$('div')[index];
+                //  2.$('div').get(index)
+                
+                 $('div')[0].innerHTML = '这是通过jq对象转化成dom对象后，使用dom方法进行内容改变'
+             //   $('div').get(0).innerHTML = '这是通过jq对象转化成dom对象后，使用dom方法进行内容改变'
+             
+            //  DOM对象转换成jQuery对象
+                var idvs = document.querySelectorAll('div')[1]
+                 $(idvs).text('这是通过DOM对象转换成jQuery对象后，使用jQuery方法进行改变的内容')
+                 
+                 console.log(this)      // DOM对象
+                 console.log($(this))    // JQ对象
+                //  $(this).addClass('')
+                
+                // jQuery对象的属性和方法
+                console.log($('div,p').length)   //通过属性获取当前jq对象中元素的个数
+                console.log($('div').context)     //返回当前文档
+                console.log($('div,p').selector)  //通过选择器获取到的元素
+                console.log($('div,p').size())     //通过方法获取元素个数
+                
+                // jQ中通过each()方法遍历对象中所有元素
+                $('div').each(function(){
+                    console.log($(this).text())
+                })
+                
+                // jQ对象相当于一个容器或者盒子，
+                // 内部可放置通过筛选器找到的元素等内容
+                
+            })
+        </script>
+    </body>
+</html>

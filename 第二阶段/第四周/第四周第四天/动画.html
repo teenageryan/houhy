@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>动画</title>
+        <script src="jquery.js"></script>
+        <style>
+            main{
+                width: 200px;
+                margin: 0 auto;
+            }
+            ul{
+                list-style: none;
+               /*position: relative;*/
+               margin: 0;
+               padding: 0;
+            }
+            li{
+                 height: 200px;
+                width: 200px;
+                position: relative;
+                overflow: hidden;
+            }
+            /*img{
+                display: inline-block;
+            }*/
+            /*li>img:nth-of-type(2){
+                left: 200px;
+            }*/
+            span{
+                position: absolute;
+                bottom: 0;
+                width: 200px;
+                background: goldenrod;
+                text-align: center;
+            }
+            span:nth-of-type(1){
+                bottom: 0px;
+            }
+            span:nth-of-type(2){
+                bottom: -20px;
+            }
+            p{
+                background: bisque;
+                margin: 0;
+                
+            }
+            div{
+                position: absolute;
+                height: 100%;
+                width: 450px;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <p>专辑推荐</p>
+            <ul>
+                <li id="o">
+                    <div>
+                        <img src="img/0.jpg" alt="">
+                        <img src="img/6.jpg" alt="">
+                    </div>
+                    <div>
+                        <span>海景</span>
+                        <span>景色</span>
+                    </div>
+                    
+                </li>
+                
+                <!--<li id="t">-->
+                        <!--<img src="img/0.jpg" alt="">
+                        <img src="img/6.jpg" alt="">-->
+                    
+                        <!--<span>海景</span>
+                        <span>景色</span>-->
+                    
+                    <!--</li>
+                <li id="th">
+                        <img src="img/0.jpg" alt="">
+                        <img src="img/6.jpg" alt="">
+                        <span>海景</span>
+                        <span>景色</span>
+                    
+                    </li>-->
+            </ul>
+        </main>
+        
+        <script>
+            $(function(){
+                $('li').hover(function(){
+                    $('div').eq(0).stop().animate({
+                        left:'-200'
+                    })
+                    $('span').eq(0).stop().animate({
+                        bottom:'-30'
+                    })
+                    $('span').eq(1).stop().animate({
+                        bottom:'0'
+                    })
+                },function(){
+                    $('div').eq(0).stop().animate({
+                        left:'0'
+                    })
+                      $('span').eq(0).stop().animate({
+                        bottom:'0'
+                    })
+                    $('span').eq(1).stop().animate({
+                        bottom:'-30'
+                    })
+                })
+                // $('li').hover(function(){
+                //     $('img').eq(0).animate({
+                //         left:'-200px'
+                //     })
+                //     $('img').eq(1).animate({
+                //         left:'0px'
+                //     })
+                //     $('img').eq(2).animate({
+                //         left:'-200px'
+                //     })
+                //     $('img').eq(3).animate({
+                //         left:'0px'
+                //     })
+                // },function(){
+                //     $('img').eq(0).animate({
+                //         left:'0px'
+                //     })
+                //     $('img').eq(1).animate({
+                //         left:'200px'
+                //     })
+                //     $('img').eq(2).animate({
+                //         left:'0px'
+                //     })
+                //     $('img').eq(3).animate({
+                //         left:'200px'
+                //     })
+                // })
+                //  $('#o').hover(function(){
+                //     $('#o img').eq(1).animate({
+                //         left:'0px'
+                //     })
+                //     $('#o span').eq(0).animate({
+                //         bottom:'-20px'
+                //     })
+                //      $('#o span').eq(1).animate({
+                //         bottom:'0px'
+                //     })
+                //     $('#o img').eq(0).animate({
+                //         left:'-200px'
+                //     })
+                // },function(){
+                //      $('#o span').eq(0).animate({
+                //         bottom:'0px'
+                //     })
+                //      $('#o span').eq(1).animate({
+                //         bottom:'-20px'
+                //     })
+                //     $('#o img').eq(1).animate({
+                //         left:'200px'
+                //     })
+                //     $('#o img').eq(0).animate({
+                //         left:'0px'
+                //     }) 
+                // })
+                
+                // // 第二行
+                //  $('#t').hover(function(){
+                //     $('#t img').eq(1).animate({
+                //         left:'0px'
+                //     })
+                //     $('#t span').eq(0).animate({
+                //         bottom:'-20px'
+                //     })
+                //      $('#t span').eq(1).animate({
+                //         bottom:'0px'
+                //     })
+                //     $('#t img').eq(0).animate({
+                //         left:'-200px'
+                //     })
+                // },function(){
+                //      $('#t span').eq(0).animate({
+                //         bottom:'0px'
+                //     })
+                //      $('#t span').eq(1).animate({
+                //         bottom:'-20px'
+                //     })
+                //     $('#t img').eq(1).animate({
+                //         left:'200px'
+                //     })
+                //     $('#t img').eq(0).animate({
+                //         left:'0px'
+                //     }) 
+                // })
+                
+                // // 第三行
+                //  $('#th').hover(function(){
+                //     $('#th img').eq(1).animate({
+                //         left:'0px'
+                //     })
+                //     $('#th span').eq(0).animate({
+                //         bottom:'-20px'
+                //     })
+                //      $('#th span').eq(1).animate({
+                //         bottom:'0px'
+                //     })
+                //     $('#th img').eq(0).animate({
+                //         left:'-200px'
+                //     })
+                // },function(){
+                //      $('#th span').eq(0).animate({
+                //         bottom:'0px'
+                //     })
+                //      $('#th span').eq(1).animate({
+                //         bottom:'-20px'
+                //     })
+                //     $('#th img').eq(1).animate({
+                //         left:'200px'
+                //     })
+                //     $('#th img').eq(0).animate({
+                //         left:'0px'
+                //     }) 
+                // })
+            })
+        </script>
+    </body>
+</html>

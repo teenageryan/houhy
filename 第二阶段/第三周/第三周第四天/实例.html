@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>按钮</title>
+        <style>
+            main{
+                width: 50%;
+                margin: 30px auto;
+                /*padding: 20px;*/
+                text-align: center;
+            }
+            div{
+                width: 200px;
+                height: 200px;
+                background: indigo;
+                margin: 10px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <button>变宽</button>
+            <button>变高</button>
+            <button>变色</button>
+            <button>隐藏</button>
+            <button>重置</button>
+            <div></div>
+        </main>
+        <script>
+            var div = document.querySelector('div')
+            var btns = document.querySelectorAll('button')
+            var arrA = ['width','height','background-color','display','display']
+            var arrV = ['300px','300px','red','none','block']
+            // 对象：实际为关联数组   obj.name = value; obj[name]=value
+            var divStyle = function(ele,attr,value){    //(标签名称，样式名称，样式值)
+                ele.style[attr] = value
+            }
+            // divAttr[0]
+            // console.log(div.style)
+            // console.log(div.styel.width)
+            // console.log(div.style.['width'])
+            
+            for(var i=0;i < btns.length;i++){
+                btns[i].index = i     //获取索引值
+                btns[i].onclick = function(){
+                    divStyle(div,arrA[this.index],arrV[this.index])
+                    if(this.index == btns.length -1){
+                        div.removeAttribute('style')
+                    }
+                }
+            }
+            // var btn2 = document.querySelectorAll('button')[1]
+            // var btn3 = document.querySelectorAll('button')[2]
+            // var btn4 = document.querySelectorAll('button')[3]
+            // var btn5 = document.querySelectorAll('button')[4]
+            // btn1.onclick = function(){
+            //     div.style.width = '300px';
+            // }
+            // btn2.onclick = function(){
+            //     div.style.height ='300px' ;
+            // }
+            // btn3.onclick = function(){
+            //     div.style.background ='green' ;
+            // }
+            // btn4.onclick = function(){
+            //     div.style.display ='none' ;
+            // }
+            // btn5.onclick = function(){
+            //     div.style.display ='block';
+            //     div.style.height = '';
+            //     div.style.width = '';
+            //     div.style.background = '';
+            // }
+        </script>
+    </body>
+</html>

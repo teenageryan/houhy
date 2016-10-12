@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>论文</title>
+        <style>
+            body{
+                background-color: #333;
+            }
+            article{
+                width: 60%;
+                height: 2000px;
+                margin: 20px auto;
+                background-color: white;
+                
+                /*内边距*/
+                padding: 80px;
+                /*内容显示模式，让内容显示宽度（80%）=外边距 + 内容宽度 +内边距*/
+                box-sizing: border-box;     /*默认为conten-box*/
+                /*box-sizing: content-box;*/
+               
+            }
+            h1,address{
+                text-align: center;
+            }
+            p{
+                text-indent: 2em;
+                /*justify两边对齐*/
+                text-align: justify;
+                /*行高：处理行间距*/
+                line-height: 180%;
+            }
+            /*figure 内容居中处理（当图片尺寸过大时，配合设置img的width百分比）*/
+            figure{
+                text-align: center;
+            }
+            figure>img{
+                width: 60%;
+            }
+            ul{
+                /*消除无序列表的小圆点*/
+                list-style: none;
+                /*消除ul的默认内边距*/
+                padding-left: 0px;
+            }
+            .yinhao:before{
+                content: '[';
+            }
+            .yinhao:after{
+                content: ']';
+            }
+            /*在段落之前插入冒号，主要对文本形式进行操作*/
+            .special:before{
+                content: '"';
+            }
+            .special:after{
+                content: '"';
+            }
+            .zhaiyao:before{
+                content: "摘要:";
+             
+                font-weight: bold;
+                font-size: 16px;
+            }
+            .keyw:before{
+                content: "关键词：";
+                font-weight: bold;
+                font-size: 16px;
+            }
+            .number:before{
+                content: "中图分类号：";
+                font-weight: bold;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <!--article文章标签-->
+        <article>
+            <!--header 标题引言相关-->
+            <header>
+                <h1>基于HTML5的移动阅读内容展示方式</h1>
+                <address>李青， 王晨升<br>
+（北京邮电大学自动化学院，北京 100876）</address>
+                <p class="zhaiyao">据“2014中国数字阅读白皮书”的大数据显示，在2014年底，手机阅读用户接近3个亿，手机阅读明显已经成为手机网民在重拾碎片时间中的主要活动之一。目前的移动阅读平台由Native App主导，Native App生命周期短、占据用户设备内存资源、上架审核流程复杂、版本更新慢的劣势日益显现。基于HTML5的移动阅读Web App，采用自适应的网页布局方式，自动识别设备屏幕宽度，适配不同分辨率的设备填充文本内容，对内容资源进行版式与流式的排版展现。满足了用户打开移动设备浏览器就能进行阅读的需求，提升阅读体验。<br>
+<span  class="keyw">Web；Native App；Web App；阅读</span><br>
+<span  class="number">TP303.2</span></p>
+            </header>
+            <!--main 论文主要部分-->
+            <main>
+                <!--<div>
+                    <img src="素材/16.jpg" alt="">
+                    <h5></h5>
+                </div>-->
+                <!--figure\figcaption-->
+                <figure>
+                    <img src="素材/16.jpg" alt="">
+                    <figcaption>图2页面初始化处理</figcaption>
+                </figure>
+                <p class="special">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam praesentium harum sequi a nihil eum, temporibus enim libero ipsa mollitia quaerat deserunt fugit, cumque tenetur architecto. Nihil culpa saepe consequuntur.</p>
+            </main>
+            <!--footer 参考文献-->
+            <footer>
+                <strong>参考文献</strong><br>
+                <ul>
+                    <li><span class="yinhao">1</span>&#x3000;刘华星, 韩庚. HTML5--下一代Web开发标准研究[J]. 计算机技术与发展, 2011，21（8）：54-59.</li>
+                    <li><span class="yinhao">2</span>王兆, 胡锦. 从用户需求分析如何初步定义产品功能[J]. 艺术与设计(理论)，2011：203-205</li>
+                    <li><span class="yinhao">3</span>黄競. 基于jQuery框架的Web前端系统构建方法的研究与应用[D].北京：北京邮电大学, 2012.</li>
+                </ul>
+            </footer>
+        </article>
+    </body>
+</html>

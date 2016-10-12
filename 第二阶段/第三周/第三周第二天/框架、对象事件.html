@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>框架、对象事件</title>
+        <style>
+            body{
+                background: black;
+                text-align: center;
+            }
+            div{
+                height: 50px;
+                background: red;
+            }
+            section{
+                height: 50px;
+                background: blue;
+            }
+        </style>
+        <!--script 可以放body上边，但必须要完成文档的加载才能正常执行 要先写window.onload-->
+        <script>
+            window.onload = function(){
+                document.querySelector('img').onmouseover = function(){
+                    alert('tatata')
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <pre>
+            onload是  在页面或文档加载完毕后再执行代码，
+            Window.onload可以处理js的位置随意放置
+        </pre>
+        <img src="http://icon.nipic.com/BannerPic/20160719/home/20160719091802.jpg" alt="">
+        <img src="http://icon.nipic.com/BannerPic/20160727/home/20160727142700.jpg"" alt="">
+        <div>
+            div标签的加载事件
+        </div>
+        <section id="">
+            section的加载事件
+        </section>
+        <a href="http://www.baidu.con">百度搜索</a>
+        <!--<script>
+            //onload加载事件   窗口加载内容实际上为body内部内容
+            // onload 事件会在页面或图片加载完成后立即发生
+            window.onload = function(e){
+                alert('加载完毕')
+                alert('window:' + e.target.nodeName)    //#document
+            }
+            document.body.onload = function(e){
+                alert('body加载完毕')
+                alert('window:' + e.target.nodeName)    //#document
+            }
+            document.documentElement.onload = function(e){
+                alert('html加载完毕')
+                alert('window:' + e.target.nodeName)
+            }
+            document.querySelector('img').onload = function(e){
+                alert('img加载完成')
+                alert('window:' + e.target.nodeName)
+            }
+            document.body.onload = function(event){
+                // return event.target
+                console.log(event.target)
+            }
+            // obj(event)
+            window.onload = function(event){
+                console.log(event.target)
+            }
+        </script>-->
+    </body>
+</html>

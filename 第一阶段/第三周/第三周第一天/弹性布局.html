@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>弹性布局</title>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            html{
+                height: 100%;
+            }
+            body{
+                height: 100%;
+                margin: 0px;
+            }
+            main{
+                height: 100%;
+                display: flex;
+                /*设置父元素，处理子元素*/
+                /*开启弹性布局，处理的是子元素的对齐方式，总宽度超过100%也不换行*/
+                /*flex-direction: row;*/
+                /*默认子元素水平方向由容器左方从左到右，宽度默认由内容决定，
+                设定宽度的话也会随着浏览器发生变化，高度默认百分百*/
+                /*flex-direction: row-reverse;*/
+                /*子元素水平方向从容器右边开始从右到左排列*/
+                /*flex-direction: column;*/
+                /*子元素在垂直方向从容器最上方从上到下排列，宽度默认百分百，
+                或者按设定的值，高度由内容撑开*/
+                /*flex-direction: column-reverse;*/
+                /*子元素在垂直方向从容器最下方从下往上排列*/
+                /*flex-wrap: nowrap;*/
+                /*默认值为不换行，设定标签宽度没用，高度平均分配容器的高度*/
+                /*flex-wrap: wrap;*/
+                /*换行标签按设定宽度，高度均分容器高度*/
+                /*flex-wrap: wrap-reverse;*/
+                /*从容器下方开始排列，从左到右*/
+                /*justify-content: flex-start;*/
+                /*水平方向：左对齐*/
+                /*justify-content: flex-end;*/
+                /*水平方向：右对齐*/
+                /*justify-content: center;*/
+                /*居中对齐*/
+                /*justify-content: space-between;*/
+                /*两端对齐,项目之间间隔相等*/
+                /*justify-content: space-around;*/
+                /*两端间距相等，是中间间隙的2分之一*/
+                /*flex-flow: row wrap;*/
+                /*属性是flex-direction属性
+                和flex-wrap属性的简写形式，默认值为row nowrap*/
+                /*align-items: flex-start;*/
+                /*容器上端*/
+                /*align-items: flex-end;
+                align-items: space-around;
+                align-items: space-between;*/
+                
+            }
+            section{
+                border: 1px solid springgreen;
+                /*width: 15%;*/
+                height: 200px;
+                width: 80px;
+                flex-shrink: 1;
+                /*不能缩小，不再具备弹性特点*/
+            }
+            span{
+                border: 1px solid cornflowerblue;
+                /*width: 120%;*/
+                /*总宽度超过100%之后，不再起作用*/
+                /*width: 30%;*/
+                width: 100px;
+                height: 100px;
+                /*flex-grow: 3;*/
+                /*flex-grow: 项目将容器剩余空间平均分配，
+                对于不同项目来说，数值越大占据空间越大*/
+            }
+            section:nth-child(2){
+                order: 5;
+                /*flex-grow: 1;*/
+                width: 150px;
+                flex-shrink: 20;
+                /*值越大缩放越快,设置宽度没用*/
+                flex-basis: 150px;
+            }
+            span:nth-of-type(2){
+                order: 2;
+                /*flex-grow: 1;*/        
+            }
+            section:nth-of-type(4){
+                order: 4;
+            }
+            /*order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0*/
+        </style>
+    </head>
+    <body>
+        <!--main>section{$}*5 + tab 键-->
+        <main>
+            <section>1</section>
+            <section>2</section>
+            <section>3</section>
+            <section>4</section>
+            <section>5</section>
+            <span>3</span>
+            <span>2</span>
+            <span>1</span>
+        </main>
+    </body>
+</html>

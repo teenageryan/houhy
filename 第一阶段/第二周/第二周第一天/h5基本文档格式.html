@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>行元素/块级元素/行内块元素</title>
+        <style>
+            body{
+                background: yellow;
+            }
+            div{
+                border: 1px solid black;
+                height: 50px;
+                width: 50px;
+            }
+            section{
+                border: dashed 1px rebeccapurple;
+            }
+            p{
+                border: dashed 1px red;
+            }
+            span{
+                border: dashed 1px springgreen;
+                height: 50px;
+                width: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>块级元素 </div>
+        <section>块级元素 </section>
+        <h1>ddd</h1>
+        <p>块级元素，段落标签</p>
+        <!--div,section,p,main,h1-h6，header,footer,article,-->
+        <!--h1-h6有默认的外边距，语义标签-->
+        <!--块级元素特点：
+       1.未设定宽高的情况下，默认独占一行；
+       2.可以设定宽高，随着宽高发生变化；
+       --> 
+       <span>行内元素</span>
+       <span>行内元素</span>
+       <!--默认之间没有空格-->
+       <!--行内元素特点：
+       1.设定宽高没有意义，不会变化，即不能设定宽高；
+      2.未设定宽高的情况下，宽度由内容决定，有多少内容占据多少空间；
+      -->
+      <!--各元素之间是可以互相转化的-->
+      <!--<a href="">yu</a>-->
+    </body>
+</html>

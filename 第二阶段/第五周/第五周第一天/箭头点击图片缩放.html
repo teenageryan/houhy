@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>缩略图</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <style>
+        body{
+            margin:0; 
+        }
+        *{
+            box-sizing:border-box;
+        }
+        ul{
+            list-style:none; margin:0; padding:0;
+        }
+        .suelue{
+            width:980px; margin:50px auto;
+        }
+        img{
+            width:100%;  display:block; 
+        }
+        .tab{
+            width:680px; border:solid 1px #eee; display: inline-block;
+        }
+        .tabbox{
+            width:680px; position:relative; height:392px; 
+        }
+        .tabbox li{
+            width:680px;  position:absolute;
+        } 
+        .list{
+            width:97%; margin-top:10px; height:78px; margin: 0 auto;
+        }
+        .list div{
+            width:25px; background:#aaa; color:#fff;  text-align:center; float:left; height:100%;  line-height:78px; font-size:30px;  cursor:pointer
+        }
+        .list .current{
+            background:#333;cursor: pointer;
+        }
+        .list section{
+            width:870px; float:left; margin:0 5px; overflow:hidden; 
+        }
+        .imgbox{
+            width:1400px; position:relative;
+        }
+        .imgbox li{
+            width:125px; float:left; cursor:pointer; 
+        }
+        .imgbox .active{
+            border:solid 1px red; 
+        }
+        .imgbox img{
+            display:block; width:120px; margin-right:5px;
+        }
+        .imgbox li:last-child img{ 
+            margin-right:0; 
+        }
+        .top span{
+            font-size: 100px;
+            position: relative;
+            top: -180px;
+        }
+        .top{
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <main class="suelue">
+        <div class="top">
+             <span class="fa fa-angle-left"></span>
+                <div class="tab">
+                    <ul class="tabbox" id="tabbox">
+                            <li style="z-index:3"> <img src="imgs/dsl-1.jpg" alt=""> </li>
+                            <li> <img src="imgs/dsl-2.jpg" alt=""> </li>
+                            <li> <img src="imgs/dsl-3.jpg" alt=""> </li>
+                            <li> <img src="imgs/dsl-4.jpg" alt=""> </li>
+                            <li> <img src="imgs/dsl-5.jpg" alt=""> </li>
+                            <li> <img src="imgs/dsl-6.jpg" alt=""> </li>
+                            <li> <img src="imgs/dsl-6.jpg" alt=""> </li>
+                            <li> <img src="imgs/dsl-4.jpg" alt=""> </li>
+                            <li> <img src="imgs/dsl-5.jpg" alt=""> </li>
+                            <li> <img src="imgs/dsl-6.jpg" alt=""> </li>
+                            <li> <img src="imgs/dsl-6.jpg" alt=""> </li>
+                    </ul>
+                </div>
+                <span class="fa fa-angle-right"></span>
+        </div>
+       
+            <div class="list">
+                    <div id="btn-pre"> <span class="fa fa-caret-left"></span></div>
+                    <section>
+                            <ul class="imgbox" id="thumbs"> 
+                                    <li> <img class="active" src="imgs/sl-1.jpg" alt=""> </li>
+                                    <li> <img src="imgs/sl-2.jpg" alt=""> </li>
+                                    <li> <img src="imgs/sl-3.jpg" alt=""> </li>
+                                    <li> <img src="imgs/sl-4.jpg" alt=""> </li>
+                                    <li> <img src="imgs/sl-5.jpg" alt=""> </li>
+                                    <li> <img src="imgs/sl-6.jpg" alt=""> </li>
+                                    <li> <img src="imgs/sl-6.jpg" alt=""> </li>
+                                     <li> <img src="imgs/sl-4.jpg" alt=""> </li>
+                                    <li> <img src="imgs/sl-5.jpg" alt=""> </li>
+                                    <li> <img src="imgs/sl-6.jpg" alt=""> </li>
+                                    <li> <img src="imgs/sl-6.jpg" alt=""> </li>
+                            </ul>
+                    </section>
+                    <div id="btn-next" class="current"> <span class="fa  fa-caret-right"></span> </div>
+            </div>
+    </main>
+    <script>
+        // $(function(){
+        //     // 先判断图片张数，太少的话不可点
+        //     var count =0
+        //     var len = $('#thumbs li').length
+        //     // console.log(len)
+        //     var width = $('#thumbs li').width()
+        // //    console.log( width)
+        //      $('#btn-next').click(function(){
+        //          $('#btn-pre').addClass('current')
+        //          count ++
+        //          if(count >= 4 && count <= 7){
+        //              $('#thumbs').animate({
+                //          left:'-=' + width + 'px'
+                //      })
+                //  }
+                // //  console.log(count)
+                //  if(count >7||count<4){
+                //      $('#thumbs li').eq(count).children().addClass('active').parent().siblings().children().removeClass('active')
+                //  }
+                //  if(count > len - 1){
+                //      $('#btn-next').removeClass('current').css('cursor','auto')
+                //  }
+        //         $('#thumbs li').eq(count).children().addClass('active').parent().siblings().children().removeClass('active')
+        //         $('#tabbox li').eq(count).css('z-index','3').siblings().css('z-index','1')
+        //     })
+        //     $('#btn-pre').click(function(){
+        //         count--
+        //          if(count >= 4 && count <= 7){
+        //              $('#thumbs').animate({
+        //                  left:'+=' + width + 'px'
+        //              })
+        //          }
+        //         $('#thumbs li').eq(count).children().addClass('active').parent().siblings().children().removeClass('active')
+        //     })
+        // })
+           
+          $(function(){
+               var len = $('#thumbs li').length
+               var s_width = $('#thumbs li').width()
+        //    根据li标签的宽度决定父级ul宽度
+           $('#thumbs').css('width',len * s_width)
+        //    定义一个初始图片显示，即中间一张
+        var isNow = 3
+        show()
+        function show(){
+             $('#thumbs li').eq(isNow).addClass('active').siblings().removeClass('active')
+            $('#thumbs li').eq(isNow).css('z-index','3').siblings().css('z-index','1')
+            if(isNow < len - 3 && isNow >= 3){
+                $('#thumbs').animate({
+                    left:-s_width * (isNow - 3)
+                },100)
+            }
+        }
+       
+        $('#btn-pre').click(function(){
+            if(isNow <=0 ){
+                return
+            }
+            isNow--
+            show()
+        })
+        $('#btn-next').click(function(){
+            if(isNow >= len -1){
+                return
+            }
+            isNow++
+            show()
+        })
+          }) 
+      </script>     
+</body>
+</html>

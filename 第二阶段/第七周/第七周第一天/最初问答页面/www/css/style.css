@@ -1,0 +1,40 @@
+.reg{
+    text-align: center;
+    overflow: hidden;
+    font-size: 20px;
+}
+.reg>ul{
+    float: none;
+}
+.reg>ul>li{
+    float: none;
+}
+.navbar-header>.glyphicon{
+    color: gray;
+    line-height: 3;
+}
+input{
+    width: 100%;
+    line-height: 2;
+    margin: 10px 0;
+}
+input:last-child{
+    background: lightseagreen;
+}
+#male,#female{
+    display: inline-block;
+    width: 5%;
+}
+label{
+    margin-right: 30px;
+}
+textarea,#dropdown{
+    width: 100%;
+}
+#dropdown{
+    height: 30px;
+}
+.ind{
+    /*text-align: right;*/
+    float: right;
+}

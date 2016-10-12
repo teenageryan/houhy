@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<!--language:中文语言-->
+<html lang="zh-CN">
+
+<head>
+    <!--字符编码：简体中文-->
+    <meta charset="utf-8">
+    <!--设置IE浏览器兼容性，以最新的IE版本兼容当前网页-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--width 属性控制设备的宽度。假设您的网站将被带有不同屏幕分辨率的设备浏览，那么将
+        它设置为 device-width 可以确保它能正确呈现在不同设备上。-->
+    <!--initial-scale=1.0 确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放。-->
+    <!--maximum-scale=1.0 与 user-scalable=no 一起使用。这样禁用缩放功能后，用户只能滚动屏幕-->
+    <!--最后两个值视情况可以不写-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--<meta name="author" content="常伟">-->
+    <title>Bootstrap</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        nav .navbar-header img{
+            width: 40px;
+        }
+        .navbar-nav > li > a{
+            padding: 15px 40px;
+        }
+        .navbar{
+            margin-bottom: 100px;
+        }
+        .navbar-nav{
+            float: right;
+        }
+        .container{
+            width: 55%;
+        }
+        .dropdown-menu>li:nth-of-type(2n+1)  a{
+            color: #0094DE;
+        }
+        .dropdown-menu>li:nth-of-type(1){
+            text-align: center;
+            color: #9B999C;
+        }
+        .navbar-inverse .navbar-toggle{
+            float: left;
+            margin-top: 10px;
+            border-color: #222222;
+        }
+        .navbar-inverse .navbar-toggle:focus, 
+        .navbar-inverse .navbar-toggle:hover{
+            background-color: #222222;
+        }
+        .carousel-control.left{
+            background-image:none;
+        }
+        .carousel-control.right{
+            background-image: none;
+        }
+        .carousel-inner>.item{
+            width: 100%;
+        }
+        .carousel-inner>.item img{
+            width: 100%;
+            height: 30vw;
+        }
+        .carousel-indicators li{
+            border: 1px solid #147BCD;
+            background-color: #999999;
+        }
+        section .row .col-lg-3{
+            padding:5px 5px;
+        }
+        section .row .col-lg-3 img{
+            width: 100%;
+        }
+        ul{
+            list-style: none;
+            display: inline-block;
+            padding: 0px;
+            margin: 0px;
+        }
+        footer li{
+            display: inline-block;
+            border-right: 1px solid #999;
+            padding: 0 15px;
+        }
+        footer li:last-child{
+            border-right: none;
+        }
+        .china{
+            float: right;
+        }
+        .china>a{
+            /*margin-top: 15px;?????????*/
+        }
+        footer{
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 20px;
+            background: #eee;
+        }
+        dt{
+            color: #222;
+        }
+        footer>.container>span:nth-of-type(1){
+            display: block;
+            border-bottom: 1px solid #ddd;
+        }
+        footer>.container>span,footer>.container>div{
+            padding: 10px 0px;
+        }
+        footer>.container>div a{
+            color: #888;
+        }
+        footer>.container a:hover{
+            color: #555;
+        }
+        @media (max-width:1800px) and (min-width:768px){
+            .navbar-nav > li > a{
+                padding: 15px;
+            }
+        }
+        @media (max-width:768px){
+            .container{
+                width: 95%;
+            }
+            .china{
+                float: none;
+                padding: 10px 0;
+            }
+            ul{
+                display: block;
+                margin-top: 10px;
+            }
+             footer li:first-child{
+                 padding-left: 0;
+             }
+             nav .navbar-header a{
+                 display: inline-block;
+             }
+             .navbar-brand{
+                float: none;
+             }
+             nav .navbar-header{
+                 text-align: center;
+             }
+        }
+        @media (max-width:980px) and (min-width:800px){
+            nav>.container{
+                width: 80%;
+            }
+            footer>.container{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>   
+ <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+   <div class="navbar-header">
+       <button type="button" class="navbar-toggle" data-toggle="collapse" 
+         data-target="#example-navbar-collapse">
+         <span class="sr-only">切换导航</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+   </div>
+   <div class="collapse navbar-collapse" id="example-navbar-collapse">
+      <ul class="nav navbar-nav">
+         <li><a href="#">Mac</a></li>
+         <li><a href="#">iPad</a></li>
+         <li><a href="#">iPhone</a></li>
+         <li><a href="#">Watch</a></li>
+         <li><a href="#">Music</a></li>
+         <li><a href="#">技术支持</a></li>
+         <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               <span class="glyphicon glyphicon-shopping-cart"></span> <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li>你的购物袋是空的</li>
+               <li class="divider"></li>
+               <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> 购物袋</a></li>
+               <li class="divider"></li>
+               <li><a href="#"><span class="glyphicon glyphicon-heart-empty"></span> 收藏</a></li>
+               <li class="divider"></li>
+               <li><a href="#"><span class="glyphicon glyphicon-gift"></span> 订单</a></li>
+               <li class="divider"></li>
+               <li><a href="#"><span class="glyphicon glyphicon-cog"></span> 账户</a></li>
+               <li class="divider"></li>
+               <li><a href="#"><span class="glyphicon glyphicon-user"></span> 登录</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+   </div>
+</nav>
+
+<main>
+    <!--<div></div>-->
+    <div id="myCarousel" class="carousel slide">
+   <!-- 轮播（Carousel）指标 -->
+   <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+   </ol>   
+   <!-- 轮播（Carousel）项目 -->
+   <div class="container">
+   <div class="carousel-inner">
+      <div class="item active">
+         <img src="img/banner1.jpg" alt="First slide">
+         <div class="carousel-caption">iPhone</div>
+      </div>
+      <div class="item">
+         <img src="img/banner2.jpg" alt="Second slide">
+         <div class="carousel-caption">iPad</div>
+      </div>
+      <div class="item">
+         <img src="img/banner3.jpg" alt="Third slide">
+         <div class="carousel-caption">WATCH</div>
+      </div>
+      <div class="item">
+         <img src="img/banner5.png" alt="Fourth slide">
+         <div class="carousel-caption">Mac Book</div>
+      </div>
+   </div>
+   </div>
+   <!-- 轮播（Carousel）导航 -->
+   <a class="carousel-control left" href="#myCarousel" 
+      data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+   <a class="carousel-control right" href="#myCarousel" 
+      data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div> 
+<section>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <img src="img/pr.jpg" alt="">
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <img src="img/ios.jpg" alt="">
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <img src="img/hp.jpg" alt="">
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <img src="img/pu.jpg" alt="">
+        </div>
+    </div>  
+ </section> 
+</main>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <dl>
+                    <dt>选购及了解</dt>
+                    <dd><a href="">Mac</a></dd>
+                    <dd><a href="">iPad</a></dd>
+                    <dd><a href="">iPhone</a></dd>
+                    <dd><a href="">Watch</a></dd>
+                    <dd><a href="">Music</a></dd>
+                    <dd><a href="">iTunes</a></dd>
+                    <dd><a href="">iPod</a></dd>
+                    <dd><a href="">配件</a></dd>
+                </dl>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-3">
+                <dl>
+                    <dt>Apple Store商店</dt>
+                    <dd><a href="">查找零售店</a></dd>
+                    <dd><a href="">Genius Bar天才吧</a></dd>
+                    <dd><a href="">讲座和学习</a></dd>
+                    <dd><a href="">青少年活动</a></dd>
+                    <dd><a href="">Apple Store App</a></dd>
+                    <dd><a href="">翻新产品</a></dd>
+                    <dd><a href="">分期付款</a></dd>
+                    <dd><a href="">重复使用和循环使用</a></dd>
+                    <dd><a href="">订单状态</a></dd>
+                    <dd><a href="">选购帮助</a></dd>
+                </dl>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <dl>
+                    <dt>教育与应用</dt>
+                    <dd><a href="">Apple与教育</a></dd>
+                    <dd><a href="">高校师生选购</a></dd>
+                </dl>
+                <dl>
+                    <dt>商务应用</dt>
+                    <dd><a href="">Apple与商务</a></dd>
+                    <dd><a href="">商务选购</a></dd>
+                </dl>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-3">
+                <dl>
+                    <dt>账户</dt>
+                    <dd><a href="">管理你的Apple ID</a></dd>
+                    <dd><a href="">Apple Store账户</a></dd>
+                    <dd><a href="">iCloud.com</a></dd>
+                </dl>
+                <dl>
+                    <dt>Apple价值观</dt>
+                    <dd><a href="">辅助功能</a></dd>
+                    <dd><a href="">环境责任</a></dd>
+                    <dd><a href="">隐私</a></dd>
+                    <dd><a href="">供应商责任</a></dd>
+                </dl>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <dl>
+                    <dt>关于Apple</dt>
+                    <dd><a href="">Apple资讯</a></dd>
+                    <dd><a href="">工作机会</a></dd>
+                    <dd><a href="">媒体咨讯</a></dd>
+                    <dd><a href="">活动</a></dd>
+                    <dd><a href="">联系Apple</a></dd>
+                </dl>
+            </div>
+        </div>
+        <span>更多选购方式：前往<a href="">Apple Store零售店</a>，
+        致电400-666-8800或查找在你附近的<a href="">授权经销商</a>。
+        </span>
+        <div>
+        <span>Copyright &copy; 2016 Apple Inc.保留所有权利。</span>
+        <ul>
+            <li><a href="">隐私政策</a></li>
+            <li><a href="">使用条款</a></li>
+            <li><a href="">销售政策</a></li>
+            <li><a href="">法律信息</a></li>
+            <li><a href="">网站地图</a></li>
+         </ul>
+         <div class="china">
+             <img src="img/16.png" alt="">
+         <a href="">中国</a>
+         </div>
+         </div>
+         <span>京公安网安备 11010502008968 京ICP备10214630</span>
+    </div>
+     
+</footer>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--bootstrap是基于jQuery的框架-->
+<script>
+$('.carousel').carousel({
+  interval: 4000
+})
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>函数的创建方法</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <pre>
+            方法1：常规创建函数方法：
+            function name(){
+                语句
+            }
+            name();
+        </pre>
+        <script>
+            // 方法2：函数表达式：函数可以存储在变量中
+           var m = function(a,b){
+               return a * b;
+           }
+        //    m(3,5)
+           console.log(m(3,5))
+        //    匿名函数
+        //    = 右侧是一个函数，但是没有函数名称，而是通过一个变量名称接收
+       
+       
+        //    方法3：构造函数
+        // 当前Function()方法，是js内置的创建函数的方法（即函数构造器）
+        // 主要用来创建对象时，初始化对象，即为对象成员变量赋初始值
+        var n = new Function(
+            'a',
+            'b',
+            'return a * b'
+        )
+        console.log( n(3,5) )
+        var now = new Date()
+        var nows = Date()
+        console.log(now)
+        console.log(nows)
+        </script>
+    </body>
+</html>

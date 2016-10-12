@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>电器</title>
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <style>
+            body{
+                margin: 0px;
+            }
+            body>div{
+                width: 80%;
+                margin: 0 auto;
+            }
+            header>div:nth-of-type(1)>img{
+                margin-left: 50px;
+            }
+            header>div:nth-of-type(1)>form{
+                float: right;
+                font-size: 14px;
+                margin-top: 50px;
+            }
+            ul{
+                list-style: none;
+                padding: 0px;
+                margin: 0px;
+            }
+            header>ul{
+                list-style: none;
+                overflow: hidden;
+                background: cadetblue;
+            }
+            header>ul>li{
+                display: inline-block;
+                margin: 10px 0px;
+                border-right: 1px solid white;
+            }
+            a{
+                text-decoration: none;
+            }
+            header>ul>li>a{
+                font-size: 14px;
+                color: white;
+                padding: 10px 30px;
+            }
+            header>ul>li>a:hover{
+                /*color: bisque;*/
+                background: orange;
+            }
+            header>ul>li:last-child{
+                border-right: none;
+            }
+            body>div>div>img{
+                width: 100%;
+                height: 300px;
+                display: block;
+                margin: 10px 0px;
+            }
+            main{
+                overflow: hidden;
+            }
+            main>div:nth-of-type(1){
+                width: 19%;
+                float: left;
+            }
+            main>div:nth-of-type(2){
+                width: 78%;
+                float: right;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(1){
+                width: 65%;
+                float: left;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2){
+                width: 25%;
+                float: right;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(1){
+                overflow: hidden;
+            }
+            main>div:nth-of-type(1)>div{
+                width: 100%;
+                border: 1px solid gray;
+                border-radius: 5px;
+            }
+            main>div:first-child>div>img,main>div:nth-of-type(1)>img{
+                width: 150px;
+                height: 80px;
+                display: block;
+                border: 1px solid gray;
+                margin: 0px auto;
+            }
+            main>div:nth-of-type(1)>img{
+                margin: 10px 0;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(2) img{
+                width: 100px;
+                height: 100px;
+                float: left;
+                margin: 5px 10px;
+                border: 1px solid gray;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(2)>section:nth-of-type(2){
+                width: 100%;
+                margin: 10px auto;
+                overflow: hidden;
+            }
+            main>div:first-child>div>ul>li{
+                border: 1px solid gray;
+                margin: 4px;
+                border-radius: 4px;
+                font-size: 14px;
+                line-height: 2;
+            }
+            main>div:nth-of-type(1) ul span{
+                padding-left: 10px;
+            }
+            h4{
+                color: deepskyblue;
+                font-size: 15px;
+            }
+            main>div:nth-of-type(1)>div>h4{
+                margin:5px 0px;
+                padding-left: 5px;
+                padding-bottom: 5px;
+                border-bottom: 1px solid gray;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(1)>section:nth-of-type(1) a{
+                font-size: 8px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 2px;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)>section:nth-of-type(1) a{
+                font-size: 8px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 2px;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(2)>section:nth-of-type(1) a{
+                font-size: 8px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 2px;
+            }
+            main>div:nth-of-type(2) a span{
+                font-size: 8px;
+            }
+            main>div:nth-of-type(2)>div:first-child>div:nth-of-type(2) ul a{
+                display: block;
+                color: gray;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2) ul a:hover{
+                border: 2px solid #ddd;
+                border-radius: 5px;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(1) ul a:hover{
+                border-bottom: 2px solid #ddd;
+            }
+            main>div:first-child>div>h4>span{
+                border-left: 4px solid cornflowerblue;
+                padding-left: 10px;
+            }
+            .fa{
+                font-size: 14px;
+            }
+            main div section:nth-of-type(1)>h4{
+                float: left;
+                margin: 0px;
+                
+            }
+            main div section:nth-of-type(1){
+                border-bottom: 1px solid #888;
+                padding-bottom: 10px;
+                overflow: hidden;
+            }
+            main div section:nth-of-type(1) a{
+                float: right;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)>ul{
+                margin-bottom: 10px;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(2)>ul>li{
+                border-bottom: 1px dashed #888;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 2;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(1)>section:nth-of-type(2)
+            >h5{
+                margin: 5px;
+                color: cornflowerblue;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(1)>section:nth-of-type(2)
+            >p{
+                margin: 5px;
+                font-size: 13px;
+                text-indent: 2em;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(1)>ul{
+                font-size: 12px;
+                color: #555;
+                width: 80%;
+                line-height: 2; 
+                margin-bottom: 10px; 
+            }
+             main>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(1)>ul a{
+                 color: gray;
+             }
+            main>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(1)>ul li span{
+                float: right;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(1)>div:nth-of-type(1)>section:nth-of-type(2)>img{
+                float: left;
+                width: 100px;
+                margin: 5px;
+            }
+            main>div:nth-of-type(2)>div:nth-of-type(2), main>div:nth-of-type(2)>div:nth-of-type(1)>div{
+                border: 1px solid #ddd;
+                border-radius: 2px;
+                padding: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 0px;
+            }
+            footer{
+                border: 1px solid #ddd;
+                background: #eee;
+                border-radius: 2px;
+            }
+            footer>div{
+                width: 91%;
+                margin: 10px auto;
+                text-align: center;
+            }
+            footer>div>p{
+                font-size: 14px;
+                color: gray;
+                margin: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <!--<nav>导航标签</nav>-->
+            <!--<artical></artical>
+            <section></section> 语义标签-->
+            <header>
+                <div>
+                    <img src="img/logo.png" alt="">
+                    <form>
+                        <label for="demo1">搜 索:</label>
+                        <input type="text" id="demo1">
+                    </form>
+                </div>
+                <ul>
+                    <li><a href="">关于祥博</a></li>
+                    <li><a href="">行业动态</a></li>
+                    <li><a href="">产品信息</a></li>
+                    <li><a href="">应用领域</a></li>
+                    <li><a href="">技术交流</a></li>
+                    <li><a href="">数据库</a></li>
+                    <li><a href="">联系我们</a></li>
+                </ul>
+            </header>
+            <div>
+                <img src="img/b.jpg" alt="">
+            </div>
+            <main>
+                <div>
+                    <div>
+                        <h4><span>服务中心</span></h4>
+                        <img src="img/j.jpg" alt="">
+                        <ul>
+                            <li><span class="fa fa-caret-right"></span> 热设计</li>
+                            <li><span class="fa fa-caret-right"></span> 散热器模型</li>
+                            <li><span class="fa fa-caret-right"></span> 散热器制造</li>
+                            <li><span class="fa fa-caret-right"></span> 散热器测试</li>
+                            <li><span class="fa fa-caret-right"></span> 散热器资询</li>
+                        </ul>
+                    </div>
+                    <img src="img/1e.jpg" alt="">
+                    <img src="img/f.jpg" alt="">
+                </div>
+                <div>
+                    <div>
+                        <div>
+                            <section>
+                                <h4><span class="fa fa-caret-right"></span> 新闻中心 
+                                </h4>
+                                <a href="">MORE <span class="fa fa-caret-right"></span></a>
+                            </section>
+                            <section>
+                                <img src="img/a.jpg" alt="">
+                                <h5>株洲南车时代对我们恭喜惊醒了为期两天的考察与访问</h5>
+                                <p>2010年1月12日，株洲南车时代对我们公司进行了为期两天的考察。</p>
+                                <p>在考察过程中，就我公司产品生产双方进行了深入的交流，南车时代共识向我们恭喜提出了许多宝贵的意见……
+                                </p>
+                            </section>
+                            <ul>
+                                <li><a href="">株洲南车时代对我们公司进行了为期凌天</a><span>2009-11-19</span></li>
+                                <li><a href="">可儿组织员工旅游</a><span>2009-11-19</span></li>
+                                <li><a href="">艾默生公司来我司视察并对我公司员工</a><span>2009-11-19</span></li>
+                                <li><a href="">我司赞助的女子篮球队在嘉善比赛中获……</a><span>2009-11-19</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <section>
+                                <h4><span class="fa fa-caret-right"></span> 产品分类</h4>
+                                <a href="">MORE <span class="fa fa-caret-right"></span></a>
+                            </section>
+                            <ul>
+                                <li><a href="">SF/SFC/SFX/SFT系列</a></li>
+                                <li><a href="">SB系列</a></li>
+                                <li><a href="">SH系列</a></li>
+                                <li><a href="">SM/SFH系列</a></li>
+                                <li><a href="">液冷版</a></li>
+                                <li><a href="">SMY系列</a></li>
+                                <li><a href="">SS系列</a></li>
+                                <li><a href="">附件</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <section>
+                                <h4><span class="fa fa-caret-right"></span> 新品展示</h4>
+                                <a href="">MORE <span class="fa fa-caret-right"></span></a>
+                        </section>
+                        <section>
+                            <img src="img/c.jpg" alt="">
+                            <img src="img/d.jpg" alt="">
+                            <img src="img/e.jpg" alt="">
+                            <img src="img/g.jpg" alt="">
+                            <img src="img/h.jpg" alt="">
+                        </section>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <div>
+                    <p>公司地址：杭州市萧山区闻堰镇大湾路58号 邮政编码：311258 联系电话：0571-82308081
+                        传 真：0571-82308081
+                    </p>
+                    <p>Copyright &copy; 2001-2007 by HANGZHOU XENBO ELECTRIC CO,CTD</p>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

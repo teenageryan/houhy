@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>类名的添加、切换、移除</title>
+        <style>
+            main{
+                height: 100px;
+                width: 300px;
+            }
+            .red{
+                color: red;
+                font-size: 14px;
+                border: 1px solid black;
+            }
+            .blue{
+                color: blue;
+                font-size: 30px;
+                background: red;
+            }
+            .fff{
+                color: #fff;
+                background: #000;
+                font-size: 15px;
+            }
+            .bre{
+                color: navajowhite;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <main class="red">
+            想要修改当前标签文字的颜色，第一次是红色，字体14px，第二次是蓝色，背景色是红色，字体30px，第三次是白色，黑色背景，字体15px
+        </main>
+        <main class="blue">
+            想要修改当前标签文字的颜色，第一次是红色，字体14px，第二次是蓝色，背景色是红色，字体30px，第三次是白色，黑色背景，字体15px
+        </main>
+        <main class="fff">
+            想要修改当前标签文字的颜色，第一次是红色，字体14px，第二次是蓝色，背景色是红色，字体30px，第三次是白色，黑色背景，字体15px
+        </main>
+        <main class="bre">
+            想要修改当前标签文字的颜色，第一次是红色，字体14px，第二次是蓝色，背景色是红色，字体30px，第三次是白色，黑色背景，字体15px
+        </main>
+        <script>
+            //var main = document.querySelector('main')      //选择当前标签的第一个
+            // className属性 改变的是当前标签的类名
+            // main.className = 'red'
+            // main.className = 'blue red'
+            
+            
+            // 实例：判断标签中是否含有blue类名，有的删除blue，没有的加上blue
+            var main = document.querySelector('main')
+            var mainLi = document.querySelectorAll('main')
+            for(var i=0;i < mainLi.length;i++){
+                var m = mainLi[i].classList
+                // if(m.contains('blue')){
+                //     m.remove('blue')
+                // }
+                // else{
+                //     m.add('blue')
+                // }
+                
+                // contains() 包含类名，add() 添加类名，remove（）移除类名
+                // toggle（）切换，如果类名存在，就移除当前类名，不存在则添加当前类名
+                m.toggle('blue')
+                console.log(m)
+            }
+        </script>
+    </body>
+</html>

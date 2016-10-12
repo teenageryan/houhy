@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <script src="jquery.js"></script>
+</head>
+<style>
+    div{
+        display: none;
+    }
+    #ceng{
+        height: 100%;
+        width: 100%;
+        opacity: 0.2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: gray;
+        z-index: 100;
+    }
+    #content{
+        height: 200px;
+        width: 400px;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 20px;
+        position: absolute;
+        left: calc(50% - 200px);
+        top: calc(50% - 100px);
+        background: #ffffff;
+        border:2px solid #aaa;
+        z-index: 200;
+        box-shadow: 1px 2px 5px #000
+    }
+    p:first-child{
+        border-bottom: 2px solid #aaa;
+        line-height: 100px;
+        color: #999;
+    }
+    p:last-child{
+        cursor: pointer;
+    }
+</style>
+<body>
+<section>
+    <form action="" method="post" id="sub">
+        <textarea name="name" cols="30" rows="10" placeholder= '请输入内容' required></textarea><br>
+        <input type="submit" value="提交"/>
+    </form>
+</section>
+<div id="content">
+    <p> 感谢你的留言！！！</p>
+    <p> 确定 </p>
+</div>
+<div id="ceng">
+</div>
+<script src="liuyan.js"></script>
+<!--<script>-->
+    <!--// 创建XHR对象-->
+    <!--var xhr = new XMLHttpRequest()-->
+    <!--var form = document.querySelector('#sub')-->
+    <!--form.onsubmit = function (ev) {-->
+        <!--// 阻止表单的默认行为-->
+        <!--ev.preventDefault()-->
+        <!--// 当请求状态改变时触发的事件-->
+        <!--xhr.onreadystatechange = function () {-->
+            <!--if(xhr.readyState == 4){-->
+                <!--console.log( xhr.responseText )-->
+
+                <!--var div = document.querySelectorAll('div')-->
+                <!--for(var i=0;i<div.length;i++){-->
+                    <!--div[i].style.display = 'block'-->
+                <!--}-->
+
+            <!--}-->
+        <!--}-->
+<!--// 把form表单数据传递给FormData对象-->
+        <!--var data = new FormData(form)-->
+        <!--// 设置请求类型及url路径-->
+        <!--xhr.open('post','/login')-->
+        <!--xhr.send(data)-->
+    <!--}-->
+      <!--function pop(){-->
+          <!--location.href = '/'-->
+      <!--}-->
+
+<!--</script>-->
+</body>
+</html>

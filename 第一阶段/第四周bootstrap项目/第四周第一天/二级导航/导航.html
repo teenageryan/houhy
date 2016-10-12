@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>导航</title>
+        <style>
+            body{
+                margin: 0;
+            }
+            nav{
+                width: 80%;
+                margin: 0 auto;
+            }
+            img{
+                width: 100%;
+            }
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                background: lightblue;
+                text-align: center;
+            }
+            a{
+                text-decoration: none;
+                padding: 10px 30px;
+                background: ivory;
+                display: block;
+                /*设置之后，可以撑开父级元素*/
+            }
+            a:hover{
+                border-radius: 5px;
+                background: rosybrown;
+            }
+            li{
+                display: inline-block;
+                line-height: 40px;
+                margin: 10px;
+            }
+            nav>ul>li:first-child,nav>ul>li:nth-child(2),nav>ul>li:nth-child(3),nav>ul>li:nth-child(4){
+                position: relative;
+                /*设有绝对定位的元素父级元素不设置相对定位会向上查找设有相对定位的元素继承*/
+            }
+            .nav2{
+                position: absolute;
+                background: none;
+                width: 100%;
+                /*display: none;*/
+                visibility: hidden;
+            }
+            .nav2 li{
+                display: block;
+                margin: 10px 0;
+            }
+            nav>ul>li:hover .nav2{
+                /*display: block;*/
+                visibility: visible;
+            }
+            .nav3{
+                position: absolute;
+                background: none;
+                left: 0px;
+                width: 100%;
+                text-align: center; 
+                visibility: hidden;
+            }
+            nav>ul>li:hover .nav3{
+                visibility: visible;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="">关于翔博</a>
+                    <ul class="nav2">
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">大事记</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">行业动态</a>
+                    <ul class="nav2">
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">大事记</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">产品信息</a>
+                    <ul class="nav2">
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">大事记</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">应用领域</a>
+                    <ul class="nav2">
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">大事记</a></li>
+                    </ul>
+                </li>
+                <li><a href="">技术交流</a></li>
+                <li><a href="">数据库</a></li>
+                <li>
+                    <a href="">联系我们</a>
+                    <ul class="nav3">
+                        <li><a href="">n</a></li>
+                        <li><a href="">45</a></li>
+                        <li><a href="">3rrrrr</a></li>
+                        <li><a href="">e</a></li>
+                        <li><a href="">x</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <img src="i.jpg" alt="">
+    </body>
+</html>

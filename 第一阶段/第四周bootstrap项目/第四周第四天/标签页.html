@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--language:中文语言-->
+<html lang="zh-CN">
+
+<head>
+    <!--字符编码：简体中文-->
+    <meta charset="utf-8">
+    <!--设置IE浏览器兼容性，以最新的IE版本兼容当前网页-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--width 属性控制设备的宽度。假设您的网站将被带有不同屏幕分辨率的设备浏览，那么将
+        它设置为 device-width 可以确保它能正确呈现在不同设备上。-->
+    <!--initial-scale=1.0 确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放。-->
+    <!--maximum-scale=1.0 与 user-scalable=no 一起使用。这样禁用缩放功能后，用户只能滚动屏幕-->
+    <!--最后两个值视情况可以不写-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--<meta name="author" content="常伟">-->
+    <title>Bootstrap</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!--第一部分  标签页导航栏，标签的导航样式-->
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <!--href="#home" 当前页面的锚文本（超链接）跳转-->
+                <a href="#home" data-toggle="tab">
+         W3Cschool Home
+      </a>
+            </li>
+            <li><a href="#ios" data-toggle="tab">iOS</a></li>
+            <li class="dropdown">
+                <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">Java 
+         <b class="caret"></b>
+      </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+                    <li><a href="#jmeter" tabindex="-1" data-toggle="tab">jmeter</a></li>
+                    <li><a href="#ejb" tabindex="-1" data-toggle="tab">ejb</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!--第二部分 标签页具体内容-->
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="home">
+                <p>W3Cschoool菜鸟教程是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。</p>
+            </div>
+            <div class="tab-pane fade" id="ios">
+                <p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS
+                    是苹果的移动版本。</p>
+            </div>
+            <div class="tab-pane fade" id="jmeter">
+                <p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+            </div>
+            <div class="tab-pane fade" id="ejb">
+                <p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!--折叠组-->
+    <div class="container">
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+          <!--data-parent 属性把折叠面板（accordion）的 id 添加到要展开或折叠的组件的链接上
+          把折叠的内容部分划分在同一个分组中，当一个折叠打开的时候，其他的部分关闭；
+          不添加data-parent的元素不影响别人，别人影响它
+          如第三部分-->
+        <a data-toggle="collapse" data-parent="#accordion" 
+          href="#collapseOne">
+          点击我进行展开，再次点击我进行折叠。第 1 部分
+          <span class="badge pull-right">50</span>
+        </a>
+      </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                        vice lomo.
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" 
+          href="#collapseTwo">
+          点击我进行展开，再次点击我进行折叠。第 2 部分
+        </a>
+      </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                        vice lomo.
+                    </div>
+                </div>
+            </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" 
+          href="#collapseThree">
+          点击我进行展开，再次点击我进行折叠。第 3 部分
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
+        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher 
+        vice lomo.
+      </div>
+    </div>
+  </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" 
+          href="#collapseFour">
+          点击我进行展开，再次点击我进行折叠。第 4 部分
+        </a>
+      </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                        vice lomo.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--bootstrap是基于jQuery的框架-->
+
+</html>

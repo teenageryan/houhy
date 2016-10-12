@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭合函数传参</title>
+    <script src="jquery.js"> </script>
+</head>
+<body>
+<script>
+//    同一个作用域内，变量的声明会提前至作用域开始的地方，之还在初始赋值的位置
+//创建的有名称的自定义函数也会提前至作用开始的地方
+//变量赋值的匿名函数，变量声明提前，值还在初始赋值的位置
+
+
+//    function a(){
+//        var a = 10
+//        console.log(a)
+//    }
+//    a()    //10
+
+
+//    var a = 10
+//    function as(){
+//        var a
+//        console.log(a)
+////        var a = 5
+//        a = 5
+//    }
+//    as()    //undefined
+
+
+//    console.log(ms)   //undefined
+//    var ms = function(){
+//        return 10
+//    }
+//    console.log(ms())    //10
+
+//(function(){
+//    var a = 10
+//    console.log($)  //function jQuery()
+//})()
+//    console.log(a)  a is not defined
+
+$.fn.myswim = function(){
+
+}
+</script>
+</body>
+</html>

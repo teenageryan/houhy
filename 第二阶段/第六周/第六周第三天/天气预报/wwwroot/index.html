@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天气预报</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<div></div>
+<script>
+//    console.log($.ajax())
+$.ajax('http://apis.baidu.com/3023/weather/weather?id=101180505',
+        {
+            headers: {
+                apikey: '65a8845d2862e506895bd10854f7f289'
+            },
+            success: function (data) {
+                console.log(data)
+//                stringify 把js对象转成json数据
+                var datas = JSON.stringify(data)
+                console.log(datas)
+                $('div').html(datas)
+                var weather = data.weather
+                console.log(weather)
+                var now = weather[0].info
+                console.log(now)
+                var nw = now.day
+                console.log(nw)
+            }
+        })
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "mo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nodejs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jy",
+  "license": "ISC",
+  "dependencies": {
+    "art-template": "^3.0.3",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0"
+  }
+}

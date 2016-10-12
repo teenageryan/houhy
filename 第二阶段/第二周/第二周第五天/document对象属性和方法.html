@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>document对象属性和方法</title>
+        <style>
+            body{
+                margin: 0;
+            }
+            main{
+                background: blue;
+            }
+            div{
+                width: 600px;
+                background: yellow;
+            }
+            section{
+                width: 400px;
+                height: 100px;
+                background: red;
+                color: #ffa;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div>
+                <section>
+                    这是新文本内容
+                </section>
+            </div>
+        </main>
+        <script>
+            //document的只读属性，获取当前页面个的styleSheetList
+            console.log(document.styleSheets)
+            var cssStyle = document.styleSheets
+            console.log(cssStyle[0])
+            
+            //获取当前页面样式表，输出的是数组
+            var cssR = cssStyle[0].cssRules
+            console.log(cssR)
+            //cssText   输出相对应的标签选择器的具体样式列表内容
+            console.log(cssR[0].cssText)
+            // console.log(document.styleSheets)
+            // var cssStyle = document.styleSheets
+            // console.log(cssStyle[0])
+            // var cssR = cssStyle[0].cssRules
+            // console.log(cssR)
+            // console.log(cssR[1].cssText)
+            // 添加样式
+            cssStyle[0].insertRule('section{border:solid 1px blue;}',1)
+            console.log(cssR[1])
+            
+            // 添加样式的三种方法
+      //   1.添加className，前提是在style标签对内写好相对应的样式列表
+      //   2.setAttribute（name,value），添加的样式在开始标签内部即行内
+      //   3.通过document.stylesheets方法添加，通过js动态添加相对应样式，不影响原文档内容
+      //      方法：insertRule（样式列表，索引值（即位置））
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="kyu">
+        <title>历史记录</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <button type="button">返回</button>
+        <a href="history2.html">tiao</a>
+        <a href="histor.html">zhuan</a>
+        <!--历史记录跟页面是否发生跳转有关-->
+        <script>
+            console.log(history)
+            var btn = document.querySelector('button')
+           btn.onclick = function backs(){
+                history.back()    //后退    类似浏览器的后退按钮
+            }
+        </script>
+    </body>
+</html>

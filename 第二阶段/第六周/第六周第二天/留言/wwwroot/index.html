@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>点我留言</h1>
+    <input type="button" value="点击" onclick="cin()"/>
+<div id="content"></div>
+</body>
+<script>
+    var xhr = new XMLHttpRequest()
+    function cin(){
+        location.href = 'cindex.html'
+
+    }
+    xhr.onreadystatechange = function() {
+//        console.log('444')
+        if (xhr.readyState == 4) {
+            console.log(xhr.responseText)
+            var text = xhr.responseText
+            var arr = '[' + text.substr(0, text.length - 1) + ']'
+            console.log(arr)
+            var arra = JSON.parse(arr)
+            console.log(arra)
+            for(var i=0;i<arra.length;i++){
+                document.querySelector('div').innerHTML +='<section> 留言： <strong>' + arra[i].body.name + '</strong> <p>' +arra[i].data + '</p> </section>'
+            }
+        }
+    }
+    xhr.open('get','/login')
+    xhr.send()
+</script>
+</html>

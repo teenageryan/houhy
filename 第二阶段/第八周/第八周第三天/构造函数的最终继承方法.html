@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数的最终继承方法</title>
+</head>
+<body>
+<script>
+    function Student(){
+        this.age = 20
+    }
+    Student.prototype.run = function(){
+        alert('跑')
+    }
+    function low(name,color){
+        Student.call(this)
+        this.name = name
+        this.color = color
+    }
+
+//    创建一个空的构造函数
+//    ming.run()执行的时候，先从自身找方法，找不到的话会到Ming的原型链中找方法
+    var third = function(){}
+    third.prototype = Student.prototype
+    low.prototype = new third()
+    var ming = new low('xiaoming','yellow')
+    ming.run()
+//    ming -- Object() -- Student.prototype -- Object -- null
+    console.log(ming.__proto__)   //object
+
+    console.log(Student.prototype)
+    console.log(low.prototype)
+    console.log( Object.getPrototypeOf(low) )   //function
+</script>
+</body>
+</html>

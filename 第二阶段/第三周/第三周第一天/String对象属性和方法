@@ -1,0 +1,14 @@
+charAt() 返回指定位置字符
+charCodeAt() 返回在指定位置Unicode编码
+concat() 连接两个以上字符串，并返回新的字符串
+fromCharCode() Unicode转为字符
+string.indexOf(searchvalue,start)    返回某个指定的字符串值在字符串中首次出现的位置。start可不写
+string.lastIndexOf(searchvalue,start)  返回一个指定的字符串值最后出现的位置，在一个字符串中的指定位置从后向前搜索。    start不写的话从后向前搜索
+slice() 提取字符串片段，并返回新提取字符串
+split() 把字符串分割为字符串数组
+string.split(separator,limit)     	把字符串分割为字符串数组。  limit 该参数可指定返回的数组的最大长度
+如果把空字符串 ("") 用作 separator，那么 stringObject 中的每个字符之间都会被分割。
+substr()   从起始索引号提取字符串中指定数目的字符。
+substring() 提取字符串中两个自定所引号之间字符      返回的子串包括 开始 处的字符，但不包括 结束 处的字符。
+toLowerCase() 字符串转换小写
+toUpperCase() 字符串转换大写

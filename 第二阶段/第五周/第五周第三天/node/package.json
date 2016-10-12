@@ -1,0 +1,16 @@
+{
+  "name": "ajax",
+  "version": "1.0.0",
+  "description": "第一个node.js项目",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "侯y",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {}
+}

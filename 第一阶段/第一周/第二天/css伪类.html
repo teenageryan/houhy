@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="charles">
+        <title>css伪类</title>
+        <style>
+            /*当鼠标掠过链接标签元素上方时，链接内容颜色发生变化*/
+            a:hover{
+                /*当鼠标悬浮在元素上时，向元素添加样式*/  
+                color: red;
+                font-size: 40px;
+                /*去除下划线，文本装饰*/
+                text-decoration: none;
+                background-color: lightblue;
+                
+            }
+            /*向已被访问的元素添加样式*/
+            a:visited
+            {
+                color: black;
+            }
+            /*a{
+                
+                text-decoration: none;
+            }*/
+        </style>
+    </head>
+    <body>
+        <a href="http://www.baidu.com">百度一下</a>
+    </body>
+</html>

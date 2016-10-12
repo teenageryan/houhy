@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录注册首页</title>
+</head>
+<body>
+<header>
+    <button type="button" onclick="location.href = 'login.html'">登录</button>
+    <button type="button" onclick="location.href = 'zhuce.html'">注册页面</button>
+</header>
+</body>
+<script src="jquery.js"></script>
+<script src="jquery.cookie.js"></script>
+<script>
+//    console.log($.cookie())
+    var uname = $.cookie('uname')
+//    console.log(uname)
+if( uname ){
+    $('header').empty()
+    $('<strong>' + uname + '</strong>' + '<span>退出</span>').appendTo('header')
+    $('header span').click(function(){
+        $.get('/user/signout',null,function(res){
+            console.log(res.code)
+            if(res.code == 'success'){
+                location.href = '/'
+            }
+        })
+
+//        location.href = 'login.html'
+    })
+    $('header strong').click(function(){
+        location.href = '/user.html'
+    })
+}
+
+</script>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="kyu">
+    <title>轮播图</title>
+    <script src="jquery.js"></script>
+    <style>
+        main {
+            height: 450px;
+            width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        img {
+            width: 800px;
+            height: 450px;
+            position: absolute;
+        }
+        ul {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            z-index: 6;
+        }
+        
+        li {
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            /*background: olive;*/
+            color: lightblue;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>
+            <img src="img/3.jpg" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/5.jpg" alt="">
+            <img src="img/6.jpg" alt="">
+        </div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <!--<span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>-->
+    </main>
+    <script>
+        $(function(){
+            $('li').eq(0).css('background','olive')
+            $('img').eq(0).css('z-index','5')
+            
+            
+                $('li').hover(function(){
+                    clearInterval(ti)
+                    // console.log($(this).index())
+                    $('li').eq($(this).index()).css('background','olive').siblings().css('background','')
+                    $('img').eq($(this).index()).css('z-index','5').siblings().css('z-index','1')
+                },function(){
+                   i = $(this).index() + 1
+                   show()
+                   ti = setInterval(show,2000)
+                })
+            
+            var i = 1
+             function show(){
+                 if(i >= 4){
+                     i = 0
+                 }
+            // $('li').each(function(){
+            //     $('li').eq($(this).index()).css('background','')
+            //     $('img').eq($(this).index()).css('z-index','1')
+            //  })    
+                $('li').eq(i).css('background','olive').siblings().css('background','')
+                $('img').eq(i).css('z-index','5').siblings().css('z-index','1')
+                i++
+            }
+            
+           ti = setInterval(show,2000)
+        })
+        // var lis = document.querySelectorAll('li')
+        // var imgs = document.querySelectorAll('img')
+        // var divs = document.querySelectorAll('div')
+        // // 手动轮播
+        //     for(var i = 0;i < lis.length;i++){
+        //         lis[i].index = i
+        //         lis[i].onmouseover = function(){
+        //             clearInterval(ti)
+        //             for(var i = 0;i < lis.length;i++){
+        //                 imgs[i].style.display = 'none'
+        //                 lis[i].className = ''
+        //             }
+        //             imgs[this.index].style.display = 'block'
+        //             this.className = 'va'
+        //             this.style.cursor = 'pointer'
+        //         }
+        //         lis[i].onmouseleave = function(){
+        //            i = this.index             //传索引，可以接着轮播
+        //            ti = setInterval(show,2000)      // 不赋给ti的话鼠标离开后轮播速度会加快
+        //         }
+        //     }
+            // var divs = document.querySelectorAll('div')
+            
+            // for(var i = 0;i < lis.length;i++){
+            //     lis[i].index = i
+            //     lis[i].onmouseover = function(){
+            //         for(var i = 0;i < lis.length;i++){
+            //             imgs[i].style.display = 'none'
+            //             lis[i].style.background = ''
+            //         }
+            //         imgs[this.index].style.display = 'block'
+            //         this.style.background = 'olive'
+            //         this.style.cursor = 'pointer'
+            //     }
+            // }
+            
+            // 自动轮播
+            //  var i =0
+            //      function show(){
+            //         if(i < 4){
+            //             // console.log(i)
+            //             for( var n = 0;n < lis.length;n++){
+            //                 imgs[n].style.display = 'none'
+            //                 lis[n].className = ''
+            //                 // console.log(lis[n])
+            //             }
+            //         imgs[i].style.display = 'block'
+            //         lis[i].className = 'va'
+            //         }
+            //         else{
+            //             i = -1
+            //         }
+            //         i++
+            // }
+            //  ti = setInterval(show,2000)
+             
+    </script>
+</body>
+
+</html>

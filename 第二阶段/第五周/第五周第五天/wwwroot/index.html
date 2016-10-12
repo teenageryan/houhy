@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>form表单新特性</title>
+</head>
+<body>
+<!--novalidate--不再对表单内容进行验证，可以直接提交   validate 验证-->
+<form action="#" novalidate id="forms">
+    <input type="text" name="name" placeholder="请输入姓名"/><br><br>
+    <input type="text" name="pwd" placeholder="请输入密码"/><br><br>
+    <!--number类型输入框min--最小值，max--最大值， step--按上下键修改数字时，数字间隔-->
+    <input type="number" name="number" placeholder="请输入年龄" min="10" max="35" step="5"/><br><br>
+    <input type="color" name="color"/><br><br>
+
+    <!--date类型输入框  日期选择器 Date picker  火狐浏览器不支持此控件，建议使用谷歌   (time,month,week,datetime,datetime-local)-->
+
+    <input type="datetime-local" name="date" value="2012-09-12" placeholder="请输入日期"/><br><br>
+<!--required必填项   autocomplete  on或off off不提示历史记录-->
+    <input type="email" name="email" required="" autocomplete="off" placeholder="请输入邮箱"/><br><br>
+
+    <!--如何改变进度条样式-->
+    <input type="range" name="range"/><br><br>
+
+    <input type="url" name="url" placeholder="请输入网址"/><br><br>
+
+    <input type="search" name="search" placeholder="请输入搜索内容"/>
+
+    <!--datalist标签与带有list属性的input标签一同使用 datalist标签的id值与list属性的值是相同的-->
+    <input type="text" name="kemu" placeholder="请输入科目" list="kemus"/><br><br>
+    <datalist id="kemus">
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+        <option value="HTML">HTML</option>
+    </datalist>
+</form>
+<!--
+默认提交按钮是在form表单内部的
+input标签写在form表单之外时，通过form属性的值与form表单id值绑定也可以实现提交功能    formtarget 跳转到另一个页面-->
+<input type="submit" value="提交" form="forms" formtarget="_blank"/><br><br>
+</body>
+</html>

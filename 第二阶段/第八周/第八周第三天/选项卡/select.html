@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡插件及面向对象</title>
+    <script src="js/jquery.js"></script>
+</head>
+<style>
+    .box{
+        margin: 0 auto;
+        width: 270px;
+        border: 1px solid gray;
+    }
+    .row{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border: 1px solid gray;
+        font-size: 0;
+    }
+    .row>li{
+        display: inline-block;
+        padding:10px 20px;
+        border-right: 1px solid #000000;
+        background: blanchedalmond;
+        font-size: 16px;
+        color: gray;
+    }
+    .row>li:last-child{
+        border-right: none;
+    }
+    .prog{
+        height: 200px;
+    }
+    .prog>ul{
+        display: none;
+        position: absolute;
+    }
+    /*.row>li:hover{*/
+        /*color: #000000;*/
+    /*}*/
+    /*路径详细才能覆盖之前设置*/
+    .box .curli{
+        color: #000000;
+    }
+    .prog .curr{
+        display: block;
+    }
+</style>
+<body>
+<main>
+    <div class="box">
+        <ul class="row">
+            <li class="curli">第一项</li>
+            <li>第二项</li>
+            <li>第三项</li>
+        </ul>
+        <div class="prog">
+            <ul class="curr">
+                <li>原型的出现</li>
+                <li>对象的创建</li>
+                <li>构造函数的继承</li>
+                <li>面向对象</li>
+            </ul>
+            <ul>
+                <li>圆形的传</li>
+                <li>对象的创建</li>
+                <li>面向对象</li>
+            </ul>
+            <ul>
+                <li>构造函数</li>
+                <li>原型穿件</li>
+                <li>面向过程</li>
+                <li>原型穿件</li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="box">
+        <ul class="row">
+            <li class="curli">第一项</li>
+            <li>第二项</li>
+            <li>第三项</li>
+        </ul>
+        <div class="prog">
+            <ul class="curr">
+                <li>原型的出现</li>
+                <li>对象的创建</li>
+                <li>构造函数的继承</li>
+                <li>面向对象</li>
+            </ul>
+            <ul>
+                <li>圆形的传</li>
+                <li>对象的创建</li>
+                <li>面向对象</li>
+            </ul>
+            <ul>
+                <li>构造函数</li>
+                <li>原型穿件</li>
+                <li>面向过程</li>
+                <li>原型穿件</li>
+            </ul>
+        </div>
+
+    </div>
+</main>
+<script src="js/seleO.js"></script>
+<script>
+    $('.box').ulfon()
+//$('.row li').eq(0).css('color','black')
+//$('.prog ul').eq(0).css('display','block')
+//$('.row li').each(function(){
+//    $(this).hover(function(){
+//        $('.prog ul').each(function(){
+//            $(this).css('display','none')
+//        })
+//        $(this).css('color','black').siblings().css('color','gray')
+//        $('.prog ul').eq($(this).index()).css('display','block')
+//    })
+//})
+
+
+</script>
+</body>
+</html>
